@@ -1,0 +1,1734 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T2JZ6T3T');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYEP8DF0RK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GYEP8DF0RK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzos | Rexofit</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos compartidos entre catálogos -->
+    <link rel="stylesheet" href="css/catalog-shared.css">
+    <style>
+        /* Buzos Page — estilos exclusivos de esta página */
+
+        /* Product Grid - 4 columns */
+
+        /* Product Card */
+        .buzo-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .buzo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .buzo-card.hidden {
+            display: none;
+        }
+
+        /* Card Media - Improved framing for better visibility */
+        .buzo-card__media {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .buzo-card__media img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* object-position controlled per product via .buzo-card--* classes */
+            transition: opacity 0.3s ease;
+        }
+
+        .buzo-card__media img.buzo-img--back {
+            opacity: 0;
+        }
+
+        .buzo-card:hover .buzo-img--front {
+            opacity: 0;
+        }
+
+        .buzo-card:hover .buzo-img--back {
+            opacity: 1;
+        }
+
+        /* Color Palette Dots - Better spacing */
+        .buzo-card__colors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px 0 2px;
+            background: #fff;
+        }
+
+        .buzo-color-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex: 0 0 14px;
+            border: 1px solid rgba(0,0,0,0.18);
+            box-sizing: border-box;
+        }
+
+        /* Card Info */
+        .buzo-card__info {
+            padding: 14px 12px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .buzo-card__name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111;
+            margin: 0 0 4px;
+        }
+
+        .buzo-card__color-name {
+            font-size: 12px;
+            color: #666;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        /* Card price */
+        .buzo-card__price {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin: 4px 0 0;
+            text-align: center;
+        }
+
+        /* Detail price display */
+        .buzo-detail-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .buzo-detail-price__label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .buzo-detail-price__value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .buzo-detail-price__xl {
+            font-size: 12px;
+            color: #e53935;
+            font-weight: 500;
+        }
+
+
+        /* ===== BADGE OFERTA ===== */
+        .card-badge-oferta {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e11d48;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            z-index: 3;
+            pointer-events: none;
+            /* === EDITAR AQUÍ: cambia el texto del badge desde el HTML === */
+        }
+
+        /* ===== ESTRELLAS ===== */
+        .card-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            margin: 4px 0 2px;
+        }
+        .card-stars__icons {
+            color: #f59e0b;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .card-stars__count {
+            font-size: 11px;
+            color: #888;
+            margin-left: 2px;
+        }
+        /* Precio tachado (oferta) */
+        .price-strike {
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+            display: block;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        .buzo-detail-price__strike {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 4px;
+        }
+
+        /* Próximamente — Niño */
+        .nino-proximamente {
+            display: none;
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .nino-proximamente.visible {
+            display: block;
+        }
+        .nino-proximamente h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 12px;
+        }
+        .nino-proximamente p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+    
+
+        /* ===== CONTADOR DE STOCK ===== */
+        .stock-counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        .stock-counter__dot {
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: stockPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes stockPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ===== GUÍA DE TALLAS ===== */
+        .size-guide-link {
+            font-size: 12px;
+            color: #6b7280;
+            cursor: pointer;
+            background: none;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 4px 10px;
+            margin-left: auto;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .size-guide-link:hover {
+            border-color: #111;
+            color: #111;
+            background: #f9f9f9;
+        }
+        /* Stock + stars row */
+        .detail-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .detail-stars {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #f59e0b;
+        }
+        .detail-stars__count {
+            font-size: 12px;
+            color: #888;
+        }
+        /* Material badge below button */
+        .detail-material {
+            margin-top: 0;
+            padding: 14px 16px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            border-left: 3px solid #e5e7eb;
+        }
+        .detail-material__title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .detail-material__text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .size-guide-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 20000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .size-guide-overlay.active { display: flex; }
+
+        .size-guide-modal {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .size-guide-modal__close {
+            position: absolute;
+            top: 14px; right: 14px;
+            width: 34px; height: 34px;
+            border: none; background: #f5f5f5;
+            border-radius: 50%; font-size: 20px;
+            cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .size-guide-modal h3 {
+            font-size: 20px; font-weight: 700;
+            color: #111; margin: 0 0 6px;
+        }
+        .size-guide-modal p {
+            font-size: 13px; color: #666; margin: 0 0 20px;
+        }
+        .size-guide-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .size-guide-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #111;
+            padding: 10px 12px;
+            text-align: center;
+            border: 1px solid #e8e8e8;
+        }
+        .size-guide-table td {
+            padding: 10px 12px;
+            text-align: center;
+            border: 1px solid #eee;
+            color: #444;
+        }
+        .size-guide-table tr:nth-child(even) td { background: #fafafa; }
+        .size-guide-note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+        /* ===== BANNER CAMBIO DE GÉNERO ===== */
+        .gender-switch-banner {
+            grid-column: 1 / -1;
+            margin: 40px 0 20px;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+            border-radius: 16px;
+            padding: 40px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gender-switch-banner::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .gender-switch-banner__text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1;
+        }
+
+        .gender-switch-banner__tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .gender-switch-banner__title {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: -0.3px;
+        }
+
+        .gender-switch-banner__sub {
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .gender-switch-banner__btn {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: #fff;
+            color: #111;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            text-decoration: none;
+            z-index: 1;
+            white-space: nowrap;
+        }
+
+        .gender-switch-banner__btn:hover {
+            transform: translateY(-2px);
+            background: #f0f0f0;
+        }
+
+        .gender-switch-banner__btn svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .gender-switch-banner--dama {
+            background: linear-gradient(135deg, #4a0030 0%, #7c1f5a 100%);
+        }
+
+        @media (max-width: 600px) {
+            .gender-switch-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px 24px;
+                gap: 20px;
+            }
+            .gender-switch-banner__btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+</style>
+    <link rel="icon" type="image/png" href="/img/logo-negro.png">
+    <!-- SEO -->
+    <meta name="description" content="Conjuntos y buzos Nova para varón y dama. Calidad premium con envío a todo el Perú. Contra entrega disponible en Lima.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rexofit.com/buzos">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Buzos Nova para Hombre y Mujer | Rexofit">
+    <meta property="og:description" content="Conjuntos y buzos Nova para varón y dama. Calidad premium con envío a todo el Perú. Contra entrega disponible en Lima.">
+    <meta property="og:url" content="https://rexofit.com/buzos">
+    <meta property="og:image" content="https://rexofit.com/img/logo-negro.png">
+    <meta property="og:site_name" content="Rexofit">
+</head>
+<body data-pagina="buzos">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2JZ6T3T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Header container (rendered by JS) -->
+    <header class="navbar-container"></header>
+    <div class="categories-modal" id="categoriesModal" hidden>
+        <div class="categories-modal__backdrop" id="categoriesBackdrop"></div>
+        <div class="categories-modal__panel">
+            <button class="categories-modal__close" id="categoriesClose" aria-label="Cerrar">&times;</button>
+            <h3 class="categories-modal__title">Tienda</h3>
+            <div class="categories-modal__list">
+                <a href="polos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-polos.webp" alt="Polos" class="categories-modal__img">
+                    <span>POLOS</span>
+                </a>
+                <a href="buzos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" class="categories-modal__img">
+                    <span>BUZOS</span>
+                </a>
+                <a href="zapatos-mujer.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" class="categories-modal__img">
+                    <span>SANDALIAS</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <main class="catalog-main">
+        <section class="catalog-container">
+            
+            <!-- Gender Tabs - Horizontal at Top -->
+            <div class="gender-tabs">
+                <button class="gender-tab active" data-filter="varon">Varón</button>
+                <button class="gender-tab" data-filter="dama">Dama</button>
+                <button class="gender-tab" data-filter="nino">Niño</button>
+            </div>
+
+            <!-- Niño - Próximamente -->
+            <div class="nino-proximamente" id="ninoProximamente">
+                <h3>Próximamente</h3>
+                <p>Estamos preparando los mejores conjuntos para los más pequeños.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="buzos-grid" id="buzosGrid">
+                
+                                <!-- VARÓN Products (7 colors - nueva tela nova) -->
+                <div class="buzo-card buzo-card--varon-azul-marino" data-gender="varon" data-product="varon-azul-marino">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-1.webp" alt="Conjunto Nova Azul Marino">
+                        <img class="buzo-img--back" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-2.webp" alt="Conjunto Nova Azul Marino">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #1e3a5f;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Azul Marino</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(127)</span></div>
+                        <span class="price-strike">S/ 129.00</span><p class="buzo-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card buzo-card--varon-beige" data-gender="varon" data-product="varon-beige">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-1.webp" alt="Conjunto Nova Beige">
+                        <img class="buzo-img--back" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-2.webp" alt="Conjunto Nova Beige">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #d4a574;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Beige</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(127)</span></div>
+                        <span class="price-strike">S/ 129.00</span><p class="buzo-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card buzo-card--varon-celeste" data-gender="varon" data-product="varon-celeste">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-1.webp" alt="Conjunto Nova Celeste">
+                        <img class="buzo-img--back" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-2.webp" alt="Conjunto Nova Celeste">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #7dd3fc;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Celeste</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(127)</span></div>
+                        <span class="price-strike">S/ 129.00</span><p class="buzo-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card buzo-card--varon-negro" data-gender="varon" data-product="varon-negro">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-1.webp" alt="Conjunto Nova Negro">
+                        <img class="buzo-img--back" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-2.webp" alt="Conjunto Nova Negro">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #1a1a1a;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Negro</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(127)</span></div>
+                        <span class="price-strike">S/ 129.00</span><p class="buzo-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card buzo-card--varon-plomo" data-gender="varon" data-product="varon-plomo">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-1.webp" alt="Conjunto Nova Plomo">
+                        <img class="buzo-img--back" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-2.webp" alt="Conjunto Nova Plomo">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #6b7280;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Plomo</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(127)</span></div>
+                        <span class="price-strike">S/ 129.00</span><p class="buzo-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card buzo-card--varon-rojo" data-gender="varon" data-product="varon-rojo">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-1.webp" alt="Conjunto Nova Rojo">
+                        <img class="buzo-img--back" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-2.webp" alt="Conjunto Nova Rojo">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #dc2626;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Rojo</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(127)</span></div>
+                        <span class="price-strike">S/ 129.00</span><p class="buzo-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card buzo-card--varon-vino" data-gender="varon" data-product="varon-vino">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-1.webp" alt="Conjunto Nova Vino">
+                        <img class="buzo-img--back" src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-2.webp" alt="Conjunto Nova Vino">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #7f1d1d;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Vino</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(127)</span></div>
+                        <span class="price-strike">S/ 129.00</span><p class="buzo-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <!-- DAMA Products (7 colors from nova-dama) -->
+                <div class="buzo-card hidden buzo-card--dama-azul-marino" data-gender="dama" data-product="dama-azul-marino">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-dama/conjunto_nova_dama_azul_marino_1.jpeg" alt="Conjunto Nova Dama Azul Marino">
+                        <img class="buzo-img--back" src="/img/nova-dama/conjunto_nova_dama_azul_marino_2.jpeg" alt="Conjunto Nova Dama Azul Marino">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #1e3a5f;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Azul Marino</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(98)</span></div>
+                        <span class="price-strike">S/ 122.00</span><p class="buzo-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card hidden buzo-card--dama-beige" data-gender="dama" data-product="dama-beige">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-dama/conjunto_nova_dama_beige_1.jpeg" alt="Conjunto Nova Dama Beige">
+                        <img class="buzo-img--back" src="/img/nova-dama/conjunto_nova_dama_beige_2.jpeg" alt="Conjunto Nova Dama Beige">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #d4a574;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Beige</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(98)</span></div>
+                        <span class="price-strike">S/ 122.00</span><p class="buzo-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card hidden buzo-card--dama-celeste" data-gender="dama" data-product="dama-celeste">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-dama/conjunto_nova_dama_celeste_1.jpeg" alt="Conjunto Nova Dama Celeste">
+                        <img class="buzo-img--back" src="/img/nova-dama/conjunto_nova_dama_celeste_2.jpeg" alt="Conjunto Nova Dama Celeste">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #7dd3fc;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Celeste</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(98)</span></div>
+                        <span class="price-strike">S/ 122.00</span><p class="buzo-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card hidden buzo-card--dama-guinda" data-gender="dama" data-product="dama-guinda">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-dama/conjunto_nova_dama_guinda_1.jpeg" alt="Conjunto Nova Dama Guinda">
+                        <img class="buzo-img--back" src="/img/nova-dama/conjunto_nova_dama_guinda_2.jpeg" alt="Conjunto Nova Dama Guinda">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #7f1d1d;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Guinda</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(98)</span></div>
+                        <span class="price-strike">S/ 122.00</span><p class="buzo-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card hidden buzo-card--dama-negro" data-gender="dama" data-product="dama-negro">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-dama/conjunto_nova_dama_negro_1.jpeg" alt="Conjunto Nova Dama Negro">
+                        <img class="buzo-img--back" src="/img/nova-dama/conjunto_nova_dama_negro_2.jpeg" alt="Conjunto Nova Dama Negro">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #1a1a1a;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Negro</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(98)</span></div>
+                        <span class="price-strike">S/ 122.00</span><p class="buzo-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card hidden buzo-card--dama-plomo" data-gender="dama" data-product="dama-plomo">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-dama/conjunto_nova_dama_plomo_1.jpeg" alt="Conjunto Nova Dama Plomo">
+                        <img class="buzo-img--back" src="/img/nova-dama/conjunto_nova_dama_plomo_2.jpeg" alt="Conjunto Nova Dama Plomo">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #6b7280;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Plomo</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(98)</span></div>
+                        <span class="price-strike">S/ 122.00</span><p class="buzo-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="buzo-card hidden buzo-card--dama-rojo" data-gender="dama" data-product="dama-rojo">
+                    <div class="buzo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="buzo-img--front" src="/img/nova-dama/conjunto_nova_dama_rojo_1.jpeg" alt="Conjunto Nova Dama Rojo">
+                        <img class="buzo-img--back" src="/img/nova-dama/conjunto_nova_dama_rojo_2.jpeg" alt="Conjunto Nova Dama Rojo">
+                    </div>
+                    <div class="buzo-card__colors">
+                        <span class="buzo-color-dot" style="background: #dc2626;"></span>
+                    </div>
+                    <div class="buzo-card__info">
+                        <h3 class="buzo-card__name">Conjunto Nova</h3>
+                        <p class="buzo-card__color-name">Rojo</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(98)</span></div>
+                        <span class="price-strike">S/ 122.00</span><p class="buzo-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <!-- NIÑO Products - Now hidden, showing Próximamente instead -->
+
+
+                <!-- Banner: ver catálogo Dama -->
+                <div class="gender-switch-banner gender-switch-banner--dama" id="bannerVerDama" style="display:none;">
+                    <div class="gender-switch-banner__text">
+                        <span class="gender-switch-banner__tag">También tenemos para ella</span>
+                        <h3 class="gender-switch-banner__title">Descubre los buzos<br>de colección Dama</h3>
+                        <p class="gender-switch-banner__sub">Diseños exclusivos en tela Nova para ella.<br>Misma calidad, distintos colores.</p>
+                    </div>
+                    <button class="gender-switch-banner__btn" id="btnVerDama">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                        Ver colección Dama
+                    </button>
+                </div>
+
+                <!-- Banner: ver catálogo Varón -->
+                <div class="gender-switch-banner" id="bannerVerVaron" style="display:none;">
+                    <div class="gender-switch-banner__text">
+                        <span class="gender-switch-banner__tag">También tenemos para él</span>
+                        <h3 class="gender-switch-banner__title">Descubre los buzos<br>de colección Varón</h3>
+                        <p class="gender-switch-banner__sub">Conjuntos Nova para caballeros.<br>Estilo, comodidad y calidad en cada prenda.</p>
+                    </div>
+                    <button class="gender-switch-banner__btn" id="btnVerVaron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                        Ver colección Varón
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Detail Overlay -->
+    <div class="product-detail-overlay" id="productDetail">
+        <div class="product-detail">
+            <button class="product-detail__close" id="detailClose">&times;</button>
+            <div class="product-detail__content">
+                <!-- Main Image Area -->
+                <div class="product-detail__main-area">
+                    <!-- Main Image with Zoom -->
+                    <div class="product-detail__main product-zoomable" id="productDetailMain">
+                        <img id="detailMainImg" src="" alt="Product Image">
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="product-detail__thumbs" id="detailThumbs"></div>
+                </div>
+                <!-- Product Info -->
+                <div class="product-detail__info">
+
+                    <!-- 1. Título y color -->
+                    <h1 class="product-detail__title" id="detailTitle">Conjunto Nova</h1>
+                    <p class="product-detail__color" id="detailColor">Color</p>
+
+                    <!-- 2. Estrellas + Stock en una fila -->
+                    <div class="detail-meta-row">
+                        <div class="detail-stars">
+                            ★★★★★
+                            <span class="detail-stars__count">(127 reseñas)</span>
+                        </div>
+                        <!-- CONTADOR DE STOCK: edita el número aquí -->
+                        <div class="stock-counter">
+                            <span class="stock-counter__dot"></span>
+                            Solo quedan <strong><span id="buzoStockNum">5</span></strong> disponibles
+                        </div>
+                    </div>
+
+                    <!-- 3. Precio -->
+                    <div class="buzo-detail-price">
+                        <span class="buzo-detail-price__label">Precio:</span>
+                        <span class="buzo-detail-price__strike" id="buzoPriceStrike">S/ 129.00</span>
+                        <span class="buzo-detail-price__value" id="buzoPriceDisplay">S/ 90.00</span>
+                        <span class="buzo-detail-price__xl" id="buzoPriceXlNote" style="display:none;">
+                            (+S/5.00 talla XL)
+                        </span>
+                    </div>
+
+                    <!-- 4. Paleta de colores -->
+                    <div class="product-detail__palette">
+                        <span class="product-detail__palette-label">Color:</span>
+                        <div id="detailPalette"></div>
+                    </div>
+
+                    <!-- 5. Tallas + Guía -->
+                    <div class="product-detail__sizes">
+                        <span class="product-detail__sizes-label">Talla:</span>
+                        <button class="size-btn active" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                        <button class="size-guide-link" onclick="document.getElementById('sizeGuideOverlay').classList.add('active')">
+                            Guía de tallas
+                        </button>
+                    </div>
+
+                    <!-- 6. Cantidad -->
+                    <div class="product-detail__quantity">
+                        <span class="product-detail__quantity-label">Cantidad:</span>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" id="qtyMinus">-</button>
+                            <input type="number" class="quantity-value" id="qtyValue" value="1" min="1">
+                            <button class="quantity-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 7. Botón agregar -->
+                    <button class="add-to-cart-btn" id="addToCart">Agregar al Carrito</button>
+
+                    <!-- 8. Descripción de tela -->
+                    <div class="detail-material">
+                        <p class="detail-material__title">Material</p>
+                        <p class="detail-material__text">Confeccionado en tela Nova — mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Suave al tacto, resistente al desgaste y con colores que no se desvanecen con el lavado.</p>
+                    </div>
+
+                    <!-- 9. Recomendados -->
+                    <div class="product-detail__recomendados">
+                        <h4 class="product-detail__recomendados-title">Recomendados</h4>
+                        <div class="product-detail__recomendados-grid" id="recomendadosGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/header.js"></script>
+    <script src="js/carrito.js"></script>
+    <script>
+        // Product Data - All products (Varón + Dama)
+        const products = {
+            // VARÓN products
+            'varon-azul-marino': {
+                name: 'Conjunto Nova',
+                color: 'Azul Marino',
+                colorKey: 'azul-marino',
+                colorHex: '#1e3a5f',
+                gender: 'varon',
+                description: 'Conjunto deportivo en tela Nova de alta calidad, confeccionado con una mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Su diseño moderno con corte atlético se adapta perfectamente al cuerpo, ideal para actividades deportivas, entrenamientos y uso casual. La tela Nova destaca por su suavidad, resistencia al desgaste y colores vibrantes que no se desvanecen con el lavado.',
+                images: [
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-1.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-2.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-3.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-4.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-5.webp'
+                ]
+            },
+            'varon-beige': {
+                name: 'Conjunto Nova',
+                color: 'Beige',
+                colorKey: 'beige',
+                colorHex: '#d4a574',
+                gender: 'varon',
+                description: 'Conjunto deportivo en tela Nova de alta calidad, confeccionado con una mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Su diseño moderno con corte atlético se adapta perfectamente al cuerpo, ideal para actividades deportivas, entrenamientos y uso casual. La tela Nova destaca por su suavidad, resistencia al desgaste y colores vibrantes que no se desvanecen con el lavado.',
+                images: [
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-1.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-2.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-3.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-4.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-5.webp'
+                ]
+            },
+            'varon-celeste': {
+                name: 'Conjunto Nova',
+                color: 'Celeste',
+                colorKey: 'celeste',
+                colorHex: '#7dd3fc',
+                gender: 'varon',
+                description: 'Conjunto deportivo en tela Nova de alta calidad, confeccionado con una mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Su diseño moderno con corte atlético se adapta perfectamente al cuerpo, ideal para actividades deportivas, entrenamientos y uso casual. La tela Nova destaca por su suavidad, resistencia al desgaste y colores vibrantes que no se desvanecen con el lavado.',
+                images: [
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-1.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-2.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-3.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-4.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-5.webp'
+                ]
+            },
+            'varon-negro': {
+                name: 'Conjunto Nova',
+                color: 'Negro',
+                colorKey: 'negro',
+                colorHex: '#1a1a1a',
+                gender: 'varon',
+                description: 'Conjunto deportivo en tela Nova de alta calidad, confeccionado con una mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Su diseño moderno con corte atlético se adapta perfectamente al cuerpo, ideal para actividades deportivas, entrenamientos y uso casual. La tela Nova destaca por su suavidad, resistencia al desgaste y colores vibrantes que no se desvanecen con el lavado.',
+                images: [
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-1.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-2.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-3.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-4.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-5.webp'
+                ]
+            },
+            'varon-plomo': {
+                name: 'Conjunto Nova',
+                color: 'Plomo',
+                colorKey: 'plomo',
+                colorHex: '#6b7280',
+                gender: 'varon',
+                description: 'Conjunto deportivo en tela Nova de alta calidad, confeccionado con una mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Su diseño moderno con corte atlético se adapta perfectamente al cuerpo, ideal para actividades deportivas, entrenamientos y uso casual. La tela Nova destaca por su suavidad, resistencia al desgaste y colores vibrantes que no se desvanecen con el lavado.',
+                images: [
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-1.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-2.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo3.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo4.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-5.webp'
+                ]
+            },
+            'varon-rojo': {
+                name: 'Conjunto Nova',
+                color: 'Rojo',
+                colorKey: 'rojo',
+                colorHex: '#dc2626',
+                gender: 'varon',
+                description: 'Conjunto deportivo en tela Nova de alta calidad, confeccionado con una mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Su diseño moderno con corte atlético se adapta perfectamente al cuerpo, ideal para actividades deportivas, entrenamientos y uso casual. La tela Nova destaca por su suavidad, resistencia al desgaste y colores vibrantes que no se desvanecen con el lavado.',
+                images: [
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-1.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-2.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-3.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-4.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-5.webp'
+                ]
+            },
+            'varon-vino': {
+                name: 'Conjunto Nova',
+                color: 'Vino',
+                colorKey: 'vino',
+                colorHex: '#7f1d1d',
+                gender: 'varon',
+                description: 'Conjunto deportivo en tela Nova de alta calidad, confeccionado con una mezcla premium de poliéster y elastano que brinda máximo confort, libertad de movimiento y durabilidad. Su diseño moderno con corte atlético se adapta perfectamente al cuerpo, ideal para actividades deportivas, entrenamientos y uso casual. La tela Nova destaca por su suavidad, resistencia al desgaste y colores vibrantes que no se desvanecen con el lavado.',
+                images: [
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-1.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-2.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-3.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-4.webp',
+                    '/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-5.webp'
+                ]
+            },
+            'dama-azul-marino': {
+                name: 'Conjunto Nova',
+                color: 'Azul Marino',
+                colorKey: 'azul_marino',
+                colorHex: '#1e3a5f',
+                images: [
+                    '/img/nova-dama/conjunto_nova_dama_azul_marino_1.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_azul_marino_2.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_azul_marino_3.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_azul_marino_4.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_azul_marino_5.jpeg'
+                ]
+            },
+            'dama-beige': {
+                name: 'Conjunto Nova',
+                color: 'Beige',
+                colorKey: 'beige',
+                colorHex: '#d4a574',
+                images: [
+                    '/img/nova-dama/conjunto_nova_dama_beige_1.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_beige_2.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_beige_3.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_beige_4.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_beige_5.jpeg'
+                ]
+            },
+            'dama-celeste': {
+                name: 'Conjunto Nova',
+                color: 'Celeste',
+                colorKey: 'celeste',
+                colorHex: '#7dd3fc',
+                images: [
+                    '/img/nova-dama/conjunto_nova_dama_celeste_1.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_celeste_2.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_celeste_3.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_celeste_4.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_celeste_5.jpeg'
+                ]
+            },
+            'dama-guinda': {
+                name: 'Conjunto Nova',
+                color: 'Guinda',
+                colorKey: 'guinda',
+                colorHex: '#7f1d1d',
+                images: [
+                    '/img/nova-dama/conjunto_nova_dama_guinda_1.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_guinda_2.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_guinda_3.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_guinda_4.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_guinda_5.jpeg'
+                ]
+            },
+            'dama-negro': {
+                name: 'Conjunto Nova',
+                color: 'Negro',
+                colorKey: 'negro',
+                colorHex: '#1a1a1a',
+                images: [
+                    '/img/nova-dama/conjunto_nova_dama_negro_1.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_negro_2.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_negro_3.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_negro_4.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_negro_5.jpg'
+                ]
+            },
+            'dama-plomo': {
+                name: 'Conjunto Nova',
+                color: 'Plomo',
+                colorKey: 'plomo',
+                colorHex: '#6b7280',
+                images: [
+                    '/img/nova-dama/conjunto_nova_dama_plomo_1.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_plomo_2.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_plomo_3.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_plomo_4.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_plomo_5.jpeg'
+                ]
+            },
+            'dama-rojo': {
+                name: 'Conjunto Nova',
+                color: 'Rojo',
+                colorKey: 'rojo',
+                colorHex: '#dc2626',
+                images: [
+                    '/img/nova-dama/conjunto_nova_dama_rojo_1.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_rojo_2.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_rojo_3.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_rojo_4.jpeg',
+                    '/img/nova-dama/conjunto_nova_dama_rojo_5.jpeg'
+                ]
+            }
+        };
+
+        // All Varón colors for palette switching
+        const allVaronColors = [
+            { key: 'varon-azul-marino', color: 'Azul Marino', hex: '#1e3a5f' },
+            { key: 'varon-beige',       color: 'Beige',       hex: '#d4a574' },
+            { key: 'varon-celeste',     color: 'Celeste',     hex: '#7dd3fc' },
+            { key: 'varon-negro',       color: 'Negro',       hex: '#1a1a1a' },
+            { key: 'varon-plomo',       color: 'Plomo',       hex: '#6b7280' },
+            { key: 'varon-rojo',        color: 'Rojo',        hex: '#dc2626' },
+            { key: 'varon-vino',        color: 'Vino',        hex: '#7f1d1d' }
+        ];
+
+        // All Dama colors for palette switching
+        const allDamaColors = [
+            { key: 'dama-azul-marino', color: 'Azul Marino', hex: '#1e3a5f' },
+            { key: 'dama-beige', color: 'Beige', hex: '#d4a574' },
+            { key: 'dama-celeste', color: 'Celeste', hex: '#7dd3fc' },
+            { key: 'dama-guinda', color: 'Guinda', hex: '#7f1d1d' },
+            { key: 'dama-negro', color: 'Negro', hex: '#1a1a1a' },
+            { key: 'dama-plomo', color: 'Plomo', hex: '#6b7280' },
+            { key: 'dama-rojo', color: 'Rojo', hex: '#dc2626' }
+        ];
+
+        let currentProduct = null;
+        let currentProductId = null;
+        let currentSize = 'S';
+        let currentQty = 1;
+
+        // Price calculator: Varón=90, Dama=85, XL=+5
+        function getBuzoPrice(productId, size) {
+            const basePrice = productId && productId.startsWith('varon-') ? 90 : 85;
+            return size === 'XL' ? basePrice + 5 : basePrice;
+        }
+
+        // Strike price is price / 0.70, rounded to nearest whole number
+        function getBuzoStrikePrice(productId, size) {
+            const price = getBuzoPrice(productId, size);
+            return Math.round(price / 0.70);
+        }
+
+        function updateBuzoPriceDisplay(productId, size) {
+            const price = getBuzoPrice(productId, size);
+            const strikePrice = getBuzoStrikePrice(productId, size);
+            const priceEl = document.getElementById('buzoPriceDisplay');
+            const strikeEl = document.getElementById('buzoPriceStrike');
+            const xlNote = document.getElementById('buzoPriceXlNote');
+            if (priceEl) priceEl.textContent = 'S/ ' + price.toFixed(2);
+            if (strikeEl) strikeEl.textContent = 'S/ ' + strikePrice.toFixed(2);
+            if (xlNote) xlNote.style.display = size === 'XL' ? 'inline' : 'none';
+        }
+
+        // Image Zoom Functionality - fixed zoom with strict max limit
+        let zoomInitialized = false;
+        let isZoomed = false;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX = 0, startY = 0;
+        const MAX_ZOOM = 2.2;
+        
+        function initZoomOnce() {
+            if (zoomInitialized) return;
+            zoomInitialized = true;
+            
+            const container = document.getElementById('productDetailMain');
+            const img = document.getElementById('detailMainImg');
+            
+            if (!container || !img) {
+                zoomInitialized = false;
+                return;
+            }
+            
+            // Prevent default drag
+            img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+            
+            // Single click to zoom (only 2 states: normal <-> zoomed)
+            container.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                if (isZoomed) {
+                    // Reset to normal
+                    isZoomed = false;
+                    translateX = 0;
+                    translateY = 0;
+                    img.style.transform = 'translate(0px, 0px) scale(1)';
+                    img.classList.remove('is-zoomed');
+                } else {
+                    // Apply fixed max zoom
+                    isZoomed = true;
+                    img.style.transform = 'translate(0px, 0px) scale(' + MAX_ZOOM + ')';
+                    img.classList.add('is-zoomed');
+                }
+            });
+            
+            // Mouse drag to pan when zoomed
+            container.addEventListener('mousedown', function(e) {
+                if (!isZoomed) return;
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                container.style.cursor = 'grabbing';
+            });
+            
+            container.addEventListener('mousemove', function(e) {
+                if (!isDragging || !isZoomed) return;
+                
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                
+                // Clamp translation to stay within bounds
+                const maxTranslate = (MAX_ZOOM - 1) * container.offsetWidth / 2;
+                translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
+                translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
+                
+                img.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + MAX_ZOOM + ')';
+            });
+            
+            container.addEventListener('mouseup', function() {
+                isDragging = false;
+                container.style.cursor = 'zoom-in';
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                isDragging = false;
+                container.style.cursor = 'zoom-in';
+            });
+        }
+        
+        function resetZoom() {
+            isZoomed = false;
+            translateX = 0;
+            translateY = 0;
+            isDragging = false;
+            const img = document.getElementById('detailMainImg');
+            if (img) {
+                img.style.transform = 'translate(0px, 0px) scale(1)';
+                img.classList.remove('is-zoomed');
+            }
+        }
+
+        // Gender Tab Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const genderTabs = document.querySelectorAll('.gender-tab');
+            const buzoCards = document.querySelectorAll('.buzo-card');
+            const ninoProximamente = document.getElementById('ninoProximamente');
+
+            function initGenderFilter() {
+                genderTabs.forEach(tab => {
+                    if (tab.dataset.filter === 'varon') {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+
+                buzoCards.forEach(card => {
+                    if (card.dataset.gender === 'varon') {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                // Hide Próximamente by default
+                if (ninoProximamente) {
+                    ninoProximamente.classList.remove('visible');
+                }
+            }
+
+            initGenderFilter();
+
+            // Deep link: si la URL tiene #producto-id, abrirlo automáticamente
+            // Ej: buzos.html#varon-azul-marino
+            const hash = window.location.hash.replace('#', '');
+            if (hash && products[hash]) {
+                // Si es dama, cambiar el tab primero
+                if (products[hash].gender === 'dama') {
+                    genderTabs.forEach(t => t.classList.remove('active'));
+                    const damaTab = document.querySelector('.gender-tab[data-filter="dama"]');
+                    if (damaTab) damaTab.classList.add('active');
+                    buzoCards.forEach(card => {
+                        card.classList.toggle('hidden', card.dataset.gender !== 'dama');
+                    });
+                }
+                setTimeout(function() { openProductDetail(hash); }, 100);
+            }
+
+            genderTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    genderTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    if (filter === 'nino') {
+                        // Show Próximamente for Niño
+                        buzoCards.forEach(card => card.classList.add('hidden'));
+                        if (ninoProximamente) {
+                            ninoProximamente.classList.add('visible');
+                        }
+                    } else {
+                        // Show products for Varón/Dama
+                        if (ninoProximamente) {
+                            ninoProximamente.classList.remove('visible');
+                        }
+                        buzoCards.forEach(card => {
+                            if (card.dataset.gender === filter) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Product Card Click - Open Detail
+            buzoCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productId = this.dataset.product;
+                    if (products[productId]) {
+                        openProductDetail(productId);
+                    }
+                });
+            });
+
+            // Close Detail
+            document.getElementById('detailClose').addEventListener('click', closeProductDetail);
+            document.getElementById('productDetail').addEventListener('click', function(e) {
+                if (e.target === this) closeProductDetail();
+            });
+
+            // Size Selection
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentSize = this.dataset.size;
+                    // Update price when size changes
+                    updateBuzoPriceDisplay(currentProductId, currentSize);
+                });
+            });
+
+            // Quantity
+            document.getElementById('qtyMinus').addEventListener('click', function() {
+                if (currentQty > 1) {
+                    currentQty--;
+                    document.getElementById('qtyValue').value = currentQty;
+                }
+            });
+
+            document.getElementById('qtyPlus').addEventListener('click', function() {
+                currentQty++;
+                document.getElementById('qtyValue').value = currentQty;
+            });
+
+            // Add to Cart - Real cart functionality with toast
+            document.getElementById('addToCart').addEventListener('click', function() {
+                if (!currentProduct) return;
+
+                // Validar que se haya seleccionado una talla
+                if (!currentSize) {
+                    if (typeof mostrarBanner === 'function') mostrarBanner('Por favor selecciona una talla.');
+                    else alert('Por favor selecciona una talla.');
+                    return;
+                }
+
+                const price = getBuzoPrice(currentProductId, currentSize);
+                
+                // Get cart from localStorage or create new
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                const itemId = 'buzo-' + currentProductId + '-' + currentSize;
+                const existing = cart.findIndex(function(p) { return p.id === itemId; });
+
+                if (existing >= 0) {
+                    cart[existing].qty = Math.min(10, cart[existing].qty + currentQty);
+                } else {
+                    if (cart.length >= 20) {
+                        if (typeof showInfoModal === 'function') showInfoModal('Carrito lleno', 'Tu carrito ya tiene el máximo de 20 productos distintos.'); else alert('Tu carrito ya tiene el máximo de 20 productos distintos.');
+                        return;
+                    }
+                    cart.push({
+                        id: itemId,
+                        name: currentProduct.name + ' ' + currentProduct.color,
+                        color: currentProduct.color,
+                        colorHex: currentProduct.colorHex,
+                        size: currentSize,
+                        qty: currentQty,
+                        price: price,
+                        image: currentProduct.images[0]
+                    });
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update cart count immediately
+                actualizarContadorCarrito();
+                dispatchCartUpdate();
+                
+                // Show toast notification
+                showToast('Producto agregado al carrito', `${currentProduct.color} - Talla ${currentSize} - S/${price}`);
+                
+                closeProductDetail();
+            });
+        });
+
+        function openProductDetail(productId) {
+            // Initialize zoom when modal opens
+            initZoomOnce();
+            
+            currentProduct = products[productId];
+            currentProductId = productId;
+            const detail = document.getElementById('productDetail');
+            const thumbsContainer = document.getElementById('detailThumbs');
+
+            // Reset size and quantity for every new product
+            currentSize = 'S';
+            currentQty = 1;
+            document.querySelectorAll('.size-btn').forEach(function(b) {
+                b.classList.toggle('active', b.dataset.size === 'S');
+            });
+            var qtyInput = document.getElementById('qtyValue');
+            if (qtyInput) qtyInput.value = 1;
+            
+            // Set product info
+            document.getElementById('detailTitle').textContent = currentProduct.name;
+            document.getElementById('detailColor').textContent = currentProduct.color;
+            // Show description if available
+            const descEl = document.getElementById('detailDesc');
+            if (descEl && currentProduct.description) descEl.textContent = currentProduct.description;
+            // Update price display on open
+            updateBuzoPriceDisplay(productId, currentSize);
+            document.getElementById('detailMainImg').src = currentProduct.images[0];
+
+            // Create thumbnails
+            thumbsContainer.innerHTML = '';
+            currentProduct.images.forEach((img, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'product-thumb' + (index === 0 ? ' active' : '');
+                thumb.innerHTML = `<img src="${img}" alt="Thumbnail ${index + 1}">`;
+                thumb.addEventListener('click', function() {
+                    document.getElementById('detailMainImg').src = img;
+                    document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+                thumbsContainer.appendChild(thumb);
+            });
+
+            // Create color palette (for both Varon and Dama products)
+            const paletteContainer = document.getElementById('detailPalette');
+            paletteContainer.innerHTML = '';
+            
+            if (productId.startsWith('varon-')) {
+                allVaronColors.forEach(c => {
+                    const colorBtn = document.createElement('span');
+                    colorBtn.className = 'palette-color' + (c.key === productId ? ' active' : '');
+                    colorBtn.style.background = c.hex;
+                    colorBtn.title = c.color;
+                    colorBtn.addEventListener('click', function() {
+                        if (products[c.key]) {
+                            openProductDetail(c.key);
+                        }
+                    });
+                    paletteContainer.appendChild(colorBtn);
+                });
+            } else if (productId.startsWith('dama-')) {
+                allDamaColors.forEach(c => {
+                    const colorBtn = document.createElement('span');
+                    colorBtn.className = 'palette-color' + (c.key === productId ? ' active' : '');
+                    colorBtn.style.background = c.hex;
+                    colorBtn.title = c.color;
+                    colorBtn.addEventListener('click', function() {
+                        if (products[c.key]) {
+                            openProductDetail(c.key);
+                        }
+                    });
+                    paletteContainer.appendChild(colorBtn);
+                });
+            }
+
+            // Handle XL tooltip for men's products
+            const isMan = productId.startsWith('varon-');
+            const sizeButtons = document.querySelectorAll('.product-detail__sizes .size-btn');
+            sizeButtons.forEach(btn => {
+                // Remove any existing tooltip first
+                const existingTooltip = btn.querySelector('.size-tooltip');
+                if (existingTooltip) {
+                    existingTooltip.remove();
+                }
+                
+                // Add tooltip only for XL on men's products
+                if (btn.dataset.size === 'XL' && isMan) {
+                    const tooltip = document.createElement('span');
+                    tooltip.className = 'size-tooltip';
+                    tooltip.textContent = 'Tallas XL serían 5 soles más';
+                    btn.appendChild(tooltip);
+                }
+            });
+
+            // Load Recomendados
+            loadRecomendados(productId);
+
+            detail.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function loadRecomendados(currentProductId) {
+            const grid = document.getElementById('recomendadosGrid');
+            grid.innerHTML = '';
+            
+            // Get current gender
+            const currentGender = currentProductId.startsWith('varon') ? 'varon' : 'dama';
+            
+            // Get recommended products (same gender, different colors)
+            const allColors = currentGender === 'varon' ? allVaronColors : allDamaColors;
+            const recommended = allColors.filter(c => c.key !== currentProductId).slice(0, 3);
+            
+            recommended.forEach(rec => {
+                const card = document.createElement('div');
+                card.className = 'recomendado-card';
+                const recProduct = products[rec.key];
+                if (recProduct) {
+                    card.innerHTML = `
+                        <div class="recomendado-card__media">
+                            <img src="${recProduct.images[0]}" alt="${rec.color}">
+                        </div>
+                        <p class="recomendado-card__name">${rec.color}</p>
+                    `;
+                    card.addEventListener('click', function() {
+                        openProductDetail(rec.key);
+                    });
+                    grid.appendChild(card);
+                }
+            });
+        }
+
+        function closeProductDetail() {
+            document.getElementById('productDetail').classList.remove('active');
+            document.body.style.overflow = '';
+            currentProduct = null;
+            
+            // Reset zoom when closing modal
+            resetZoom();
+        }
+    </script>
+    <script>
+    // Modal handled by header.js
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Diseño y calidad en cada prenda que acompaña tu día</h2>
+                <div class="footer-social">
+                    <p>Síguenos</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="TikTok">TikTok</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                    </div>
+                </div>
+                <p class="footer-copy">© 2026 Rexofit. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>EXPLORAR</h4>
+                    <a href="index.html">Categorías</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-col">
+                    <h4>MI CUENTA</h4>
+                    <a href="carrito.html">Mis pedidos</a>
+                    <a href="#">Mis datos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contactanos</h4>
+                    <a href="#">Atención</a>
+                    <a href="#">Cambios y devoluciones</a>
+                    <a href="#">Términos</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a class="claims" href="#">Libro de Reclamaciones</a>
+            <div class="payments">
+                <span class="pay">VISA</span>
+                <span class="pay">PLIN</span>
+                <span class="pay">YAPE</span>
+                <span class="pay">BCP</span>
+                <span class="pay">Interbank</span>
+            </div>
+        </div>
+        <div class="footer-watermark" aria-hidden="true">REXOFIT</div>
+    </footer>
+
+    <!-- FLOATING SIDE DOTS NAVIGATION -->
+    <nav class="side-nav" aria-label="Categorías">
+        <a href="index.html" class="side-nav__dot" title="Inicio" data-label="Inicio">
+            <img src="/img/hero-section.webp" alt="Inicio">
+        </a>
+        <a href="polos.html" class="side-nav__dot" title="Polos" data-label="Polos">
+            <img src="/img/categorias/categoria-polos.webp" alt="Polos">
+        </a>
+        <a href="buzos.html" class="side-nav__dot  active" title="Buzos" data-label="Buzos">
+            <img src="/img/categorias/categoria-buzos.webp" alt="Buzos">
+        </a>
+        <a href="zapatos-mujer.html" class="side-nav__dot" title="Sandalias" data-label="Sandalias">
+            <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias">
+        </a>
+    </nav>
+
+    <script>
+    // ── Banners género ──────────────────────────────
+    (function() {
+        function actualizarBanners(generoActivo) {
+            var bDama  = document.getElementById('bannerVerDama');
+            var bVaron = document.getElementById('bannerVerVaron');
+            if (!bDama || !bVaron) return;
+            if (generoActivo === 'varon') {
+                bDama.style.display  = 'flex';
+                bVaron.style.display = 'none';
+            } else if (generoActivo === 'dama') {
+                bDama.style.display  = 'none';
+                bVaron.style.display = 'flex';
+            } else {
+                bDama.style.display  = 'none';
+                bVaron.style.display = 'none';
+            }
+        }
+
+        // Interceptar clicks en tabs para actualizar banner
+        document.querySelectorAll('.gender-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                setTimeout(function() { actualizarBanners(tab.dataset.filter); }, 50);
+            });
+        });
+
+        // Botón Ver Dama
+        var btnDama = document.getElementById('btnVerDama');
+        if (btnDama) {
+            btnDama.addEventListener('click', function() {
+                var damaTab = document.querySelector('.gender-tab[data-filter="dama"]');
+                if (damaTab) { damaTab.click(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+            });
+        }
+
+        // Botón Ver Varón
+        var btnVaron = document.getElementById('btnVerVaron');
+        if (btnVaron) {
+            btnVaron.addEventListener('click', function() {
+                var varonTab = document.querySelector('.gender-tab[data-filter="varon"]');
+                if (varonTab) { varonTab.click(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+            });
+        }
+
+        // Mostrar banner según tab activo al cargar
+        var activeTab = document.querySelector('.gender-tab.active');
+        if (activeTab) actualizarBanners(activeTab.dataset.filter);
+    })();
+    </script>
+
+
+    <!-- GUÍA DE TALLAS MODAL -->
+    <div class="size-guide-overlay" id="sizeGuideOverlay">
+        <div class="size-guide-modal">
+            <button class="size-guide-modal__close" onclick="document.getElementById('sizeGuideOverlay').classList.remove('active')">&times;</button>
+            <h3>📏 Guía de Tallas — Buzos</h3>
+            <p>Medidas en centímetros. Mide sobre la prenda.</p>
+            <table class="size-guide-table">
+                <thead>
+                    <tr>
+                        <th>Talla</th>
+                        <th>Pecho (cm)</th>
+                        <th>Cintura (cm)</th>
+                        <th>Cadera (cm)</th>
+                        <th>Largo (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>S</strong></td><td>88–92</td><td>72–76</td><td>90–94</td><td>65</td></tr>
+                    <tr><td><strong>M</strong></td><td>94–98</td><td>78–82</td><td>96–100</td><td>67</td></tr>
+                    <tr><td><strong>L</strong></td><td>100–104</td><td>84–88</td><td>102–106</td><td>69</td></tr>
+                    <tr><td><strong>XL</strong></td><td>106–110</td><td>90–94</td><td>108–112</td><td>71</td></tr>
+                </tbody>
+            </table>
+            <p class="size-guide-note">💡 Si estás entre dos tallas, elige la mayor para mayor comodidad. Las medidas pueden variar ±2 cm según el modelo.</p>
+        </div>
+    </div>
+
+</body>
+</html>

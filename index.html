@@ -1,0 +1,4392 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T2JZ6T3T');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYEP8DF0RK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GYEP8DF0RK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Rexofit</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="/img/logo-negro.png">
+    
+    <style>
+        /* =============================================
+           HOME — estilos propios, sin afectar otras páginas
+        ============================================= */
+        body { padding: 0; }
+
+        .home-seo-title {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Anular el grid global de main */
+        main.home-main,
+        .home-main {
+            display: block !important;
+            grid-template-columns: unset !important;
+            gap: unset !important;
+            margin-bottom: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* ===== COMMERCIAL HERO ===== */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            min-height: clamp(560px, calc(100vh - 72px), 760px);
+            overflow: hidden;
+            background: #111;
+        }
+
+        .new-hero-image {
+            width: 100%;
+            height: 100%;
+            min-height: inherit;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.52) 100%);
+            pointer-events: none;
+        }
+
+        .commercial-hero-copy {
+            position: absolute;
+            right: clamp(24px, 7vw, 92px);
+            top: clamp(36px, 6vh, 56px);
+            z-index: 2;
+            width: min(620px, calc(100% - 48px));
+            color: #fff;
+            text-shadow: 0 4px 18px rgba(0,0,0,.45);
+        }
+
+        .commercial-hero-copy__title {
+            margin: 0 0 16px;
+            font-size: clamp(3rem, 5.2vw, 5rem);
+            line-height: .92;
+            font-weight: 900;
+            letter-spacing: 0;
+        }
+
+        .commercial-hero-copy__text {
+            margin: 0;
+            max-width: 560px;
+            font-size: clamp(1.18rem, 1.85vw, 1.75rem);
+            line-height: 1.18;
+            font-weight: 500;
+        }
+
+        .commercial-route-grid {
+            box-sizing: border-box;
+            position: absolute;
+            right: clamp(24px, 5vw, 72px);
+            bottom: clamp(28px, 6vw, 72px);
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            width: min(760px, calc(100% - 48px));
+            align-items: stretch;
+        }
+
+        .commercial-route-card {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+            min-height: 360px;
+            background: #fff;
+            color: #111;
+            border: 1px solid rgba(17,17,17,.12);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            box-shadow: 0 16px 40px rgba(0,0,0,.22);
+            transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+            transform: translateZ(0);
+        }
+
+        .commercial-route-grid * {
+            box-sizing: border-box;
+        }
+
+        .commercial-route-card:hover,
+        .commercial-route-card:focus-visible {
+            transform: scale(1.025);
+            box-shadow: 0 22px 52px rgba(0,0,0,.30);
+            outline: none;
+        }
+
+        .commercial-route-card--strong {
+            border: 3px solid #8bd600;
+        }
+
+        .commercial-route-card__image {
+            box-sizing: border-box;
+            width: 100%;
+            aspect-ratio: 1 / 1.04;
+            object-fit: cover;
+            display: block;
+        }
+
+        .commercial-route-card__body {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 14px 16px;
+            min-height: 116px;
+            text-align: center;
+        }
+
+        .commercial-route-card__title {
+            margin: 0;
+            min-height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .commercial-route-card__button {
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 44px;
+            padding: 12px 14px;
+            border-radius: 3px;
+            border: 2px solid #111;
+            background: #fff;
+            color: #111;
+            font-size: 13px;
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+            transition: transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+        }
+
+        .commercial-route-card:hover .commercial-route-card__button {
+            transform: translateY(-1px);
+        }
+
+        .commercial-route-card__button--dark {
+            background: #111;
+            color: #fff;
+        }
+
+        .commercial-route-card__button--green {
+            background: #8bd600;
+            border-color: #8bd600;
+            color: #111;
+        }
+
+        @media (max-width: 1100px) {
+            .commercial-route-grid {
+                width: min(680px, calc(100% - 40px));
+                gap: 12px;
+            }
+            .commercial-route-card {
+                min-height: 330px;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .hero-container {
+                min-height: auto;
+                background: #fff;
+            }
+            .hero-container::after {
+                display: none;
+            }
+            .commercial-hero-copy {
+                position: static;
+                width: 100%;
+                padding: 28px 24px 24px;
+                background: #111;
+                text-shadow: none;
+            }
+            .commercial-hero-copy__title {
+                margin-bottom: 12px;
+                font-size: clamp(2.35rem, 9vw, 4rem);
+            }
+            .commercial-hero-copy__text {
+                font-size: 1.08rem;
+            }
+            .new-hero-image {
+                height: auto;
+                min-height: 0;
+            }
+            .commercial-route-grid {
+                position: static;
+                width: 100%;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                padding: 18px 18px 28px;
+                background: #fff;
+                gap: 12px;
+            }
+            .commercial-route-card {
+                min-height: 310px;
+                box-shadow: 0 10px 28px rgba(0,0,0,.10);
+            }
+            .commercial-route-card__body {
+                padding: 16px 12px 14px;
+            }
+            .commercial-route-card__title {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .commercial-route-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                width: calc(100vw - 32px);
+                max-width: calc(100vw - 32px);
+                margin: 0 auto;
+                padding: 16px 0 28px;
+            }
+            .commercial-route-card {
+                min-height: 0;
+            }
+            .commercial-route-card__image {
+                aspect-ratio: 16 / 12;
+            }
+            .commercial-route-card__body {
+                min-height: 104px;
+            }
+            .commercial-route-card__button {
+                width: 82%;
+                max-width: 320px;
+            }
+            .commercial-route-card__title {
+                font-size: 15px;
+            }
+        }
+
+        /* ===== PDF BUTTON BELOW HERO ===== */
+        .hero-pdf-cta {
+            display: flex;
+            justify-content: center;
+            padding: 32px 24px;
+            background: #fff;
+        }
+
+        .hero-pdf-cta .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background .2s, transform .15s;
+        }
+
+        .hero-pdf-cta .btn-pdf:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .hero-pdf-cta .btn-pdf svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ===== PIMA COLOR STORY ===== */
+        .pima-color-story {
+            background: #f7f7f7;
+            padding: 34px 24px 58px;
+        }
+
+        .pima-color-story__inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .pima-color-story__head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .pima-color-story__title {
+            margin: 0;
+            color: #111;
+            font-size: clamp(1.7rem, 3vw, 2.8rem);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .pima-color-story__copy {
+            max-width: 380px;
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pima-color-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .pima-color-card {
+            position: relative;
+            min-height: 310px;
+            overflow: hidden;
+            text-decoration: none;
+            background: #e9e9e9;
+        }
+
+        .pima-color-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .35s ease;
+        }
+
+        .pima-color-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .pima-color-card__info {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 48px 14px 14px;
+            color: #fff;
+            background: linear-gradient(to top, rgba(0,0,0,.72), transparent);
+        }
+
+        .pima-color-card__swatch {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,.88);
+            border-radius: 50%;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.25);
+        }
+
+        .pima-color-card__name {
+            display: block;
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .pima-color-card__use {
+            display: block;
+            font-size: 12px;
+            line-height: 1.35;
+            color: rgba(255,255,255,.84);
+        }
+
+        @media (max-width: 900px) {
+            .pima-color-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .pima-color-story__head {
+                display: block;
+            }
+            .pima-color-story__copy {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .pima-color-story {
+                padding: 26px 16px 42px;
+            }
+            .pima-color-card {
+                min-height: 250px;
+            }
+        }
+
+        /* -----------------------------------------------
+           2. PROMO BAR — franja delgada debajo del hero
+        ----------------------------------------------- */
+        .promo-bar {
+            background: #f7f7f7;
+            border-top: 1px solid #ebebeb;
+            border-bottom: 1px solid #ebebeb;
+            padding: 10px 24px;
+            margin-bottom: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .promo-bar__line {
+            font-size: 13px;
+            color: #666;
+            letter-spacing: .1px;
+        }
+
+        .promo-bar__time {
+            font-weight: 700;
+            color: #111;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: .5px;
+        }
+
+        .promo-bar__note {
+            font-size: 12px;
+            color: #bbb;
+            margin-left: 18px;
+        }
+
+        /* -----------------------------------------------
+           3. SECCIONES GENÉRICAS
+        ----------------------------------------------- */
+        .home-section {
+            padding: 72px 40px;
+        }
+
+        .home-section--gray { background: #f9f9f9; }
+        .home-section--dark { background: #0d0d0d; color: #fff; }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 48px;
+            letter-spacing: -.2px;
+        }
+
+        .section-title--light { color: #fff; }
+
+        /* -----------------------------------------------
+           HOME BOOST SECTIONS
+        ----------------------------------------------- */
+        .patria-hero {
+            background:
+                radial-gradient(circle at 14% 12%, rgba(245,197,66,.18), transparent 26%),
+                radial-gradient(circle at 92% 18%, rgba(126,34,206,.32), transparent 30%),
+                linear-gradient(135deg, #241034 0%, #120717 46%, #08080b 100%);
+            color: #fff;
+            padding: 50px 24px;
+            overflow: hidden;
+            position: relative;
+            border-top: 1px solid rgba(245,197,66,.30);
+            border-bottom: 1px solid rgba(245,197,66,.30);
+        }
+
+        .patria-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, transparent 0%, rgba(245,197,66,.13) 50%, transparent 100%),
+                repeating-linear-gradient(135deg, rgba(255,255,255,.045) 0 1px, transparent 1px 18px);
+            opacity: .58;
+        }
+
+        .patria-hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(34px 18px at 20px 0, transparent 20px, rgba(245,197,66,.32) 21px, transparent 23px) top left / 68px 20px repeat-x,
+                radial-gradient(34px 18px at 20px 20px, transparent 20px, rgba(245,197,66,.28) 21px, transparent 23px) bottom left / 68px 20px repeat-x,
+                radial-gradient(18px 34px at 0 20px, transparent 20px, rgba(126,34,206,.42) 21px, transparent 23px) left top / 20px 68px repeat-y,
+                radial-gradient(18px 34px at 20px 20px, transparent 20px, rgba(126,34,206,.38) 21px, transparent 23px) right top / 20px 68px repeat-y;
+            opacity: .72;
+        }
+
+        .patria-hero__inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, .76fr);
+            gap: 36px;
+            align-items: center;
+        }
+
+        .patria-hero__eyebrow {
+            display: inline-block;
+            margin: 0 0 10px;
+            color: #f5c542;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .patria-hero__title {
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 4.4rem);
+            line-height: .95;
+            font-weight: 900;
+            letter-spacing: 0;
+            max-width: 720px;
+        }
+
+        .patria-hero__copy {
+            max-width: 620px;
+            margin: 16px 0 0;
+            color: rgba(255,255,255,.76);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .patria-hero__points {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 8px;
+            margin-top: 20px;
+            max-width: 390px;
+        }
+
+        .patria-hero__point {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 36px;
+            padding: 8px 12px;
+            border: 1px solid rgba(245,197,66,.30);
+            border-radius: 8px;
+            background: rgba(255,255,255,.07);
+            color: rgba(255,255,255,.9);
+            font-size: 11px;
+            font-weight: 800;
+            backdrop-filter: blur(8px);
+            white-space: nowrap;
+        }
+
+        .patria-hero__point::before {
+            content: "";
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex: 0 0 auto;
+            background: #f5c542;
+            box-shadow: 0 0 0 4px rgba(245,197,66,.14);
+        }
+
+        .patria-hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .patria-hero__cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0 18px;
+            background: #fff;
+            color: #111;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 850;
+            border-radius: 6px;
+            transition: transform .22s ease, background .22s ease;
+        }
+
+        .patria-hero__cta:hover {
+            background: #f5c542;
+            transform: translateY(-1px);
+        }
+
+        .patria-hero__chip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 0 14px;
+            border: 1px solid rgba(245,197,66,.24);
+            color: rgba(255,255,255,.82);
+            background: rgba(68,24,103,.55);
+            font-size: 12px;
+            font-weight: 750;
+            border-radius: 6px;
+        }
+
+        .patria-hero__visual {
+            position: relative;
+            min-height: 350px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .patria-hero__shot {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(245,197,66,.22);
+            border-radius: 10px;
+        }
+
+        .patria-hero__shot:first-child {
+            grid-row: span 2;
+        }
+
+        .patria-hero__shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .patria-hero__deal {
+            position: absolute;
+            right: 18px;
+            bottom: 18px;
+            width: 142px;
+            height: 142px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(145deg, #6d28d9 0%, #3b0764 100%);
+            box-shadow: 0 18px 36px rgba(0,0,0,.32), 0 0 0 8px rgba(245,197,66,.12);
+            border: 3px solid #f5c542;
+        }
+
+        .patria-hero__deal strong {
+            display: block;
+            color: #fff;
+            font-size: 34px;
+            line-height: 1;
+        }
+
+        .patria-hero__deal span {
+            display: block;
+            margin-top: 5px;
+            color: rgba(255,255,255,.86);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+        }
+
+        .trust-strip {
+            background: #fafafa;
+            border-bottom: 1px solid #ededed;
+            padding: 16px 24px 18px;
+        }
+
+        .trust-strip__inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .trust-item {
+            display: grid;
+            grid-template-columns: 40px minmax(0, 1fr);
+            align-items: center;
+            column-gap: 14px;
+            min-width: 0;
+            min-height: 84px;
+            padding: 14px 16px;
+            background: #fff;
+            border: 1px solid #ededed;
+            border-radius: 8px;
+        }
+
+        .trust-item__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: #111;
+            color: #111;
+            flex: 0 0 40px;
+            align-self: center;
+        }
+
+        .trust-item__icon svg {
+            width: 19px;
+            height: 19px;
+            color: #fff;
+            display: block;
+        }
+
+        .trust-item:not(.trust-item--whatsapp) .trust-item__icon svg {
+            stroke: currentColor;
+        }
+
+        .trust-item--whatsapp .trust-item__icon svg {
+            width: 21px;
+            height: 21px;
+            stroke: currentColor;
+        }
+
+        .trust-item--whatsapp {
+            border-color: rgba(37, 211, 102, .26);
+            background: linear-gradient(180deg, #fff 0%, #f7fff9 100%);
+        }
+
+        .trust-item--whatsapp .trust-item__icon {
+            background: #25d366;
+        }
+
+        .trust-item--whatsapp strong {
+            color: #0f6b34;
+        }
+
+        .trust-item > div {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .trust-item strong {
+            display: block;
+            color: #111;
+            font-size: 13px;
+            line-height: 1.25;
+            margin-bottom: 2px;
+        }
+
+        .trust-item > div > span {
+            display: block;
+            color: #777;
+            font-size: 12px;
+            line-height: 1.35;
+            max-width: 190px;
+        }
+
+        .best-sellers {
+            background: #fff;
+            padding: 56px 24px 28px;
+        }
+
+        .best-sellers__inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .best-sellers__head {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: end;
+            margin-bottom: 22px;
+        }
+
+        .best-sellers__title {
+            margin: 0;
+            color: #111;
+            font-size: clamp(1.8rem, 3vw, 2.7rem);
+            line-height: 1.05;
+            font-weight: 850;
+        }
+
+        .best-sellers__copy {
+            max-width: 360px;
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .best-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .best-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+        }
+
+        .best-card__media {
+            position: relative;
+            overflow: hidden;
+            background: #f1f1f1;
+            aspect-ratio: 3/4;
+        }
+
+        .best-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .35s ease;
+        }
+
+        .best-card:hover .best-card__media img {
+            transform: scale(1.05);
+        }
+
+        .best-card__badge {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            padding: 5px 8px;
+            border-radius: 6px;
+            background: #111;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
+
+        .best-card__info {
+            padding-top: 12px;
+        }
+
+        .best-card__name {
+            margin: 0 0 3px;
+            color: #111;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .best-card__meta {
+            margin: 0 0 6px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .best-card__price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .best-card__price del {
+            color: #999;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .reviews-section {
+            background: #111;
+            color: #fff;
+            padding: 58px 24px;
+        }
+
+        .reviews-section__inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .reviews-section__head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .reviews-section__title {
+            margin: 0;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.08;
+            font-weight: 850;
+        }
+
+        .reviews-section__score {
+            color: #f5c542;
+            font-size: 13px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .review-card {
+            border: 1px solid rgba(255,255,255,.14);
+            padding: 18px;
+            background: rgba(255,255,255,.055);
+        }
+
+        .review-card__stars {
+            color: #f5c542;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+
+        .review-card p {
+            margin: 0;
+            color: rgba(255,255,255,.82);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .review-card strong {
+            display: block;
+            margin-top: 16px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .patria-hero__inner,
+            .best-sellers__head,
+            .reviews-section__head {
+                display: block;
+            }
+
+            .patria-hero__visual {
+                margin-top: 28px;
+                min-height: 300px;
+            }
+
+            .trust-strip__inner,
+            .best-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .best-sellers__copy {
+                margin-top: 10px;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .patria-hero {
+                padding: 34px 16px;
+            }
+
+            .patria-hero__visual {
+                min-height: 250px;
+            }
+
+            .patria-hero__deal {
+                width: 118px;
+                height: 118px;
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .patria-hero__deal strong {
+                font-size: 28px;
+            }
+
+            .patria-hero__points {
+                max-width: 100%;
+                gap: 6px;
+            }
+
+            .patria-hero__point {
+                padding: 8px 9px;
+                font-size: 10px;
+            }
+
+            .trust-strip {
+                padding: 16px;
+            }
+
+            .trust-strip__inner,
+            .best-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .best-sellers,
+            .reviews-section {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+
+        /* -----------------------------------------------
+           4. CATEGORY SHOWCASE — 3 vertical category cards
+         ----------------------------------------------- */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .category-card {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            text-decoration: none;
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover {
+            transform: translateX(12px);
+        }
+
+        .category-card__media {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f0f0f0;
+            aspect-ratio: 3/5;
+            position: relative;
+        }
+
+        .category-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease;
+        }
+
+        .category-card:hover .category-card__media img {
+            transform: scale(1.05);
+        }
+
+        .category-card__name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111;
+            margin: 0;
+            text-align: center;
+            letter-spacing: -0.2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            .category-card__name {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid {
+                gap: 8px;
+            }
+        }
+
+        /* -----------------------------------------------
+           5. BEST SELLERS — productos destacados
+        ----------------------------------------------- */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .featured-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .featured-card__media {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f0f0f0;
+            aspect-ratio: 3/4;
+        }
+
+        .featured-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease;
+        }
+
+        .featured-card:hover .featured-card__media img {
+            transform: scale(1.05);
+        }
+
+        .featured-card__name  { font-size: 14px; font-weight: 500; color: #111; margin: 0; }
+        .featured-card__price { font-size: 14px; font-weight: 700; color: #111; margin: 0; }
+
+        .featured-card__btn {
+            display: inline-block;
+            padding: 9px 18px;
+            border: 1.5px solid #111;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #111;
+            width: fit-content;
+            transition: background .2s, color .2s;
+            margin-top: 2px;
+        }
+        .featured-card__btn:hover { background: #111; color: #fff; }
+
+        /* -----------------------------------------------
+           5. SLIDER COMPARATIVO — before/after
+        ----------------------------------------------- */
+        .compare-wrap {
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        .compare-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 16px;
+            user-select: none;
+            cursor: ew-resize;
+            box-shadow: 0 8px 40px rgba(0,0,0,.18);
+            touch-action: none;
+        }
+
+        .compare-before,
+        .compare-after {
+            position: absolute;
+            inset: 0;
+        }
+
+        .compare-before img,
+        .compare-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+
+        .compare-after {
+            clip-path: inset(0 50% 0 0);
+        }
+
+        .compare-labels {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 20px;
+            z-index: 3;
+        }
+
+        .compare-label {
+            background: rgba(0,0,0,.45);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .compare-divider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: rgba(255,255,255,.9);
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .compare-handle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 2px 16px rgba(0,0,0,.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .compare-handle svg {
+            width: 20px;
+            height: 20px;
+            color: #333;
+        }
+
+        .compare-hint {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 12px;
+            color: #bbb;
+            letter-spacing: .5px;
+        }
+
+        /* -----------------------------------------------
+           6. BENEFICIOS
+        ----------------------------------------------- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .benefit-item { display: flex; flex-direction: column; gap: 10px; }
+        .benefit-icon { font-size: 1.5rem; line-height: 1; }
+        .benefit-title { font-size: 15px; font-weight: 600; color: #111; margin: 0; }
+        .benefit-desc { font-size: 13.5px; color: #666; line-height: 1.6; margin: 0; }
+        .benefit-note { font-size: 12px; color: #bbb; margin-top: 2px; }
+
+        /* -----------------------------------------------
+           7. FAQ
+        ----------------------------------------------- */
+        .faq-list { border-top: 1px solid #e8e8e8; }
+        .faq-item { border-bottom: 1px solid #e8e8e8; }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 0;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            color: #111;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .faq-question:hover { color: #444; }
+
+        .faq-icon {
+            font-size: 18px;
+            font-weight: 300;
+            color: #aaa;
+            flex-shrink: 0;
+            transition: transform .25s;
+        }
+
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease;
+        }
+
+        .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 18px; }
+
+        .faq-answer p { font-size: 14px; color: #555; line-height: 1.7; margin: 0; }
+
+        /* -----------------------------------------------
+           8. CTA FINAL
+        ----------------------------------------------- */
+        .home-cta {
+            background: #0d0d0d;
+            color: #fff;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .home-cta__inner { max-width: 540px; margin: 0 auto; }
+
+        .home-cta__title {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 14px;
+        }
+
+        .home-cta__sub {
+            font-size: 14px;
+            color: rgba(255,255,255,.55);
+            margin: 0 0 36px;
+            line-height: 1.6;
+        }
+
+        .home-cta__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        .btn-cta-wa {
+            display: inline-block;
+            padding: 15px 32px;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: background .2s;
+        }
+        .btn-cta-wa:hover { background: #1ebe5d; }
+
+        .btn-cta-catalog {
+            display: inline-block;
+            padding: 15px 32px;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1.5px solid rgba(255,255,255,.3);
+            transition: border-color .2s;
+        }
+        .btn-cta-catalog:hover { border-color: #fff; }
+
+        /* -----------------------------------------------
+           RESPONSIVE
+        ----------------------------------------------- */
+        @media (max-width: 1024px) {
+            .hero__text { padding: 64px 40px; }
+            .featured-grid { grid-template-columns: repeat(2, 1fr); }
+            .category-grid { gap: 16px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: unset;
+            }
+            .hero__text {
+                padding: 52px 24px 40px;
+                order: 1;
+            }
+            .hero__image {
+                order: 2;
+                height: 300px;
+            }
+            .hero__image::before {
+                background: linear-gradient(to bottom, #0d0d0d 0%, transparent 30%);
+            }
+            .hero__subtitle { max-width: 100%; }
+
+            /* Hero categories - responsive */
+            .hero-categories {
+                gap: 16px;
+                margin-top: 28px;
+            }
+            .hero-category-circle {
+                width: 80px;
+                height: 80px;
+            }
+            .hero-category-label {
+                font-size: 11px;
+            }
+
+            .home-section { padding: 48px 24px; }
+            .home-cta { padding: 56px 24px; }
+
+            .benefits-grid { grid-template-columns: 1fr; gap: 28px; }
+
+            .promo-bar__note { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .featured-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .compare-slider { aspect-ratio: 1/1; }
+            .hero__title { font-size: 2.2rem; }
+        }
+
+        /* ===== NEW NOVEDADES - Horizontal premium card layout ===== */
+        .home-novedades {
+            padding: 8px 20px 60px;
+            background: #fff;
+        }
+
+        .home-novedades__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 24px;
+        }
+
+        .home-novedades__title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #111;
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+
+        .home-novedades__more {
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .home-novedades__more:hover {
+            color: #111;
+        }
+
+        .home-novedades__track {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 8px 0 4px;
+            max-width: 1100px;
+            margin: 0 auto;
+            scrollbar-width: none;
+        }
+
+        .home-novedades__track::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Wrapper con flechas */
+        .carrusel-wrapper {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .carrusel-arrow {
+            position: absolute;
+            top: 38%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            transition: background 0.2s, border-color 0.2s;
+            font-size: 18px;
+            color: #111;
+            user-select: none;
+        }
+
+        .carrusel-arrow:hover {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
+        .carrusel-arrow--left  { left: -20px; }
+        .carrusel-arrow--right { right: -20px; }
+
+        @media (max-width: 768px) {
+            .carrusel-arrow { display: none; }
+        }
+
+        .home-novedad-card {
+            flex: 0 0 220px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .home-novedad-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .home-novedad-card__media {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .card-badge-oferta {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e11d48;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .home-novedad-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .home-novedad-card:hover .home-novedad-card__media img {
+            transform: scale(1.05);
+        }
+
+        .home-novedad-card__action {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            transition: background 0.2s, transform 0.2s;
+            z-index: 2;
+        }
+
+        .home-novedad-card__action:hover {
+            background: #111;
+            transform: scale(1.1);
+        }
+
+        .home-novedad-card__action svg {
+            width: 18px;
+            height: 18px;
+            color: #111;
+            transition: color 0.2s;
+        }
+
+        .home-novedad-card__action:hover svg {
+            color: #fff;
+        }
+
+        .home-novedad-card__info {
+            padding: 14px 4px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .home-novedad-card__name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111;
+            margin: 0 0 4px;
+        }
+
+        .home-novedad-card__color {
+            font-size: 12px;
+            color: #666;
+            margin: 0 0 5px;
+            text-transform: capitalize;
+        }
+
+        .home-novedad-card__rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin: 0 0 7px;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        .home-novedad-card__stars {
+            color: #f59e0b;
+            letter-spacing: 0.5px;
+        }
+
+        .home-novedad-card__reviews {
+            color: #777;
+            font-size: 11px;
+        }
+
+        .home-novedad-card__price {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin: 0;
+        }
+
+        .home-novedad-card.hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .home-novedades {
+                padding: 0 20px 40px;
+            }
+            .home-novedad-card {
+                flex: 0 0 180px;
+            }
+            .home-novedad-card__action {
+                width: 32px;
+                height: 32px;
+            }
+            .home-novedad-card__action svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-novedad-card {
+                flex: 0 0 160px;
+            }
+        }
+
+        /* ===== NOVEDADES GENDER TABS ===== */
+        .novedades-gender-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 0 auto 24px;
+            max-width: 400px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 4px;
+        }
+
+        .novedades-gender-tab {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            color: #666;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .novedades-gender-tab:hover {
+            color: #333;
+            background: rgba(0,0,0,0.03);
+        }
+
+        .novedades-gender-tab.active {
+            background: #fff;
+            color: #111;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* ===== PRODUCT DETAIL MODAL STYLES - POLOS STYLE ===== */
+        .product-detail-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .product-detail-overlay.active {
+            display: flex;
+        }
+
+        .product-detail {
+            background: #fff;
+            border-radius: 18px;
+            max-width: 1280px;
+            width: min(1280px, 96vw);
+            max-height: 92vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .product-detail--polos {
+            max-width: 1280px;
+            width: min(1280px, 96vw);
+            max-height: 92vh;
+            overflow-y: auto;
+            border-radius: 18px;
+        }
+
+        .product-detail__close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #f5f5f5;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .product-detail__close:hover {
+            background: #e0e0e0;
+        }
+
+        .product-detail__content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+            gap: 24px;
+            padding: 22px;
+            align-items: start;
+        }
+
+        .product-detail__content--vertical-thumbs {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+            gap: 24px;
+            padding: 22px;
+            align-items: start;
+        }
+
+        /* Gallery with thumbnails below */
+        .product-detail__gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .product-detail__main {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-detail__main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-detail__thumbs {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 2px;
+        }
+
+        .product-detail__thumbs--bottom {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 2px;
+        }
+
+        .product-thumb {
+            width: 74px;
+            min-width: 74px;
+            height: 88px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            background: #f3f3f3;
+            transition: border-color 0.2s;
+        }
+
+        .product-thumb.active {
+            border-color: #111;
+        }
+
+        .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-detail__info {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            min-width: 0;
+        }
+
+        .product-detail__title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111;
+            margin: 0;
+        }
+
+        .product-detail__color {
+            font-size: 18px;
+            color: #666;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .product-detail__subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin: -6px 0 0;
+        }
+
+        .product-detail__palette {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        #detailPalette {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .product-detail__palette-label {
+            font-size: 13px;
+            color: #666;
+            margin-right: 8px;
+        }
+
+        .palette-color {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px rgba(0,0,0,.18);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .palette-color:hover {
+            transform: scale(1.1);
+        }
+
+        .palette-color.active {
+            box-shadow: 0 0 0 2px #111, 0 0 0 4px #fff;
+        }
+
+        /* Promo Box */
+        .product-promo-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+            background: #fafafa;
+        }
+
+        .product-promo-box h3 {
+            margin: 0 0 6px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .product-promo-box p {
+            margin: 0 0 12px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .promo-option {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            cursor: default;
+            pointer-events: none;
+            user-select: none;
+            background: #f1f1f1;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .promo-option.active {
+            background: #16a34a;
+            color: #fff;
+        }
+
+        .product-promo-box__total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 
+            
+            px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+
+        /* Size buttons with tooltip */
+        .product-detail__sizes {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .product-detail__sizes-label {
+            font-size: 13px;
+            color: #666;
+            margin-right: 8px;
+        }
+
+        .size-btn {
+            width: 44px;
+            height: 44px;
+            border: 2px solid #e0e0e0;
+            background: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .size-btn:hover {
+            border-color: #999;
+        }
+
+        .size-btn.active {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
+        /* XL tooltip for men's products */
+        .size-btn--xl {
+            position: relative;
+        }
+
+        .size-tooltip {
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 8px);
+            transform: translateX(-50%);
+            background: #111;
+            color: #fff;
+            font-size: 11px;
+            line-height: 1.3;
+            padding: 6px 8px;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .2s ease, visibility .2s ease;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .size-btn--xl:hover .size-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .product-detail__quantity {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .product-detail__quantity-label {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #f5f5f5;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .quantity-value {
+            width: 50px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+        .quantity-value::-webkit-outer-spin-button,
+        .quantity-value::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .add-to-cart-btn {
+            padding: 16px 32px;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            margin-top: 8px;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Recommended Products */
+        .product-detail__recommended {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 18px;
+        }
+
+        .product-detail__recommended-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 12px;
+        }
+
+        .recommended-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .recommended-card {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .recommended-card img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            background: #f3f3f3;
+        }
+
+        .recommended-card__name {
+            font-size: 12px;
+            margin: 6px 0 0;
+            font-weight: 600;
+        }
+
+        .recommended-card__color {
+            font-size: 11px;
+            color: #777;
+            margin: 2px 0 0;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 980px) {
+            .product-detail__content--vertical-thumbs {
+                grid-template-columns: 1fr;
+            }
+            .recommended-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .product-detail__content {
+                padding: 16px;
+            }
+        }
+
+        /* =========================================
+           FLOATING SIDE DOTS NAVIGATION
+           ========================================= */
+        .side-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 8000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .side-nav__dot {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            background: #fff;
+            display: block;
+            text-decoration: none;
+            position: relative;
+            overflow: visible;
+        }
+
+        .side-nav__dot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .side-nav__dot:hover,
+        .side-nav__dot.active {
+            border-color: #111;
+            transform: scale(1.15);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+        }
+
+
+        /* Tooltip al pasar por los dots */
+        .side-nav__dot::after {
+            content: attr(data-label);
+            position: absolute;
+            right: calc(100% + 10px);
+            top: 50%;
+            transform: translateY(-50%) translateX(4px);
+            background: #111;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            padding: 5px 10px;
+            border-radius: 6px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .side-nav__dot:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .side-nav { display: none; }
+        }
+
+
+        /* ===== MAGNIFIER ZOOM ===== */
+        .product-zoomable {
+            position: relative;
+            cursor: none !important;
+        }
+        .product-zoomable img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .zoom-lens {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(255,255,255,0.7);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(1px);
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.12), inset 0 0 12px rgba(255,255,255,0.25);
+            pointer-events: none;
+            display: none;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+        }
+        .zoom-result {
+            position: absolute;
+            top: 0;
+            left: calc(100% + 12px);
+            width: 340px;
+            height: 340px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f5f5f5;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            display: none;
+            z-index: 200;
+            pointer-events: none;
+        }
+        .zoom-result img {
+            position: absolute;
+            width: auto;
+            height: auto;
+            max-width: none;
+        }
+        .product-zoomable:hover .zoom-lens,
+        .product-zoomable:hover .zoom-result {
+            display: block;
+        }
+    </style>
+    <!-- SEO -->
+    <meta name="description" content="Tienda online de ropa deportiva en Perú. Polos Pima, buzos Nova y sandalias de mujer. Envío a todo el Perú. Contra entrega en Lima.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rexofit.com/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rexofit | Ropa deportiva y sandalias en Perú">
+    <meta property="og:description" content="Tienda online de ropa deportiva en Perú. Polos Pima, buzos Nova y sandalias de mujer. Envío a todo el Perú. Contra entrega en Lima.">
+    <meta property="og:url" content="https://rexofit.com/">
+    <meta property="og:image" content="https://rexofit.com/img/logo-negro.png">
+    <meta property="og:site_name" content="Rexofit">
+</head>
+<body data-pagina="home">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2JZ6T3T"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <img src="/img/logo-blanco.jpeg" class="brand-logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span style="display:none; font-size:22px; font-weight:700; color:#111;">Rexofit</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">INICIO</a>
+                <a href="#" class="nav-link" id="categoriasLink">TIENDA</a>
+                <a href="revendedores.html" class="nav-link">REVENDEDORES</a>
+                <a href="empresas.html" class="nav-link">EMPRESAS</a>
+            </nav>
+            <a href="carrito.html" class="cart-link" aria-label="Carrito">
+                <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Categories Modal -->
+    <div class="categories-modal" id="categoriesModal" hidden>
+        <div class="categories-modal__backdrop" id="categoriesBackdrop"></div>
+        <div class="categories-modal__panel">
+            <button class="categories-modal__close" id="categoriesClose" aria-label="Cerrar">&times;</button>
+            <h3 class="categories-modal__title">Tienda</h3>
+            <div class="categories-modal__list">
+                <a href="polos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-polos.webp" alt="Polos" class="categories-modal__img">
+                    <span>POLOS</span>
+                </a>
+                <a href="buzos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" class="categories-modal__img">
+                    <span>BUZOS</span>
+                </a>
+                <a href="zapatos-mujer.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" class="categories-modal__img">
+                    <span>SANDALIAS</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="home-main">
+        <h1 class="home-seo-title">Rexofit - ropa deportiva, polos Pima, buzos y sandalias en Perú</h1>
+
+        <!-- ===== NEW HERO — clean full-width image with category buttons inside ===== -->
+        <div class="hero-container">
+            <img src="/img/hero-section.webp" alt="Rexofit - Nueva colección" class="new-hero-image" fetchpriority="high" loading="eager">
+            
+            <div class="commercial-hero-copy">
+                <h2 class="commercial-hero-copy__title">Ropa deportiva corporativa</h2>
+                <p class="commercial-hero-copy__text">Conjuntos, polos y accesorios para empresas, instituciones y clubes.</p>
+            </div>
+
+            <div class="commercial-route-grid" aria-label="Rutas comerciales Rexofit">
+                <a href="#" class="commercial-route-card" id="heroShopRoute">
+                    <img src="/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp" alt="Persona utilizando ropa deportiva Rexofit" class="commercial-route-card__image" loading="eager">
+                    <span class="commercial-route-card__body">
+                        <span class="commercial-route-card__title">COMPRA PERSONAL</span>
+                        <span class="commercial-route-card__button">VER TIENDA</span>
+                    </span>
+                </a>
+                <a href="revendedores.html" class="commercial-route-card">
+                    <img src="/img/nova-dama/conjunto_nova_dama_beige_1.jpeg" alt="Emprende con Rexofit" class="commercial-route-card__image" loading="eager">
+                    <span class="commercial-route-card__body">
+                        <span class="commercial-route-card__title">EMPRENDE CON REXOFIT</span>
+                        <span class="commercial-route-card__button commercial-route-card__button--dark">QUIERO REVENDER</span>
+                    </span>
+                </a>
+                <a href="empresas.html" class="commercial-route-card commercial-route-card--strong">
+                    <img src="/img/corporativos/equipos-deportivos.jpg" alt="Equipo con indumentaria deportiva corporativa" class="commercial-route-card__image" loading="eager">
+                    <span class="commercial-route-card__body">
+                        <span class="commercial-route-card__title">VISTE A TU EQUIPO</span>
+                        <span class="commercial-route-card__button commercial-route-card__button--green">SOLICITAR COTIZACIÓN</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <section class="pima-color-story" aria-label="Colores de polos Pima">
+            <div class="pima-color-story__inner">
+                <div class="pima-color-story__head">
+                    <h2 class="pima-color-story__title">Elige el color que habla por ti.</h2>
+                    <p class="pima-color-story__copy">Cinco tonos esenciales para armar looks rápidos: sobrios, limpios y fáciles de repetir sin sentirse igual.</p>
+                </div>
+                <div class="pima-color-grid">
+                    <a href="polos.html#hombre-azul-marino" class="pima-color-card">
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-1.webp" alt="Polo Pima azul marino" loading="lazy">
+                        <span class="pima-color-card__info">
+                            <span class="pima-color-card__swatch" style="background:#1e3a5f;"></span>
+                            <span class="pima-color-card__name">Azul Marino</span>
+                            <span class="pima-color-card__use">Elegante, clásico y fácil de combinar.</span>
+                        </span>
+                    </a>
+                    <a href="polos.html#hombre-beige" class="pima-color-card">
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-beige-1.webp" alt="Polo Pima beige" loading="lazy">
+                        <span class="pima-color-card__info">
+                            <span class="pima-color-card__swatch" style="background:#d4a574;"></span>
+                            <span class="pima-color-card__name">Beige</span>
+                            <span class="pima-color-card__use">Limpio, moderno y con vibra relajada.</span>
+                        </span>
+                    </a>
+                    <a href="polos.html#hombre-negro" class="pima-color-card">
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp" alt="Polo Pima negro" loading="lazy">
+                        <span class="pima-color-card__info">
+                            <span class="pima-color-card__swatch" style="background:#1a1a1a;"></span>
+                            <span class="pima-color-card__name">Negro</span>
+                            <span class="pima-color-card__use">Básico premium para cualquier plan.</span>
+                        </span>
+                    </a>
+                    <a href="polos.html#hombre-plomo" class="pima-color-card">
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-plomo-1.webp" alt="Polo Pima plomo" loading="lazy">
+                        <span class="pima-color-card__info">
+                            <span class="pima-color-card__swatch" style="background:#6b7280;"></span>
+                            <span class="pima-color-card__name">Plomo</span>
+                            <span class="pima-color-card__use">Urbano, neutro y muy combinable.</span>
+                        </span>
+                    </a>
+                    <a href="polos.html#hombre-rojo" class="pima-color-card">
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-rojo-1.webp" alt="Polo Pima rojo" loading="lazy">
+                        <span class="pima-color-card__info">
+                            <span class="pima-color-card__swatch" style="background:#dc2626;"></span>
+                            <span class="pima-color-card__name">Rojo</span>
+                            <span class="pima-color-card__use">Más presencia sin perder comodidad.</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 2. PROMO BAR — below hero ===== -->
+        <div class="promo-bar" id="promoBanner">
+            <span class="promo-bar__line">
+                La colección se agota en:&nbsp;<span class="promo-bar__time" id="promoTime">--:--:--</span>
+            </span>
+            <span class="promo-bar__note">· Envío gratis desde 3 prendas</span>
+        </div>
+
+        <section class="patria-hero" aria-label="Promoción Señor de los Milagros">
+            <div class="patria-hero__inner">
+                <div>
+                    <p class="patria-hero__eyebrow">Mes morado | edición especial</p>
+                    <h2 class="patria-hero__title">Renueva tu look con fe y estilo.</h2>
+                    <p class="patria-hero__copy">Polos Pima suaves, conjuntos Nova y sandalias listas para acompañarte en una temporada especial. Una campaña morada, elegante y pensada para comprar con calma, confianza y atención directa.</p>
+                    <div class="patria-hero__points" aria-label="Beneficios de compra">
+                        <span class="patria-hero__point">Seguro</span>
+                        <span class="patria-hero__point">Gratis</span>
+                        <span class="patria-hero__point">WhatsApp</span>
+                    </div>
+                    <div class="patria-hero__actions">
+                        <a href="polos.html" class="patria-hero__cta">Descubre más</a>
+                        <span class="patria-hero__chip">Inspirado en el mes morado</span>
+                        <span class="patria-hero__chip">Promoción por temporada</span>
+                    </div>
+                </div>
+                <div class="patria-hero__visual" aria-hidden="true">
+                    <div class="patria-hero__shot">
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="patria-hero__shot">
+                        <img src="/img/nova-dama/conjunto_nova_dama_beige_1.jpeg" alt="" loading="lazy">
+                    </div>
+                    <div class="patria-hero__shot">
+                        <img src="/img/sandalias/Sandalia Mujer Doble Tira Confort/sandalia-mujer-verano-15.jpeg" alt="" loading="lazy">
+                    </div>
+                    <div class="patria-hero__deal">
+                        <strong>30%</strong>
+                        <span>descuento especial</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Confianza Rexofit">
+            <div class="trust-strip__inner">
+                <div class="trust-item">
+                    <span class="trust-item__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 10 17l-5-5"></path></svg>
+                    </span>
+                    <div>
+                        <strong>Envío gratis</strong>
+                        <span>Por agencia a nivel nacional.</span>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-item__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </span>
+                    <div>
+                        <strong>Contraentrega en Lima</strong>
+                        <span>Pagas cuando recibes tu pedido.</span>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-item__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"></path><path d="M4 17h16"></path><path d="M7 4v16"></path><path d="M17 4v16"></path></svg>
+                    </span>
+                    <div>
+                        <strong>Ayuda con tallas</strong>
+                        <span>Te orientamos antes de comprar.</span>
+                    </div>
+                </div>
+                <div class="trust-item trust-item--whatsapp">
+                    <span class="trust-item__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 4.5a7.3 7.3 0 0 0-6.2 11.2l-.8 3.1 3.2-.8A7.3 7.3 0 1 0 12 4.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                            <path d="M9.3 9.2c.4 2.4 2 4 4.4 4.7l1.1-1.1 1.6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>Atención por WhatsApp</strong>
+                        <span>Confirmación rápida y directa.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-sellers" aria-label="Productos más vendidos">
+            <div class="best-sellers__inner">
+                <div class="best-sellers__head">
+                    <h2 class="best-sellers__title">Más vendidos de la semana.</h2>
+                    <p class="best-sellers__copy">Una selección corta de los productos que más se están llevando: básicos premium, conjuntos completos y sandalias en oferta.</p>
+                </div>
+                <div class="best-grid">
+                    <a href="polos.html#hombre-negro" class="best-card">
+                        <div class="best-card__media">
+                            <span class="best-card__badge">Top polo</span>
+                            <img src="/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp" alt="Polo Pima negro" loading="lazy">
+                        </div>
+                        <div class="best-card__info">
+                            <p class="best-card__name">Polo Pima Negro</p>
+                            <p class="best-card__meta">Algodón Pima | hombre</p>
+                            <span class="best-card__price">S/49.00</span>
+                        </div>
+                    </a>
+                    <a href="buzos.html#varon-azul-marino" class="best-card">
+                        <div class="best-card__media">
+                            <span class="best-card__badge">Top conjunto</span>
+                            <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-1.webp" alt="Conjunto Nova azul marino" loading="lazy">
+                        </div>
+                        <div class="best-card__info">
+                            <p class="best-card__name">Conjunto Nova</p>
+                            <p class="best-card__meta">Azul marino | hombre</p>
+                            <span class="best-card__price">S/90.00</span>
+                        </div>
+                    </a>
+                    <a href="zapatos-mujer.html#doble-tira-confort" class="best-card">
+                        <div class="best-card__media">
+                            <span class="best-card__badge">Oferta</span>
+                            <img src="/img/sandalias/Sandalia Mujer Doble Tira Confort/sandalia-mujer-verano-15.jpeg" alt="Sandalia Doble Tira Confort" loading="lazy">
+                        </div>
+                        <div class="best-card__info">
+                            <p class="best-card__name">Sandalia Doble Tira</p>
+                            <p class="best-card__meta">Confort | mujer</p>
+                            <span class="best-card__price"><del>S/49.90</del> S/39.90</span>
+                        </div>
+                    </a>
+                    <a href="buzos.html#dama-beige" class="best-card">
+                        <div class="best-card__media">
+                            <span class="best-card__badge">Dama</span>
+                            <img src="/img/nova-dama/conjunto_nova_dama_beige_1.jpeg" alt="Conjunto Nova Dama beige" loading="lazy">
+                        </div>
+                        <div class="best-card__info">
+                            <p class="best-card__name">Conjunto Nova Dama</p>
+                            <p class="best-card__meta">Beige | mujer</p>
+                            <span class="best-card__price">S/85.00</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 2. NOVEDADES — Polos Section ===== -->
+        <section class="home-novedades">
+            <div class="home-novedades__header">
+                <a href="polos.html" class="home-novedades__more">Ver más</a>
+            </div>
+            
+            <!-- Gender Tabs -->
+            <div class="novedades-gender-tabs">
+                <button class="novedades-gender-tab active" data-filter="all">Todos</button>
+                <button class="novedades-gender-tab" data-filter="varon">Varón</button>
+                <button class="novedades-gender-tab" data-filter="dama">Mujer</button>
+            </div>
+            
+            <!-- Horizontal Product Track -->
+            <div class="carrusel-wrapper">
+                <button class="carrusel-arrow carrusel-arrow--left" onclick="scrollCarrusel('novedadesTrack', -1)">&#9664;</button>
+                <button class="carrusel-arrow carrusel-arrow--right" onclick="scrollCarrusel('novedadesTrack', 1)">&#9654;</button>
+            <div class="home-novedades__track" id="novedadesTrack">
+                <!-- Varón Products -->
+                <div class="home-novedad-card" data-gender="varon" data-product="hombre-azul-marino">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-1.webp" alt="Polo Pima Azul Marino" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima</p>
+                        <p class="home-novedad-card__color">Azul Marino</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(38)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="varon" data-product="hombre-beige">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-beige-1.webp" alt="Polo Pima Beige" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima</p>
+                        <p class="home-novedad-card__color">Beige</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(31)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="varon" data-product="hombre-negro">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp" alt="Polo Pima Negro" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima</p>
+                        <p class="home-novedad-card__color">Negro</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(35)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="varon" data-product="hombre-plomo">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-plomo-1.webp" alt="Polo Pima Plomo" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima</p>
+                        <p class="home-novedad-card__color">Plomo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(27)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="varon" data-product="hombre-rojo">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-hombre/Polo-hombre-pima-rojo-1.webp" alt="Polo Pima Rojo" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima</p>
+                        <p class="home-novedad-card__color">Rojo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span><span class="home-novedad-card__reviews">(24)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <!-- Mujer Products -->
+                <div class="home-novedad-card" data-gender="dama" data-product="dama-azul-marino">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-mujer/Polo_dama_Azul_Marino_1.webp" alt="Polo Pima Dama Azul Marino" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima Dama</p>
+                        <p class="home-novedad-card__color">Azul Marino</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(40)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="dama" data-product="dama-beige">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-mujer/Polo_dama_Beige_1.webp" alt="Polo Pima Dama Beige" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima Dama</p>
+                        <p class="home-novedad-card__color">Beige</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(32)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="dama" data-product="dama-negro">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-mujer/Polo_dama_Negro_2.webp" alt="Polo Pima Dama Negro" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima Dama</p>
+                        <p class="home-novedad-card__color">Negro</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(29)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="dama" data-product="dama-plomo">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-mujer/Polo_dama_plomo_1.webp" alt="Polo Pima Dama Plomo" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima Dama</p>
+                        <p class="home-novedad-card__color">Plomo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(36)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+                
+                <div class="home-novedad-card" data-gender="dama" data-product="dama-rojo">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/polo-pima-mujer/Polo_dama_rojo_1.webp" alt="Polo Pima Dama Rojo" loading="lazy">
+                        <button class="home-novedad-card__action" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Polo Pima Dama</p>
+                        <p class="home-novedad-card__color">Rojo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span><span class="home-novedad-card__reviews">(22)</span></div>
+                        <p class="home-novedad-card__price">S/49.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== 3a. BUZOS SECTION ===== -->
+        <section class="home-novedades">
+            <div class="home-novedades__header">
+                <h2 class="home-novedades__title">Conjuntos</h2>
+                <a href="buzos.html" class="home-novedades__more">Ver más</a>
+            </div>
+
+            <!-- Tabs género -->
+            <div class="novedades-gender-tabs" id="bozosTabs">
+                <button class="novedades-gender-tab active" data-filter="all">Todos</button>
+                <button class="novedades-gender-tab" data-filter="varon">Varón</button>
+                <button class="novedades-gender-tab" data-filter="dama">Mujer</button>
+            </div>
+        
+
+            <div class="carrusel-wrapper">
+                <button class="carrusel-arrow carrusel-arrow--left" onclick="scrollCarrusel('buzosTrack', -1)">&#9664;</button>
+                <button class="carrusel-arrow carrusel-arrow--right" onclick="scrollCarrusel('buzosTrack', 1)">&#9654;</button>
+            <div class="home-novedades__track" id="buzosTrack">
+
+                <!-- VARÓN -->
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="varon" data-buzo-product="varon-azul-marino">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-1.webp" alt="Conjunto Nova Azul Marino" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova</p>
+                        <p class="home-novedad-card__color">Azul Marino</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(39)</span></div>
+                        <p class="home-novedad-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="varon" data-buzo-product="varon-beige">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-1.webp" alt="Conjunto Nova Beige" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova</p>
+                        <p class="home-novedad-card__color">Beige</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(30)</span></div>
+                        <p class="home-novedad-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="varon" data-buzo-product="varon-celeste">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-1.webp" alt="Conjunto Nova Celeste" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova</p>
+                        <p class="home-novedad-card__color">Celeste</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(26)</span></div>
+                        <p class="home-novedad-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="varon" data-buzo-product="varon-negro">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-1.webp" alt="Conjunto Nova Negro" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova</p>
+                        <p class="home-novedad-card__color">Negro</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(34)</span></div>
+                        <p class="home-novedad-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="varon" data-buzo-product="varon-plomo">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-1.webp" alt="Conjunto Nova Plomo" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova</p>
+                        <p class="home-novedad-card__color">Plomo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span><span class="home-novedad-card__reviews">(21)</span></div>
+                        <p class="home-novedad-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="varon" data-buzo-product="varon-rojo">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-1.webp" alt="Conjunto Nova Rojo" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova</p>
+                        <p class="home-novedad-card__color">Rojo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(28)</span></div>
+                        <p class="home-novedad-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="varon" data-buzo-product="varon-vino">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-1.webp" alt="Conjunto Nova Vino" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova</p>
+                        <p class="home-novedad-card__color">Vino</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(37)</span></div>
+                        <p class="home-novedad-card__price">S/ 90.00</p>
+                    </div>
+                </div>
+
+                <!-- DAMA -->
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="dama" data-buzo-product="dama-azul-marino" style="display:none;">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-dama/conjunto_nova_dama_azul_marino_1.jpeg" alt="Conjunto Nova Dama Azul Marino" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova Dama</p>
+                        <p class="home-novedad-card__color">Azul Marino</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(33)</span></div>
+                        <p class="home-novedad-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="dama" data-buzo-product="dama-beige" style="display:none;">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-dama/conjunto_nova_dama_beige_1.jpeg" alt="Conjunto Nova Dama Beige" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova Dama</p>
+                        <p class="home-novedad-card__color">Beige</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(25)</span></div>
+                        <p class="home-novedad-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="dama" data-buzo-product="dama-celeste" style="display:none;">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-dama/conjunto_nova_dama_celeste_1.jpeg" alt="Conjunto Nova Dama Celeste" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova Dama</p>
+                        <p class="home-novedad-card__color">Celeste</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(40)</span></div>
+                        <p class="home-novedad-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="dama" data-buzo-product="dama-guinda" style="display:none;">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-dama/conjunto_nova_dama_guinda_1.jpeg" alt="Conjunto Nova Dama Guinda" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova Dama</p>
+                        <p class="home-novedad-card__color">Guinda</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span><span class="home-novedad-card__reviews">(23)</span></div>
+                        <p class="home-novedad-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="dama" data-buzo-product="dama-negro" style="display:none;">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-dama/conjunto_nova_dama_negro_1.jpeg" alt="Conjunto Nova Dama Negro" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova Dama</p>
+                        <p class="home-novedad-card__color">Negro</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(35)</span></div>
+                        <p class="home-novedad-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="dama" data-buzo-product="dama-plomo" style="display:none;">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-dama/conjunto_nova_dama_plomo_1.jpeg" alt="Conjunto Nova Dama Plomo" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova Dama</p>
+                        <p class="home-novedad-card__color">Plomo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(31)</span></div>
+                        <p class="home-novedad-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card buzo-home-card" data-gender-buzo="dama" data-buzo-product="dama-rojo" style="display:none;">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/nova-dama/conjunto_nova_dama_rojo_1.jpeg" alt="Conjunto Nova Dama Rojo" loading="lazy">
+                        <button class="home-novedad-card__action buzo-detail-btn" aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Conjunto Nova Dama</p>
+                        <p class="home-novedad-card__color">Rojo</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(29)</span></div>
+                        <p class="home-novedad-card__price">S/ 85.00</p>
+                    </div>
+                </div>
+
+            </div>
+            </div><!-- end carrusel-wrapper -->
+        </section>
+
+        <!-- ===== 3b. SANDALIAS SECTION ===== -->
+        <section class="home-novedades">
+            <div class="home-novedades__header">
+                <h2 class="home-novedades__title">Sandalias</h2>
+                <a href="zapatos-mujer.html" class="home-novedades__more">Ver más</a>
+            </div>
+            <div class="carrusel-wrapper">
+                <button class="carrusel-arrow carrusel-arrow--left" onclick="scrollCarrusel('sandaliasTrack', -1)">&#9664;</button>
+                <button class="carrusel-arrow carrusel-arrow--right" onclick="scrollCarrusel('sandaliasTrack', 1)">&#9654;</button>
+            <div class="home-novedades__track" id="sandaliasTrack">
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#doble-tira-confort'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Doble Tira Confort/sandalia-mujer-verano-15.jpeg" alt="Sandalia Doble Tira Confort" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#doble-tira-confort'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia Doble Tira</p>
+                        <p class="home-novedad-card__color">Confort</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(38)</span></div>
+                        <p class="home-novedad-card__price">S/ 39.90</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#estilo-casual-elegance'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Estilo Casual Elegance/sandalia-mujer-verano-13.jpeg" alt="Sandalia Casual Elegance" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#estilo-casual-elegance'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia Casual</p>
+                        <p class="home-novedad-card__color">Elegance</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(27)</span></div>
+                        <p class="home-novedad-card__price">S/ 29.90</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#estilo-mk-urbano'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Estilo MK Urbano/sandalia-mujer-verano-02.jpeg" alt="Sandalia MK Urbano" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#estilo-mk-urbano'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia MK</p>
+                        <p class="home-novedad-card__color">Urbano</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span><span class="home-novedad-card__reviews">(20)</span></div>
+                        <p class="home-novedad-card__price">S/ 39.90</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#floral-elegance'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Floral Elegance/sandalia-mujer-verano-03.jpeg" alt="Sandalia Floral Elegance" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#floral-elegance'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia Floral</p>
+                        <p class="home-novedad-card__color">Elegance</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(36)</span></div>
+                        <p class="home-novedad-card__price">S/ 29.90</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#glam'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Glam/sandalia-mujer-verano-09.jpeg" alt="Sandalia Glam" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#glam'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia Glam</p>
+                        <p class="home-novedad-card__color">Clásica</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(32)</span></div>
+                        <p class="home-novedad-card__price">S/ 29.90</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#lazo-floral'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Lazo Floral/sandalia-mujer-verano-05.jpeg" alt="Sandalia Lazo Floral" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#lazo-floral'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia Lazo</p>
+                        <p class="home-novedad-card__color">Floral</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="home-novedad-card__reviews">(39)</span></div>
+                        <p class="home-novedad-card__price">S/ 29.90</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#perla-chic'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-24.jpeg" alt="Sandalia Perla Chic" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#perla-chic'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia Perla</p>
+                        <p class="home-novedad-card__color">Chic</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="home-novedad-card__reviews">(30)</span></div>
+                        <p class="home-novedad-card__price">S/ 39.90</p>
+                    </div>
+                </div>
+
+                <div class="home-novedad-card" style="cursor:pointer;" onclick="window.location.href='zapatos-mujer.html#plataforma-activa'">
+                    <div class="home-novedad-card__media">
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="/img/sandalias/Sandalia Mujer Plataforma Activa/sandalia-mujer-verano-18.jpeg" alt="Sandalia Plataforma Activa" loading="lazy">
+                        <button class="home-novedad-card__action" onclick="window.location.href='zapatos-mujer.html#plataforma-activa'"   aria-label="Ver producto">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="home-novedad-card__info">
+                        <p class="home-novedad-card__name">Sandalia Plataforma</p>
+                        <p class="home-novedad-card__color">Activa</p>
+                        <div class="home-novedad-card__rating"><span class="home-novedad-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span><span class="home-novedad-card__reviews">(24)</span></div>
+                        <p class="home-novedad-card__price">S/ 39.90</p>
+                    </div>
+                </div>
+
+            </div>
+            </div><!-- end carrusel-wrapper -->
+        </section>
+
+        <section class="home-section home-section--gray">
+            <div class="section-inner">
+                <h2 class="section-title">Categorías</h2>
+                
+                <div class="category-grid">
+                    <a href="buzos.html" class="category-card">
+                        <div class="category-card__media">
+                            <img src="/img/categorias/buzo-categoria.jpg" alt="Buzos" loading="lazy">
+                        </div>
+                        <p class="category-card__name">Buzos</p>
+                    </a>
+                    <a href="polos.html" class="category-card">
+                        <div class="category-card__media">
+                            <img src="/img/categorias/categoria-polos.webp" alt="Polos" loading="lazy">
+                        </div>
+                        <p class="category-card__name">Polos</p>
+                    </a>
+                    <a href="zapatos-mujer.html" class="category-card">
+                        <div class="category-card__media">
+                            <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" loading="lazy">
+                        </div>
+                        <p class="category-card__name">Sandalias</p>
+                    </a>
+                </div>
+            </div>
+            </div><!-- end carrusel-wrapper -->
+        </section>
+
+
+                        <!-- ===== 4. COMPARA LA TEXTURA — before/after slider ===== -->
+        <section class="home-section">
+            <div class="section-inner" style="max-width:800px;">
+                <span class="section-tag">Elige tu estilo</span>
+                <h2 class="section-title">Detalles de la suavidad y calidad</h2>
+                <div class="compare-wrap">
+                    <div class="compare-slider" id="compareSlider">
+                        <!-- imagen de fondo (izquierda — textura) — SWAPPED -->
+                        <div class="compare-before">
+                            <img src="/img/polo-pima-hombre/Polo-hombre-pima-beige-4.webp" alt="Polo Beige Textura" loading="lazy">
+                        </div>
+                        <!-- imagen de encima (derecha — polo puesto) — SWAPPED -->
+                        <div class="compare-after" id="compareAfter">
+                            <img src="/img/polo-pima-hombre/Polo-hombre-pima-beige-1.webp" alt="Polo Beige Vista 1" loading="lazy">
+                        </div>
+                        <!-- etiquetas -->
+                        
+                        <!-- línea divisoria + handle circular -->
+                        <div class="compare-divider" id="compareDivider">
+                            <div class="compare-handle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                    <polyline points="9 18 15 12 9 6" transform="translate(6,0)"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="compare-hint">Arrastra la línea central para comparar ambas vistas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 5. CALIDAD SE NOTA ===== -->
+        <section class="home-section home-section--gray">
+            <div class="section-inner">
+                <span class="section-tag">Por qué elegirnos</span>
+                <h2 class="section-title">Calidad se nota</h2>
+                <div class="calidad-grid">
+                    <div>
+                        <h3>Calidad Premium</h3>
+                        <p>Algodón Pima de exportación.</p>
+                    </div>
+                    <div>
+                        <h3>Envíos Seguros</h3>
+                        <p>Coordinación directa por WhatsApp.</p>
+                    </div>
+                    <div>
+                        <h3>Atención Directa</h3>
+                        <p>Respuesta rápida para pedidos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section" aria-label="Reseñas de clientes">
+            <div class="reviews-section__inner">
+                <div class="reviews-section__head">
+                    <h2 class="reviews-section__title">Lo que más valoran nuestros clientes.</h2>
+                    <span class="reviews-section__score">&#9733;&#9733;&#9733;&#9733;&#9733; 4.8/5</span>
+                </div>
+                <div class="review-grid">
+                    <div class="review-card">
+                        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>La tela del polo se siente fresca y suave. Me gustó que combina fácil y no se ve básico.</p>
+                        <strong>Andrea M.</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p>El conjunto llegó bien empaquetado y la talla me quedó como me indicaron por WhatsApp.</p>
+                        <strong>Marco R.</strong>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        <p>Compré sandalias en oferta y llegaron rápido. Buena atención para confirmar el color.</p>
+                        <strong>Claudia P.</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 6. FAQ ===== -->
+        <section class="home-section">
+            <div class="section-inner" style="max-width:740px;">
+                <span class="section-tag">Preguntas frecuentes</span>
+                <h2 class="section-title">Resolvemos tus dudas</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" type="button">¿Cómo hago mi pedido?<span class="faq-icon">+</span></button>
+                        <div class="faq-answer"><p>Elige tu polo, selecciona la talla y la cantidad, y presiona "Agregar al carrito". Al finalizar, envíanos tu pedido por WhatsApp con tus datos y te confirmamos en minutos.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button">¿Cuánto tarda el envío?<span class="faq-icon">+</span></button>
+                        <div class="faq-answer"><p>Los envíos por Shalom demoran entre 2 y 5 días hábiles según tu ciudad. Te avisamos cuando despachamos tu paquete.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button">¿Qué tallas manejan?<span class="faq-icon">+</span></button>
+                        <div class="faq-answer"><p>Manejamos S, M, L y XL. Si tienes dudas sobre la medida que te queda mejor, escríbenos por WhatsApp y te ayudamos.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button">¿Cómo pago?<span class="faq-icon">+</span></button>
+                        <div class="faq-answer"><p>Aceptamos Yape, Plin y transferencias bancarias. Todo se coordina directamente por WhatsApp antes del despacho.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL BUZOS -->
+    <div class="product-detail-overlay" id="buzoDetail">
+        <div class="product-detail product-detail--polos">
+            <button class="product-detail__close" id="buzoDetailClose">&times;</button>
+            <div class="product-detail__content product-detail__content--vertical-thumbs">
+                <div class="product-detail__gallery">
+                    <div class="product-detail__main" id="buzoDetailMain">
+                        <img id="buzoMainImg" src="" alt="Conjunto Nova">
+                    </div>
+                    <div class="product-detail__thumbs product-detail__thumbs--bottom" id="buzoDetailThumbs"></div>
+                </div>
+                <div class="product-detail__info">
+                    <h2 class="product-detail__title" id="buzoDetailTitle">Conjunto Nova</h2>
+                    <p class="product-detail__color" id="buzoDetailColor">Color</p>
+                    <p class="product-detail__subtitle">Tela Nova — poliéster y elastano premium</p>
+                    <div class="product-detail__palette">
+                        <span class="product-detail__palette-label">Color:</span>
+                        <div id="buzoDetailPalette"></div>
+                    </div>
+                    <div class="product-promo-box">
+                        <h3>CONJUNTO NOVA TELA PREMIUM</h3>
+                        <p>Tallas disponibles: S, M, L y XL</p>
+                        <div class="product-promo-box__total" style="margin-top:8px;">
+                            <span>Precio:</span>
+                            <strong id="buzoFinalPrice">S/ 90.00</strong>
+                        </div>
+                    </div>
+                    <div class="product-detail__sizes" id="buzoDetailSizes">
+                        <span class="product-detail__sizes-label">Talla:</span>
+                        <button class="size-btn active" data-size="S" type="button">S</button>
+                        <button class="size-btn" data-size="M" type="button">M</button>
+                        <button class="size-btn" data-size="L" type="button">L</button>
+                        <button class="size-btn" data-size="XL" type="button">XL</button>
+                    </div>
+                    <div class="product-detail__quantity">
+                        <span class="product-detail__quantity-label">Cantidad:</span>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" id="buzoQtyMinus" type="button">-</button>
+                            <input type="number" class="quantity-value" id="buzoQtyValue" value="1" min="1">
+                            <button class="quantity-btn" id="buzoQtyPlus" type="button">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn" id="buzoAddToCart" type="button">Agregar al Carrito</button>
+                    <div class="product-detail__recommended">
+                        <h3 class="product-detail__recommended-title">Otros colores</h3>
+                        <div class="recommended-grid" id="buzoRecommended"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Overlay for Home Page - Polos Style -->
+    <div class="product-detail-overlay" id="productDetail">
+        <div class="product-detail product-detail--polos">
+            <button class="product-detail__close" id="detailClose">&times;</button>
+
+            <div class="product-detail__content product-detail__content--vertical-thumbs">
+                
+                <div class="product-detail__gallery">
+                    <div class="product-detail__main">
+                        <img id="detailMainImg" src="" alt="Product Image">
+                    </div>
+                    <div class="product-detail__thumbs product-detail__thumbs--bottom" id="detailThumbs"></div>
+                </div>
+
+                <div class="product-detail__info">
+                    <h2 class="product-detail__title" id="detailTitle">Polo Pima</h2>
+                    <p class="product-detail__color" id="detailColor">Beige</p>
+                    <p class="product-detail__subtitle" id="detailSubtitle">Algodón Pima peruano de primera calidad</p>
+
+                    <div class="product-detail__palette">
+                        <span class="product-detail__palette-label">Color:</span>
+                        <div id="detailPalette"></div>
+                    </div>
+
+                    <div class="product-promo-box" id="detailPromoBox">
+                        <h3>POLOS Algodón PIMA EXPORTACIÓN</h3>
+                        <p>TALLAS: "S", "M" y "L"</p>
+
+                        <button type="button" class="promo-option active" data-qty="3" data-price="99">
+                            <span>3 Polos</span>
+                            <strong>S/99</strong>
+                        </button>
+
+                        <button type="button" class="promo-option" data-qty="2" data-price="89">
+                            <span>2 Polos</span>
+                            <strong>S/89</strong>
+                        </button>
+
+                        <button type="button" class="promo-option" data-qty="1" data-price="49">
+                            <span>1 Polo</span>
+                            <strong>S/49</strong>
+                        </button>
+
+                        <div class="product-promo-box__total">
+                            <span>Precio final:</span>
+                            <strong id="detailFinalPrice">S/49</strong>
+                        </div>
+                    </div>
+
+                    <div class="product-detail__sizes" id="detailSizes">
+                        <span class="product-detail__sizes-label">Talla:</span>
+                        <button class="size-btn active" data-size="S" type="button">S</button>
+                        <button class="size-btn" data-size="M" type="button">M</button>
+                        <button class="size-btn" data-size="L" type="button">L</button>
+                        <button class="size-btn" data-size="XL" type="button">XL</button>
+                    </div>
+
+                    <div class="product-detail__quantity">
+                        <span class="product-detail__quantity-label">Cantidad:</span>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" id="qtyMinus" type="button">-</button>
+                            <input type="number" class="quantity-value" id="qtyValue" value="1" min="1">
+                            <button class="quantity-btn" id="qtyPlus" type="button">+</button>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" id="addToCart" type="button">Agregar al Carrito</button>
+
+                    <div class="product-detail__recommended">
+                        <h3 class="product-detail__recommended-title">Recomendados</h3>
+                        <div class="recommended-grid" id="detailRecommended"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Diseño y calidad en cada prenda que acompaña tu día</h2>
+                <div class="footer-social">
+                    <p>Síguenos</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="TikTok">TikTok</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                    </div>
+                </div>
+                <p class="footer-copy">© 2026 Rexofit. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>EXPLORAR</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="revendedores.html">Revendedores</a>
+                    <a href="empresas.html">Empresas</a>
+                </div>
+                <div class="footer-col">
+                    <h4>TIENDA</h4>
+                    <a href="polos.html">Polos</a>
+                    <a href="buzos.html">Conjuntos</a>
+                    <a href="zapatos-mujer.html">Sandalias</a>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACTO</h4>
+                    <a href="carrito.html">Carrito</a>
+                    <a href="#">Cambios y devoluciones</a>
+                    <a href="#">Términos</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a class="claims" href="#">Libro de Reclamaciones</a>
+            <div class="payments">
+                <span class="pay">VISA</span>
+                <span class="pay">PLIN</span>
+                <span class="pay">YAPE</span>
+                <span class="pay">BCP</span>
+                <span class="pay">Interbank</span>
+            </div>
+        </div>
+        <div class="footer-watermark" aria-hidden="true">REXOFIT</div>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <!-- FLOATING SIDE DOTS NAVIGATION -->
+    <nav class="side-nav" id="sideNav" aria-label="Categorías">
+        <a href="index.html" class="side-nav__dot active" title="Inicio" data-label="Inicio">
+            <img src="/img/hero-section.webp" alt="Inicio" loading="lazy">
+        </a>
+        <a href="polos.html" class="side-nav__dot" title="Polos" data-label="Polos">
+            <img src="/img/categorias/categoria-polos.webp" alt="Polos" loading="lazy">
+        </a>
+        <a href="buzos.html" class="side-nav__dot" title="Buzos" data-label="Buzos">
+            <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" loading="lazy">
+        </a>
+        <a href="zapatos-mujer.html" class="side-nav__dot" title="Sandalias" data-label="Sandalias">
+            <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" loading="lazy">
+        </a>
+    </nav>
+
+    <script src="js/promo-timer.js"></script>
+    <script src="js/carrito.js"></script>
+    <script>
+
+    // =============================================
+    // MODAL BUZOS — igual al de polos
+    // =============================================
+
+    const buzosProducts = {
+        'varon-azul-marino': { name: 'Conjunto Nova', color: 'Azul Marino', colorHex: '#1e3a5f', gender: 'varon', price: 90,
+            images: ['/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-1.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-2.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-3.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-4.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-azul-marino-5.webp'] },
+        'varon-beige':       { name: 'Conjunto Nova', color: 'Beige',       colorHex: '#d4a574', gender: 'varon', price: 90,
+            images: ['/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-1.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-2.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-3.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-4.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-beige-5.webp'] },
+        'varon-celeste':     { name: 'Conjunto Nova', color: 'Celeste',     colorHex: '#7dd3fc', gender: 'varon', price: 90,
+            images: ['/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-1.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-2.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-3.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-4.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-celeste-5.webp'] },
+        'varon-negro':       { name: 'Conjunto Nova', color: 'Negro',       colorHex: '#1a1a1a', gender: 'varon', price: 90,
+            images: ['/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-1.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-2.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-3.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-4.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-negro-5.webp'] },
+        'varon-plomo':       { name: 'Conjunto Nova', color: 'Plomo',       colorHex: '#6b7280', gender: 'varon', price: 90,
+            images: ['/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-1.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-2.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo3.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo4.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-plomo-5.webp'] },
+        'varon-rojo':        { name: 'Conjunto Nova', color: 'Rojo',        colorHex: '#dc2626', gender: 'varon', price: 90,
+            images: ['/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-1.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-2.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-3.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-4.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-rojo-5.webp'] },
+        'varon-vino':        { name: 'Conjunto Nova', color: 'Vino',        colorHex: '#7f1d1d', gender: 'varon', price: 90,
+            images: ['/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-1.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-2.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-3.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-4.webp','/img/nova-rexer-hombre/Conjuntos-tela-nova-caballeros-vino-5.webp'] },
+        'dama-azul-marino':  { name: 'Conjunto Nova Dama', color: 'Azul Marino', colorHex: '#1e3a5f', gender: 'dama', price: 85,
+            images: ['/img/nova-dama/conjunto_nova_dama_azul_marino_1.jpeg','/img/nova-dama/conjunto_nova_dama_azul_marino_2.jpeg','/img/nova-dama/conjunto_nova_dama_azul_marino_3.jpeg','/img/nova-dama/conjunto_nova_dama_azul_marino_4.jpeg','/img/nova-dama/conjunto_nova_dama_azul_marino_5.jpeg'] },
+        'dama-beige':        { name: 'Conjunto Nova Dama', color: 'Beige',       colorHex: '#d4a574', gender: 'dama', price: 85,
+            images: ['/img/nova-dama/conjunto_nova_dama_beige_1.jpeg','/img/nova-dama/conjunto_nova_dama_beige_2.jpeg','/img/nova-dama/conjunto_nova_dama_beige_3.jpeg','/img/nova-dama/conjunto_nova_dama_beige_4.jpeg','/img/nova-dama/conjunto_nova_dama_beige_5.jpeg'] },
+        'dama-celeste':      { name: 'Conjunto Nova Dama', color: 'Celeste',     colorHex: '#7dd3fc', gender: 'dama', price: 85,
+            images: ['/img/nova-dama/conjunto_nova_dama_celeste_1.jpeg','/img/nova-dama/conjunto_nova_dama_celeste_2.jpeg','/img/nova-dama/conjunto_nova_dama_celeste_3.jpeg','/img/nova-dama/conjunto_nova_dama_celeste_4.jpeg','/img/nova-dama/conjunto_nova_dama_celeste_5.jpeg'] },
+        'dama-guinda':       { name: 'Conjunto Nova Dama', color: 'Guinda',      colorHex: '#7f1d1d', gender: 'dama', price: 85,
+            images: ['/img/nova-dama/conjunto_nova_dama_guinda_1.jpeg','/img/nova-dama/conjunto_nova_dama_guinda_2.jpeg','/img/nova-dama/conjunto_nova_dama_guinda_3.jpeg','/img/nova-dama/conjunto_nova_dama_guinda_4.jpeg','/img/nova-dama/conjunto_nova_dama_guinda_5.jpeg'] },
+        'dama-negro':        { name: 'Conjunto Nova Dama', color: 'Negro',       colorHex: '#1a1a1a', gender: 'dama', price: 85,
+            images: ['/img/nova-dama/conjunto_nova_dama_negro_1.jpeg','/img/nova-dama/conjunto_nova_dama_negro_2.jpeg','/img/nova-dama/conjunto_nova_dama_negro_3.jpeg','/img/nova-dama/conjunto_nova_dama_negro_4.jpeg','/img/nova-dama/conjunto_nova_dama_negro_5.jpg'] },
+        'dama-plomo':        { name: 'Conjunto Nova Dama', color: 'Plomo',       colorHex: '#6b7280', gender: 'dama', price: 85,
+            images: ['/img/nova-dama/conjunto_nova_dama_plomo_1.jpeg','/img/nova-dama/conjunto_nova_dama_plomo_2.jpeg','/img/nova-dama/conjunto_nova_dama_plomo_3.jpeg','/img/nova-dama/conjunto_nova_dama_plomo_4.jpeg','/img/nova-dama/conjunto_nova_dama_plomo_5.jpeg'] },
+        'dama-rojo':         { name: 'Conjunto Nova Dama', color: 'Rojo',        colorHex: '#dc2626', gender: 'dama', price: 85,
+            images: ['/img/nova-dama/conjunto_nova_dama_rojo_1.jpeg','/img/nova-dama/conjunto_nova_dama_rojo_2.jpeg','/img/nova-dama/conjunto_nova_dama_rojo_3.jpeg','/img/nova-dama/conjunto_nova_dama_rojo_4.jpeg','/img/nova-dama/conjunto_nova_dama_rojo_5.jpeg'] }
+    };
+
+    const buzosVaronColors = ['varon-azul-marino','varon-beige','varon-celeste','varon-negro','varon-plomo','varon-rojo','varon-vino'];
+    const bozosDamaColors  = ['dama-azul-marino','dama-beige','dama-celeste','dama-guinda','dama-negro','dama-plomo','dama-rojo'];
+
+    let currentBuzo = null;
+    let currentBuzoSize = 'S';
+    let currentBuzoQty = 1;
+
+    function openBuzoDetail(productId) {
+        currentBuzo = buzosProducts[productId];
+        if (!currentBuzo) return;
+
+        document.getElementById('buzoDetailTitle').textContent = currentBuzo.name;
+        document.getElementById('buzoDetailColor').textContent = currentBuzo.color;
+        document.getElementById('buzoMainImg').src = currentBuzo.images[0];
+        document.getElementById('buzoFinalPrice').textContent = 'S/ ' + currentBuzo.price.toFixed(2);
+
+        // Thumbnails
+        const thumbs = document.getElementById('buzoDetailThumbs');
+        thumbs.innerHTML = '';
+        currentBuzo.images.forEach(function(img, i) {
+            const t = document.createElement('div');
+            t.className = 'product-thumb' + (i === 0 ? ' active' : '');
+            t.innerHTML = '<img src="' + img + '" alt="Thumb ' + (i+1) + '">';
+            t.addEventListener('click', function() {
+                document.getElementById('buzoMainImg').src = img;
+                thumbs.querySelectorAll('.product-thumb').forEach(function(x){ x.classList.remove('active'); });
+                t.classList.add('active');
+            });
+            thumbs.appendChild(t);
+        });
+
+        // Paleta
+        const palette = document.getElementById('buzoDetailPalette');
+        palette.innerHTML = '';
+        const colorList = currentBuzo.gender === 'varon' ? buzosVaronColors : bozosDamaColors;
+        colorList.forEach(function(key) {
+            const p = buzosProducts[key];
+            if (!p) return;
+            const dot = document.createElement('span');
+            dot.className = 'palette-color' + (key === productId ? ' active' : '');
+            dot.style.background = p.colorHex;
+            dot.title = p.color;
+            dot.addEventListener('click', function() { openBuzoDetail(key); });
+            palette.appendChild(dot);
+        });
+
+        // Tallas reset
+        currentBuzoSize = 'S'; currentBuzoQty = 1;
+        document.getElementById('buzoQtyValue').value = 1;
+        document.querySelectorAll('#buzoDetailSizes .size-btn').forEach(function(b) {
+            b.classList.toggle('active', b.dataset.size === 'S');
+        });
+
+        // Recomendados
+        const rec = document.getElementById('buzoRecommended');
+        rec.innerHTML = '';
+        colorList.filter(function(k){ return k !== productId; }).slice(0,3).forEach(function(k) {
+            const p = buzosProducts[k];
+            if (!p) return;
+            const card = document.createElement('div');
+            card.className = 'recommended-card';
+            card.innerHTML = '<img src="' + p.images[0] + '" alt="' + p.name + '"><p class="recommended-card__name">' + p.name + '</p><p class="recommended-card__color">' + p.color + '</p>';
+            card.addEventListener('click', function() { openBuzoDetail(k); });
+            rec.appendChild(card);
+        });
+
+        document.getElementById('buzoDetail').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBuzoDetail() {
+        document.getElementById('buzoDetail').classList.remove('active');
+        document.body.style.overflow = '';
+        currentBuzo = null;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cerrar modal buzos
+        document.getElementById('buzoDetailClose').addEventListener('click', closeBuzoDetail);
+        document.getElementById('buzoDetail').addEventListener('click', function(e) {
+            if (e.target === this) closeBuzoDetail();
+        });
+
+        // Tallas buzos
+        document.querySelectorAll('#buzoDetailSizes .size-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('#buzoDetailSizes .size-btn').forEach(function(b){ b.classList.remove('active'); });
+                this.classList.add('active');
+                currentBuzoSize = this.dataset.size;
+            });
+        });
+
+        // Cantidad buzos
+        document.getElementById('buzoQtyMinus').addEventListener('click', function() {
+            if (currentBuzoQty > 1) { currentBuzoQty--; document.getElementById('buzoQtyValue').value = currentBuzoQty; }
+        });
+        document.getElementById('buzoQtyPlus').addEventListener('click', function() {
+            currentBuzoQty++; document.getElementById('buzoQtyValue').value = currentBuzoQty;
+        });
+
+        // Agregar al carrito — buzos
+        document.getElementById('buzoAddToCart').addEventListener('click', function() {
+            if (!currentBuzo) return;
+            const cartItem = {
+                id: 'buzo-' + currentBuzo.color.toLowerCase().replace(/ /g,'-') + '-' + currentBuzoSize,
+                name: currentBuzo.name + ' ' + currentBuzo.color,
+                price: currentBuzo.price,
+                color: currentBuzo.color,
+                colorHex: currentBuzo.colorHex,
+                size: currentBuzoSize,
+                qty: currentBuzoQty,
+                image: currentBuzo.images[0]
+            };
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const idx = cart.findIndex(function(i){ return i.id === cartItem.id; });
+            if (idx >= 0) {
+                cart[idx].qty = Math.min(cart[idx].qty + currentBuzoQty, 10);
+            } else {
+                if (cart.length >= 20) { alert('Tu carrito ya tiene el maximo de 20 productos.'); return; }
+                cart.push(cartItem);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            if (typeof actualizarContadorCarrito === 'function') actualizarContadorCarrito();
+            if (typeof dispatchCartUpdate === 'function') dispatchCartUpdate();
+            if (typeof showToast === 'function') showToast('Producto agregado', currentBuzo.color + ' - Talla ' + currentBuzoSize);
+            closeBuzoDetail();
+        });
+
+        // Click en cards de buzos — redirige a buzos.html#producto-id
+        document.querySelectorAll('.buzo-home-card').forEach(function(card) {
+            card.addEventListener('click', function(e) {
+                const productId = this.dataset.buzoProduct;
+                if (productId) {
+                    window.location.href = 'buzos.html#' + productId;
+                }
+            });
+        });
+    });
+
+    // Product Data - Same as polos.html for consistency
+    const products = {
+        'hombre-azul-marino': {
+            name: 'Polo Pima',
+            color: 'Azul Marino',
+            colorKey: 'azul-marino',
+            colorHex: '#1e3a5f',
+            gender: 'varon',
+            images: [
+                '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-1.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-2.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-3.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-4.webp'
+            ]
+        },
+        'hombre-beige': {
+            name: 'Polo Pima',
+            color: 'Beige',
+            colorKey: 'beige',
+            colorHex: '#d4a574',
+            gender: 'varon',
+            images: [
+                '/img/polo-pima-hombre/Polo-hombre-pima-beige-1.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-beige-2.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-beige-3.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-beige-4.webp'
+            ]
+        },
+        'hombre-negro': {
+            name: 'Polo Pima',
+            color: 'Negro',
+            colorKey: 'negro',
+            colorHex: '#1a1a1a',
+            gender: 'varon',
+            images: [
+                '/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-negro-2.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-negro-3.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-negro-4.webp'
+            ]
+        },
+        'hombre-plomo': {
+            name: 'Polo Pima',
+            color: 'Plomo',
+            colorKey: 'plomo',
+            colorHex: '#6b7280',
+            gender: 'varon',
+            images: [
+                '/img/polo-pima-hombre/Polo-hombre-pima-plomo-1.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-plomo-2.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-plomo-3.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-plomo-4.webp'
+            ]
+        },
+        'hombre-rojo': {
+            name: 'Polo Pima',
+            color: 'Rojo',
+            colorKey: 'rojo',
+            colorHex: '#c41e3a',
+            gender: 'varon',
+            images: [
+                '/img/polo-pima-hombre/Polo-hombre-pima-rojo-1.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-rojo-2.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-rojo-3.webp',
+                '/img/polo-pima-hombre/Polo-hombre-pima-rojo-4.webp'
+            ]
+        },
+        'dama-azul-marino': {
+            name: 'Polo Pima Dama',
+            color: 'Azul Marino',
+            colorKey: 'azul-marino',
+            colorHex: '#1e3a5f',
+            gender: 'dama',
+            images: [
+                '/img/polo-pima-mujer/Polo_dama_Azul_Marino_1.webp',
+                '/img/polo-pima-mujer/Polo_dama_Azul_Marino_2.webp',
+                '/img/polo-pima-mujer/Polo_dama_Azul_Marino_3.webp'
+            ]
+        },
+        'dama-beige': {
+            name: 'Polo Pima Dama',
+            color: 'Beige',
+            colorKey: 'beige',
+            colorHex: '#d4a574',
+            gender: 'dama',
+            images: [
+                '/img/polo-pima-mujer/Polo_dama_Beige_1.webp',
+                '/img/polo-pima-mujer/Polo_dama_Beige_2.webp',
+                '/img/polo-pima-mujer/Polo_dama_Beige_3.webp'
+            ]
+        },
+        'dama-negro': {
+            name: 'Polo Pima Dama',
+            color: 'Negro',
+            colorKey: 'negro',
+            colorHex: '#1a1a1a',
+            gender: 'dama',
+            images: [
+                '/img/polo-pima-mujer/Polo_dama_Negro_2.webp',
+                '/img/polo-pima-mujer/Polo_dama_Negro_3.webp',
+                '/img/polo-pima-mujer/Polo_dama_Negro_4.webp'
+            ]
+        },
+        'dama-plomo': {
+            name: 'Polo Pima Dama',
+            color: 'Plomo',
+            colorKey: 'plomo',
+            colorHex: '#6b7280',
+            gender: 'dama',
+            images: [
+                '/img/polo-pima-mujer/Polo_dama_plomo_1.webp',
+                '/img/polo-pima-mujer/Polo_dama_plomo_2.webp',
+                '/img/polo-pima-mujer/Polo_dama_plomo_3.webp'
+            ]
+        },
+        'dama-rojo': {
+            name: 'Polo Pima Dama',
+            color: 'Rojo',
+            colorKey: 'rojo',
+            colorHex: '#c41e3a',
+            gender: 'dama',
+            images: [
+                '/img/polo-pima-mujer/Polo_dama_rojo_1.webp',
+                '/img/polo-pima-mujer/Polo_dama_rojo_2.webp',
+                '/img/polo-pima-mujer/Polo_dama_rojo_3.webp'
+            ]
+        }
+    };
+
+    const allHombreColors = [
+        { key: 'hombre-azul-marino', color: 'Azul Marino', hex: '#1e3a5f' },
+        { key: 'hombre-beige', color: 'Beige', hex: '#d4a574' },
+        { key: 'hombre-negro', color: 'Negro', hex: '#1a1a1a' },
+        { key: 'hombre-plomo', color: 'Plomo', hex: '#6b7280' },
+        { key: 'hombre-rojo', color: 'Rojo', hex: '#c41e3a' }
+    ];
+
+    const allDamaColors = [
+        { key: 'dama-azul-marino', color: 'Azul Marino', hex: '#1e3a5f' },
+        { key: 'dama-beige', color: 'Beige', hex: '#d4a574' },
+        { key: 'dama-negro', color: 'Negro', hex: '#1a1a1a' },
+        { key: 'dama-plomo', color: 'Plomo', hex: '#6b7280' },
+        { key: 'dama-rojo', color: 'Rojo', hex: '#c41e3a' }
+    ];
+
+
+    // ===== MAGNIFIER ZOOM =====
+    function initMagnifier(containerId, imgId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const img = document.getElementById(imgId);
+        if (!img) return;
+
+        // Avoid duplicate lenses
+        if (container.querySelector('.zoom-lens')) return;
+
+        const lens = document.createElement('div');
+        lens.className = 'zoom-lens';
+        container.appendChild(lens);
+
+        const result = document.createElement('div');
+        result.className = 'zoom-result';
+        const resultImg = document.createElement('img');
+        result.appendChild(resultImg);
+        container.appendChild(result);
+
+        const ZOOM = 3;
+
+        function moveLens(e) {
+            e.preventDefault();
+            const rect = container.getBoundingClientRect();
+            const lensW = lens.offsetWidth;
+            const lensH = lens.offsetHeight;
+
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            // Clamp to image bounds
+            x = Math.max(lensW/2, Math.min(rect.width - lensW/2, x));
+            y = Math.max(lensH/2, Math.min(rect.height - lensH/2, y));
+
+            lens.style.left = x + 'px';
+            lens.style.top = y + 'px';
+
+            // Result image
+            const naturalW = img.naturalWidth || img.offsetWidth * ZOOM;
+            const naturalH = img.naturalHeight || img.offsetHeight * ZOOM;
+            const scaleX = naturalW / img.offsetWidth;
+            const scaleY = naturalH / img.offsetHeight;
+
+            resultImg.src = img.src;
+            resultImg.style.width = (img.offsetWidth * ZOOM) + 'px';
+            resultImg.style.height = (img.offsetHeight * ZOOM) + 'px';
+            resultImg.style.left = '-' + ((x - lensW/2) * ZOOM) + 'px';
+            resultImg.style.top  = '-' + ((y - lensH/2) * ZOOM) + 'px';
+        }
+
+        container.addEventListener('mousemove', moveLens);
+        container.addEventListener('mouseleave', function() {
+            lens.style.display = 'none';
+            result.style.display = 'none';
+        });
+        container.addEventListener('mouseenter', function() {
+            lens.style.display = 'block';
+            result.style.display = 'block';
+            resultImg.src = img.src;
+        });
+    }
+
+    let currentProduct = null;
+    let currentSize = 'S';
+    let currentQty = 1;
+
+    // Same promo logic as polos.html
+    function getPoloPromoPrice(qty) {
+        let total = 0;
+        let remaining = qty;
+        while (remaining >= 3) { total += 99; remaining -= 3; }
+        if (remaining === 2) total += 89;
+        if (remaining === 1) total += 49;
+        return total;
+    }
+
+    function updateHomePromoPrice(qty) {
+        const isXL = currentSize === 'XL';
+        const xlExtra = isXL ? 5 * qty : 0;
+        const price = getPoloPromoPrice(qty) + xlExtra;
+        const el = document.getElementById('detailFinalPrice');
+        if (el) el.textContent = 'S/' + price;
+        // Highlight the right promo row
+        const rows = document.querySelectorAll('.promo-option');
+        rows.forEach(r => r.classList.remove('active'));
+        if (qty >= 3) {
+            const r = document.querySelector('.promo-option[data-qty="3"]');
+            if (r) r.classList.add('active');
+        } else if (qty === 2) {
+            const r = document.querySelector('.promo-option[data-qty="2"]');
+            if (r) r.classList.add('active');
+        } else {
+            const r = document.querySelector('.promo-option[data-qty="1"]');
+            if (r) r.classList.add('active');
+        }
+    }
+
+    // La promo de polos aplica al total de polos del carrito, aunque sean colores o tallas distintas.
+    function recalcularPreciosPolos(cart) {
+        const poloItems = cart.filter(function(item) {
+            if (item.isPolo) return true;
+            if (typeof item.id === 'string' && item.id.indexOf('polo-') === 0) {
+                item.isPolo = true;
+                return true;
+            }
+            return false;
+        });
+        if (poloItems.length === 0) return cart;
+
+        const totalUnidades = poloItems.reduce(function(sum, item) {
+            return sum + (parseInt(item.qty) || 1);
+        }, 0);
+
+        const totalBase = getPoloPromoPrice(totalUnidades);
+        const precioBaseUnitario = Math.round((totalBase / totalUnidades) * 100) / 100;
+
+        poloItems.forEach(function(item) {
+            item.price = precioBaseUnitario + (item.size === 'XL' ? 5 : 0);
+        });
+
+        return cart;
+    }
+
+    function agregarAlCarritoPolos(producto, talla, cantidad) {
+        const cartItem = {
+            id: 'polo-' + producto.colorKey + '-' + talla,
+            name: producto.name + ' ' + producto.color,
+            price: 0,
+            color: producto.color,
+            colorHex: producto.colorHex || '#888',
+            size: talla,
+            qty: cantidad,
+            image: producto.images ? producto.images[0] : '',
+            isPolo: true
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingIndex = cart.findIndex(function(item) {
+            return item.id === cartItem.id;
+        });
+
+        if (existingIndex >= 0) {
+            cart[existingIndex].qty = Math.min(10, cart[existingIndex].qty + cantidad);
+            cart[existingIndex].isPolo = true;
+        } else {
+            if (cart.length >= 20) {
+                if (typeof showInfoModal === 'function') showInfoModal('Carrito lleno', 'Tu carrito ya tiene el maximo de 20 productos distintos.'); else alert('Tu carrito ya tiene el maximo de 20 productos distintos.');
+                return false;
+            }
+            cart.push(cartItem);
+        }
+
+        cart = recalcularPreciosPolos(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        if (typeof actualizarContadorCarrito === 'function') actualizarContadorCarrito();
+        if (typeof dispatchCartUpdate === 'function') dispatchCartUpdate();
+
+        return true;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gender Tab Filtering — POLOS (solo afecta track de polos)
+        const polosTabs = document.querySelectorAll('#novedadesTrack ~ * .novedades-gender-tab, .novedades-gender-tabs:not(#bozosTabs) .novedades-gender-tab');
+        // Más simple: buscar el contenedor de polos directamente
+        const polosTabsContainer = document.querySelector('.novedades-gender-tabs:not(#bozosTabs)');
+        const polosCards = document.querySelectorAll('#novedadesTrack .home-novedad-card');
+
+        if (polosTabsContainer) {
+            polosTabsContainer.querySelectorAll('.novedades-gender-tab').forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    polosTabsContainer.querySelectorAll('.novedades-gender-tab').forEach(function(t) { t.classList.remove('active'); });
+                    this.classList.add('active');
+                    polosCards.forEach(function(card) {
+                        if (filter === 'all' || card.dataset.gender === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Product Card Click - Open Detail (for both polo-card and home-novedad-card)
+        const productDetail = document.getElementById('productDetail');
+        if (productDetail) {
+            // Home Novedades Card Click
+            document.querySelectorAll('.home-novedad-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Don't open if clicking the + button (it has its own handler)
+                    if (e.target.closest('.home-novedad-card__action')) return;
+                    e.preventDefault();
+                    const productId = this.dataset.product;
+                    if (products[productId]) {
+                        openProductDetail(productId);
+                    }
+                });
+            });
+
+            // Home Novedades + Button Click
+            document.querySelectorAll('.home-novedad-card__action').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const card = this.closest('.home-novedad-card');
+                    const productId = card.dataset.product;
+                    if (products[productId]) {
+                        openProductDetail(productId);
+                    }
+                });
+            });
+
+            // Legacy polo-card support
+            document.querySelectorAll('.polo-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productId = this.dataset.product;
+                    if (products[productId]) {
+                        openProductDetail(productId);
+                    }
+                });
+            });
+
+            // Close Detail
+            document.getElementById('detailClose').addEventListener('click', closeProductDetail);
+            productDetail.addEventListener('click', function(e) {
+                if (e.target === this) closeProductDetail();
+            });
+
+            // Size Selection
+            document.querySelectorAll('#detailSizes .size-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#detailSizes .size-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentSize = this.dataset.size;
+                    updateHomePromoPrice(currentQty);
+                });
+            });
+
+            // Quantity
+            document.getElementById('qtyMinus').addEventListener('click', function() {
+                if (currentQty > 1) {
+                    currentQty--;
+                    document.getElementById('qtyValue').value = currentQty;
+                    updateHomePromoPrice(currentQty);
+                }
+            });
+
+            document.getElementById('qtyPlus').addEventListener('click', function() {
+                currentQty++;
+                document.getElementById('qtyValue').value = currentQty;
+                updateHomePromoPrice(currentQty);
+            });
+
+            // Add to Cart
+            document.getElementById('addToCart').addEventListener('click', function() {
+                if (currentProduct) {
+                    const agregado = agregarAlCarritoPolos(currentProduct, currentSize, currentQty);
+                    if (!agregado) return;
+                    if (typeof showToast === 'function') {
+                        showToast('Producto agregado al carrito', currentProduct.color + ' - Talla ' + currentSize);
+                    }
+                    closeProductDetail();
+                }
+            });
+        }
+    });
+
+    function openProductDetail(productId) {
+        currentProduct = products[productId];
+        setTimeout(function() { initMagnifier('productDetailMain', 'detailMainImg'); }, 80);
+        const detail = document.getElementById('productDetail');
+        const thumbsContainer = document.getElementById('detailThumbs');
+        
+        document.getElementById('detailTitle').textContent = currentProduct.name;
+        document.getElementById('detailColor').textContent = currentProduct.color;
+        document.getElementById('detailMainImg').src = currentProduct.images[0];
+
+        // Create thumbnails
+        thumbsContainer.innerHTML = '';
+        currentProduct.images.forEach((img, index) => {
+            const thumb = document.createElement('div');
+            thumb.className = 'product-thumb' + (index === 0 ? ' active' : '');
+            thumb.innerHTML = `<img src="${img}" alt="Thumbnail ${index + 1}">`;
+            thumb.addEventListener('click', function() {
+                document.getElementById('detailMainImg').src = img;
+                document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+            thumbsContainer.appendChild(thumb);
+        });
+
+        // Create color palette
+        const paletteContainer = document.getElementById('detailPalette');
+        paletteContainer.innerHTML = '';
+        const colorList = currentProduct.gender === 'varon' ? allHombreColors : allDamaColors;
+        colorList.forEach(c => {
+            const colorBtn = document.createElement('span');
+            colorBtn.className = 'palette-color' + (c.key === productId ? ' active' : '');
+            colorBtn.style.background = c.hex;
+            colorBtn.title = c.color;
+            colorBtn.addEventListener('click', function() {
+                if (products[c.key]) {
+                    openProductDetail(c.key);
+                }
+            });
+            paletteContainer.appendChild(colorBtn);
+        });
+
+        // Handle size buttons with XL tooltip for men
+        const sizesContainer = document.getElementById('detailSizes');
+        const isMan = currentProduct.gender === 'varon';
+        const sizeButtons = sizesContainer.querySelectorAll('.size-btn');
+        sizeButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.size === 'S') btn.classList.add('active');
+            
+            // Add XL tooltip for men's products
+            if (btn.dataset.size === 'XL' && isMan) {
+                btn.classList.add('size-btn--xl');
+                if (!btn.querySelector('.size-tooltip')) {
+                    const tooltip = document.createElement('span');
+                    tooltip.className = 'size-tooltip';
+                    tooltip.textContent = 'Tallas XL serían 5 soles más';
+                    btn.appendChild(tooltip);
+                }
+            } else {
+                btn.classList.remove('size-btn--xl');
+                const tooltip = btn.querySelector('.size-tooltip');
+                if (tooltip) tooltip.remove();
+            }
+        });
+
+        // Reset quantity to 1
+        currentQty = 1;
+        currentSize = 'S';
+        document.getElementById('qtyValue').value = 1;
+        updateHomePromoPrice(1);
+
+        // Promo options are display-only (no click interaction)
+
+        // Render recommended products
+        renderRecommendedProducts(productId);
+
+        detail.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function renderRecommendedProducts(currentProductId) {
+        const recommendedContainer = document.getElementById('detailRecommended');
+        if (!recommendedContainer) return;
+
+        recommendedContainer.innerHTML = '';
+
+        const current = products[currentProductId];
+        if (!current) return;
+
+        const sameGenderProducts = Object.entries(products)
+            .filter(([key, product]) => key !== currentProductId && product.gender === current.gender)
+            .slice(0, 3);
+
+        sameGenderProducts.forEach(([key, product]) => {
+            const card = document.createElement('div');
+            card.className = 'recommended-card';
+            card.innerHTML = `
+                <img src="${product.images[0]}" alt="${product.name}">
+                <p class="recommended-card__name">${product.name}</p>
+                <p class="recommended-card__color">${product.color}</p>
+            `;
+            card.addEventListener('click', function() {
+                openProductDetail(key);
+            });
+            recommendedContainer.appendChild(card);
+        });
+    }
+
+    function closeProductDetail() {
+        document.getElementById('productDetail').classList.remove('active');
+        document.body.style.overflow = '';
+        currentProduct = null;
+    }
+    </script>
+    <script>
+    // Modal handled by header.js
+
+    // ── CARRUSEL — flechas ──
+    function scrollCarrusel(trackId, dir) {
+        var track = document.getElementById(trackId);
+        if (!track) return;
+        track.scrollBy({ left: dir * 280, behavior: 'smooth' });
+    }
+
+    // ── BUZOS TABS ──
+    var bozosTabs = document.getElementById('bozosTabs');
+    if (bozosTabs) {
+        bozosTabs.querySelectorAll('.novedades-gender-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var filter = this.dataset.filter;
+                bozosTabs.querySelectorAll('.novedades-gender-tab').forEach(function(t) { t.classList.remove('active'); });
+                this.classList.add('active');
+                document.querySelectorAll('.buzo-home-card').forEach(function(card) {
+                    if (filter === 'all' || card.dataset.genderBuzo === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                var track = document.getElementById('buzosTrack');
+                if (track) track.scrollLeft = 0;
+            });
+        });
+    }
+
+    // ── Hero comercial: abrir tienda existente ──
+    (function() {
+        var heroShopRoute = document.getElementById('heroShopRoute');
+        var categoriasLink = document.getElementById('categoriasLink');
+        if (!heroShopRoute || !categoriasLink) return;
+        heroShopRoute.addEventListener('click', function(e) {
+            e.preventDefault();
+            categoriasLink.click();
+        });
+    })();
+
+    // ── FAQ accordion — un solo listener, sin duplicados ──
+    (function() {
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = btn.closest('.faq-item');
+                var isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    })();
+
+    // ── Slider comparativo before/after ──
+    (function() {
+        var slider   = document.getElementById('compareSlider');
+        if (!slider) return;
+        var divider  = document.getElementById('compareDivider');
+        var after    = document.getElementById('compareAfter');
+        var dragging = false;
+
+        function clamp(val, min, max) {
+            return Math.max(min, Math.min(max, val));
+        }
+
+        function setPos(pct) {
+            pct = clamp(pct, 3, 97);
+            divider.style.left = pct + '%';
+            after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+        }
+
+        function getPercent(e) {
+            var rect    = slider.getBoundingClientRect();
+            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            return ((clientX - rect.left) / rect.width) * 100;
+        }
+
+        // Mouse events
+        slider.addEventListener('mousedown', function(e) {
+            dragging = true;
+            setPos(getPercent(e));
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (dragging) setPos(getPercent(e));
+        });
+
+        document.addEventListener('mouseup', function() {
+            dragging = false;
+        });
+
+        // Touch events
+        slider.addEventListener('touchstart', function(e) {
+            dragging = true;
+            setPos(getPercent(e));
+        }, { passive: true });
+
+        document.addEventListener('touchmove', function(e) {
+            if (dragging) setPos(getPercent(e));
+        }, { passive: true });
+
+        document.addEventListener('touchend', function() {
+            dragging = false;
+        });
+
+        // Posición inicial centrada
+        setPos(50);
+    })();
+    </script>
+</body>
+</html>

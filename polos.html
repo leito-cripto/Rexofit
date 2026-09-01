@@ -1,0 +1,1607 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T2JZ6T3T');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYEP8DF0RK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GYEP8DF0RK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polos Pima | Rexofit</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos compartidos entre catálogos -->
+    <link rel="stylesheet" href="css/catalog-shared.css">
+    <style>
+        /* Polos Page — estilos exclusivos de esta página */
+
+        /* Product Grid - 4 columns */
+
+        /* Product Card */
+        .polo-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .polo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .polo-card.hidden {
+            display: none;
+        }
+
+        /* Card Media */
+        .polo-card__media {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .polo-card__media img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .polo-card__media img.polo-img--back {
+            opacity: 0;
+        }
+
+        .polo-card:hover .polo-img--front {
+            opacity: 0;
+        }
+
+        .polo-card:hover .polo-img--back {
+            opacity: 1;
+        }
+
+        /* Color Palette Dots */
+        .polo-card__colors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px 0 2px;
+            background: #fff;
+        }
+
+        .polo-color-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex: 0 0 14px;
+            border: 1px solid rgba(0,0,0,0.18);
+            box-sizing: border-box;
+        }
+
+        /* Card Info */
+        .polo-card__info {
+            padding: 14px 12px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .polo-card__name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111;
+            margin: 0 0 4px;
+        }
+
+        .polo-card__color-name {
+            font-size: 12px;
+            color: #666;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+
+        /* ===== BADGE OFERTA ===== */
+        .card-badge-oferta {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e11d48;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            z-index: 3;
+            pointer-events: none;
+            /* === EDITAR AQUÍ: cambia el texto del badge desde el HTML === */
+        }
+
+        /* ===== ESTRELLAS ===== */
+        .card-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            margin: 4px 0 2px;
+        }
+        .card-stars__icons {
+            color: #f59e0b;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .card-stars__count {
+            font-size: 11px;
+            color: #888;
+            margin-left: 2px;
+        }
+        /* Precio tachado (oferta) */
+        .price-strike {
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+            display: block;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        .polo-card__price {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin: 4px 0 0;
+            text-align: center;
+        }
+        .polo-promo-row__strike {
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 6px;
+            font-weight: 400;
+        }
+
+    
+
+        /* ===== CONTADOR DE STOCK ===== */
+        .stock-counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        .stock-counter__dot {
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: stockPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes stockPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ===== GUÍA DE TALLAS ===== */
+        .size-guide-link {
+            font-size: 12px;
+            color: #6b7280;
+            cursor: pointer;
+            background: none;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 4px 10px;
+            margin-left: auto;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .size-guide-link:hover {
+            border-color: #111;
+            color: #111;
+            background: #f9f9f9;
+        }
+        .detail-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .detail-stars {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #f59e0b;
+        }
+        .detail-stars__count {
+            font-size: 12px;
+            color: #888;
+        }
+        .detail-material {
+            margin-top: 0;
+            padding: 14px 16px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            border-left: 3px solid #e5e7eb;
+        }
+        .detail-material__title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .detail-material__text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .size-guide-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 20000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .size-guide-overlay.active { display: flex; }
+
+        .size-guide-modal {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .size-guide-modal__close {
+            position: absolute;
+            top: 14px; right: 14px;
+            width: 34px; height: 34px;
+            border: none; background: #f5f5f5;
+            border-radius: 50%; font-size: 20px;
+            cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .size-guide-modal h3 {
+            font-size: 20px; font-weight: 700;
+            color: #111; margin: 0 0 6px;
+        }
+        .size-guide-modal p {
+            font-size: 13px; color: #666; margin: 0 0 20px;
+        }
+        .size-guide-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .size-guide-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #111;
+            padding: 10px 12px;
+            text-align: center;
+            border: 1px solid #e8e8e8;
+        }
+        .size-guide-table td {
+            padding: 10px 12px;
+            text-align: center;
+            border: 1px solid #eee;
+            color: #444;
+        }
+        .size-guide-table tr:nth-child(even) td { background: #fafafa; }
+        .size-guide-note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+        /* ===== BANNER CAMBIO DE GÉNERO ===== */
+        .gender-switch-banner {
+            grid-column: 1 / -1;
+            margin: 40px 0 20px;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+            border-radius: 16px;
+            padding: 40px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gender-switch-banner::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .gender-switch-banner__text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1;
+        }
+
+        .gender-switch-banner__tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .gender-switch-banner__title {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: -0.3px;
+        }
+
+        .gender-switch-banner__sub {
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .gender-switch-banner__btn {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: #fff;
+            color: #111;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            z-index: 1;
+            white-space: nowrap;
+        }
+
+        .gender-switch-banner__btn:hover {
+            transform: translateY(-2px);
+            background: #f0f0f0;
+        }
+
+        .gender-switch-banner__btn svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .gender-switch-banner--mujer {
+            background: linear-gradient(135deg, #4a0030 0%, #7c1f5a 100%);
+        }
+
+        @media (max-width: 600px) {
+            .gender-switch-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px 24px;
+                gap: 20px;
+            }
+            .gender-switch-banner__btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+</style>
+    <link rel="icon" type="image/png" href="/img/logo-negro.png">
+    <!-- SEO -->
+    <meta name="description" content="Compra polos Pima de algodón premium para hombre y mujer en Rexofit. Envío a todo el Perú. Contra entrega en Lima.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rexofit.com/polos">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Polos Pima para Hombre y Mujer | Rexofit">
+    <meta property="og:description" content="Compra polos Pima de algodón premium para hombre y mujer en Rexofit. Envío a todo el Perú. Contra entrega en Lima.">
+    <meta property="og:url" content="https://rexofit.com/polos">
+    <meta property="og:image" content="https://rexofit.com/img/logo-negro.png">
+    <meta property="og:site_name" content="Rexofit">
+</head>
+<body data-pagina="polos">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2JZ6T3T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Header container (rendered by JS) -->
+    <header class="navbar-container"></header>
+
+    <!-- Categories Modal -->
+    <div class="categories-modal" id="categoriesModal" hidden>
+        <div class="categories-modal__backdrop" id="categoriesBackdrop"></div>
+        <div class="categories-modal__panel">
+            <button class="categories-modal__close" id="categoriesClose" aria-label="Cerrar">&times;</button>
+            <h3 class="categories-modal__title">Tienda</h3>
+            <div class="categories-modal__list">
+                <a href="polos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-polos.webp" alt="Polos" class="categories-modal__img">
+                    <span>POLOS</span>
+                </a>
+                <a href="buzos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" class="categories-modal__img">
+                    <span>BUZOS</span>
+                </a>
+                <a href="zapatos-mujer.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" class="categories-modal__img">
+                    <span>SANDALIAS</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="catalog-main">
+        <section class="catalog-container">
+            
+            <!-- Gender Tabs - Horizontal at Top -->
+            <div class="gender-tabs">
+                <button class="gender-tab active" data-filter="varon">Varón</button>
+                <button class="gender-tab" data-filter="dama">Mujer</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="polos-grid" id="polosGrid">
+                
+                
+                <!-- VARÓN Products (5 colors) -->
+                <!-- Azul Marino -->
+                <div class="polo-card" data-gender="varon" data-product="hombre-azul-marino">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-1.webp" alt="Polo Pima Azul Marino">
+                        <img class="polo-img--back" src="/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-2.webp" alt="Polo Pima Azul Marino">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #1e3a5f;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima</h3>
+                        <p class="polo-card__color-name">Azul Marino</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Beige -->
+                <div class="polo-card" data-gender="varon" data-product="hombre-beige">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-hombre/Polo-hombre-pima-beige-1.webp" alt="Polo Pima Beige">
+                        <img class="polo-img--back" src="/img/polo-pima-hombre/Polo-hombre-pima-beige-2.webp" alt="Polo Pima Beige">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #d4a574;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima</h3>
+                        <p class="polo-card__color-name">Beige</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Negro -->
+                <div class="polo-card" data-gender="varon" data-product="hombre-negro">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp" alt="Polo Pima Negro">
+                        <img class="polo-img--back" src="/img/polo-pima-hombre/Polo-hombre-pima-negro-2.webp" alt="Polo Pima Negro">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #1a1a1a;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima</h3>
+                        <p class="polo-card__color-name">Negro</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Plomo -->
+                <div class="polo-card" data-gender="varon" data-product="hombre-plomo">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-hombre/Polo-hombre-pima-plomo-1.webp" alt="Polo Pima Plomo">
+                        <img class="polo-img--back" src="/img/polo-pima-hombre/Polo-hombre-pima-plomo-2.webp" alt="Polo Pima Plomo">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #6b7280;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima</h3>
+                        <p class="polo-card__color-name">Plomo</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Rojo -->
+                <div class="polo-card" data-gender="varon" data-product="hombre-rojo">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-hombre/Polo-hombre-pima-rojo-1.webp" alt="Polo Pima Rojo">
+                        <img class="polo-img--back" src="/img/polo-pima-hombre/Polo-hombre-pima-rojo-2.webp" alt="Polo Pima Rojo">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #dc2626;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima</h3>
+                        <p class="polo-card__color-name">Rojo</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- DAMA Products (5 colors) -->
+                <!-- Azul Marino -->
+                <div class="polo-card hidden" data-gender="dama" data-product="dama-azul-marino">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-mujer/Polo_dama_Azul_Marino_1.webp" alt="Polo Pima Dama Azul Marino">
+                        <img class="polo-img--back" src="/img/polo-pima-mujer/Polo_dama_Azul_Marino_2.webp" alt="Polo Pima Dama Azul Marino">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #1e3a5f;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima Dama</h3>
+                        <p class="polo-card__color-name">Azul Marino</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Beige -->
+                <div class="polo-card hidden" data-gender="dama" data-product="dama-beige">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-mujer/Polo_dama_Beige_1.webp" alt="Polo Pima Dama Beige">
+                        <img class="polo-img--back" src="/img/polo-pima-mujer/Polo_dama_Beige_2.webp" alt="Polo Pima Dama Beige">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #d4a574;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima Dama</h3>
+                        <p class="polo-card__color-name">Beige</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Negro -->
+                <div class="polo-card hidden" data-gender="dama" data-product="dama-negro">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-mujer/Polo_dama_Negro_2.webp" alt="Polo Pima Dama Negro">
+                        <img class="polo-img--back" src="/img/polo-pima-mujer/Polo_dama_Negro_3.webp" alt="Polo Pima Dama Negro">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #1a1a1a;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima Dama</h3>
+                        <p class="polo-card__color-name">Negro</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Plomo -->
+                <div class="polo-card hidden" data-gender="dama" data-product="dama-plomo">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-mujer/Polo_dama_plomo_1.webp" alt="Polo Pima Dama Plomo">
+                        <img class="polo-img--back" src="/img/polo-pima-mujer/Polo_dama_plomo_2.webp" alt="Polo Pima Dama Plomo">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #6b7280;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima Dama</h3>
+                        <p class="polo-card__color-name">Plomo</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(214)</span></div>
+                        <span class="price-strike">Desde S/ 70.00</span>
+                        <p class="polo-card__price">Desde S/ 49.00</p>
+                    </div>
+                </div>
+
+                <!-- Rojo -->
+                <div class="polo-card hidden" data-gender="dama" data-product="dama-rojo">
+                    <div class="polo-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img class="polo-img--front" src="/img/polo-pima-mujer/Polo_dama_rojo_1.webp" alt="Polo Pima Dama Rojo">
+                        <img class="polo-img--back" src="/img/polo-pima-mujer/Polo_dama_rojo_2.webp" alt="Polo Pima Dama Rojo">
+                    </div>
+                    <div class="polo-card__colors">
+                        <span class="polo-color-dot" style="background: #dc2626;"></span>
+                    </div>
+                    <div class="polo-card__info">
+                        <h3 class="polo-card__name">Polo Pima Dama</h3>
+                        <p class="polo-card__color-name">Rojo</p>
+                    </div>
+                </div>
+
+
+                <!-- Banner: ver catálogo Mujer -->
+                <div class="gender-switch-banner gender-switch-banner--mujer" id="bannerVerMujer" style="display:none;">
+                    <div class="gender-switch-banner__text">
+                        <span class="gender-switch-banner__tag">También tenemos para ella</span>
+                        <h3 class="gender-switch-banner__title">Descubre los polos<br>de colección Mujer</h3>
+                        <p class="gender-switch-banner__sub">Polos Pima de algodón para ella.<br>Suaves, cómodos y con los mejores colores.</p>
+                    </div>
+                    <button class="gender-switch-banner__btn" id="btnVerMujer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                        Ver colección Mujer
+                    </button>
+                </div>
+
+                <!-- Banner: ver catálogo Varón -->
+                <div class="gender-switch-banner" id="bannerVerVaronP" style="display:none;">
+                    <div class="gender-switch-banner__text">
+                        <span class="gender-switch-banner__tag">También tenemos para él</span>
+                        <h3 class="gender-switch-banner__title">Descubre los polos<br>de colección Varón</h3>
+                        <p class="gender-switch-banner__sub">Polos Pima premium para caballeros.<br>Calidad y estilo en cada prenda.</p>
+                    </div>
+                    <button class="gender-switch-banner__btn" id="btnVerVaronP">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                        Ver colección Varón
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Detail Overlay -->
+    <div class="product-detail-overlay" id="productDetail">
+        <div class="product-detail">
+            <button class="product-detail__close" id="detailClose">&times;</button>
+            <div class="product-detail__content">
+                <!-- Main Image Area -->
+                <div class="product-detail__main-area">
+                    <!-- Main Image with Zoom -->
+                    <div class="product-detail__main product-zoomable" id="productDetailMain">
+                        <img id="detailMainImg" src="" alt="Product Image">
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="product-detail__thumbs" id="detailThumbs"></div>
+                </div>
+                <!-- Product Info -->
+                <div class="product-detail__info">
+
+                    <!-- 1. Título y color -->
+                    <h1 class="product-detail__title" id="detailTitle">Polo Pima</h1>
+                    <p class="product-detail__color" id="detailColor">Color</p>
+
+                    <!-- 2. Estrellas + Stock en una fila -->
+                    <div class="detail-meta-row">
+                        <div class="detail-stars">
+                            ★★★★★
+                            <span class="detail-stars__count">(214 reseñas)</span>
+                        </div>
+                        <!-- CONTADOR DE STOCK: edita el número aquí -->
+                        <div class="stock-counter">
+                            <span class="stock-counter__dot"></span>
+                            Solo quedan <strong><span id="poloStockNum">8</span></strong> disponibles
+                        </div>
+                    </div>
+
+                    <!-- 3. Bloque de precios por paquete -->
+                    <div class="polo-promo-block" id="poloPromoBlock" style="display: none;">
+                        <p class="polo-promo-title">POLOS Algodón PIMA EXPORTACIÓN</p>
+                        <p class="polo-promo-sizes">TALLAS: "S", "M" y "L"</p>
+                        <div class="polo-promo-pricing">
+                            <div class="polo-promo-row polo-promo-row--best">
+                                <span>3 Polos</span>
+                                <strong>S/99 <span class="polo-promo-row__strike">S/142</span></strong>
+                            </div>
+                            <div class="polo-promo-row">
+                                <span>2 Polos</span>
+                                <strong>S/89 <span class="polo-promo-row__strike">S/127</span></strong>
+                            </div>
+                            <div class="polo-promo-row">
+                                <span>1 Polo</span>
+                                <strong>S/49 <span class="polo-promo-row__strike">S/70</span></strong>
+                            </div>
+                        </div>
+                        <div class="polo-final-price">
+                            <span>Precio final:</span>
+                            <strong id="poloFinalPrice">S/49</strong>
+                        </div>
+                    </div>
+
+                    <!-- 4. Paleta de colores -->
+                    <div class="product-detail__palette">
+                        <span class="product-detail__palette-label">Color:</span>
+                        <div id="detailPalette"></div>
+                    </div>
+
+                    <!-- 5. Tallas + Guía -->
+                    <div class="product-detail__sizes">
+                        <span class="product-detail__sizes-label">Talla:</span>
+                        <button class="size-btn active" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                        <button class="size-guide-link" onclick="document.getElementById('sizeGuideOverlay').classList.add('active')">
+                            Guía de tallas
+                        </button>
+                    </div>
+
+                    <!-- 6. Cantidad -->
+                    <div class="product-detail__quantity">
+                        <span class="product-detail__quantity-label">Cantidad:</span>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" id="qtyMinus">-</button>
+                            <input type="number" class="quantity-value" id="qtyValue" value="1" min="1">
+                            <button class="quantity-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 7. Botón agregar -->
+                    <button class="add-to-cart-btn" id="addToCart">Agregar al Carrito</button>
+
+                    <!-- 8. Descripción de tela -->
+                    <div class="detail-material">
+                        <p class="detail-material__title">Material</p>
+                        <p class="detail-material__text">Confeccionado en algodón Pima peruano 100% — fibra extra larga reconocida mundialmente por su suavidad, durabilidad y acabado sedoso. Transpirable, fresco y con colores que mantienen su intensidad lavado tras lavado.</p>
+                    </div>
+
+                    <!-- 9. Recomendados -->
+                    <div class="product-detail__recomendados">
+                        <h3 class="product-detail__recomendados-title">Recomendados</h3>
+                        <div class="product-detail__recomendados-grid" id="recomendadosGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/header.js"></script>
+    <script src="js/carrito.js"></script>
+    <script>
+        // Product Data - Polos Pima from new image folders
+        const products = {
+            // HOMBRE Products
+            'hombre-azul-marino': {
+                name: 'Polo Pima',
+                color: 'Azul Marino',
+                colorKey: 'azul-marino',
+                colorHex: '#1e3a5f',
+                gender: 'varon',
+                images: [
+                    '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-1.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-2.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-3.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-azul-marino-4.webp'
+                ]
+            },
+            'hombre-beige': {
+                name: 'Polo Pima',
+                color: 'Beige',
+                colorKey: 'beige',
+                colorHex: '#d4a574',
+                gender: 'varon',
+                images: [
+                    '/img/polo-pima-hombre/Polo-hombre-pima-beige-1.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-beige-2.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-beige-3.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-beige-4.webp'
+                ]
+            },
+            'hombre-negro': {
+                name: 'Polo Pima',
+                color: 'Negro',
+                colorKey: 'negro',
+                colorHex: '#1a1a1a',
+                gender: 'varon',
+                images: [
+                    '/img/polo-pima-hombre/Polo-hombre-pima-negro-1.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-negro-2.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-negro-3.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-negro-4.webp'
+                ]
+            },
+            'hombre-plomo': {
+                name: 'Polo Pima',
+                color: 'Plomo',
+                colorKey: 'plomo',
+                colorHex: '#6b7280',
+                gender: 'varon',
+                images: [
+                    '/img/polo-pima-hombre/Polo-hombre-pima-plomo-1.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-plomo-2.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-plomo-3.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-plomo-4.webp'
+                ]
+            },
+            'hombre-rojo': {
+                name: 'Polo Pima',
+                color: 'Rojo',
+                colorKey: 'rojo',
+                colorHex: '#dc2626',
+                gender: 'varon',
+                images: [
+                    '/img/polo-pima-hombre/Polo-hombre-pima-rojo-1.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-rojo-2.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-rojo-3.webp',
+                    '/img/polo-pima-hombre/Polo-hombre-pima-rojo-4.webp'
+                ]
+            },
+            // DAMA Products
+            'dama-azul-marino': {
+                name: 'Polo Pima Dama',
+                color: 'Azul Marino',
+                colorKey: 'azul-marino',
+                colorHex: '#1e3a5f',
+                gender: 'dama',
+                images: [
+                    '/img/polo-pima-mujer/Polo_dama_Azul_Marino_1.webp',
+                    '/img/polo-pima-mujer/Polo_dama_Azul_Marino_2.webp',
+                    '/img/polo-pima-mujer/Polo_dama_Azul_Marino_3.webp'
+                ]
+            },
+            'dama-beige': {
+                name: 'Polo Pima Dama',
+                color: 'Beige',
+                colorKey: 'beige',
+                colorHex: '#d4a574',
+                gender: 'dama',
+                images: [
+                    '/img/polo-pima-mujer/Polo_dama_Beige_1.webp',
+                    '/img/polo-pima-mujer/Polo_dama_Beige_2.webp',
+                    '/img/polo-pima-mujer/Polo_dama_Beige_3.webp'
+                ]
+            },
+            'dama-negro': {
+                name: 'Polo Pima Dama',
+                color: 'Negro',
+                colorKey: 'negro',
+                colorHex: '#1a1a1a',
+                gender: 'dama',
+                images: [
+                    '/img/polo-pima-mujer/Polo_dama_Negro_2.webp',
+                    '/img/polo-pima-mujer/Polo_dama_Negro_3.webp',
+                    '/img/polo-pima-mujer/Polo_dama_Negro_4.webp'
+                ]
+            },
+            'dama-plomo': {
+                name: 'Polo Pima Dama',
+                color: 'Plomo',
+                colorKey: 'plomo',
+                colorHex: '#6b7280',
+                gender: 'dama',
+                images: [
+                    '/img/polo-pima-mujer/Polo_dama_plomo_1.webp',
+                    '/img/polo-pima-mujer/Polo_dama_plomo_2.webp',
+                    '/img/polo-pima-mujer/Polo_dama_plomo_3.webp'
+                ]
+            },
+            'dama-rojo': {
+                name: 'Polo Pima Dama',
+                color: 'Rojo',
+                colorKey: 'rojo',
+                colorHex: '#dc2626',
+                gender: 'dama',
+                images: [
+                    '/img/polo-pima-mujer/Polo_dama_rojo_1.webp',
+                    '/img/polo-pima-mujer/Polo_dama_rojo_2.webp',
+                    '/img/polo-pima-mujer/Polo_dama_rojo_3.webp'
+                ]
+            }
+        };
+
+        // All colors for palette switching
+        const allHombreColors = [
+            { key: 'hombre-azul-marino', color: 'Azul Marino', hex: '#1e3a5f' },
+            { key: 'hombre-beige', color: 'Beige', hex: '#d4a574' },
+            { key: 'hombre-negro', color: 'Negro', hex: '#1a1a1a' },
+            { key: 'hombre-plomo', color: 'Plomo', hex: '#6b7280' },
+            { key: 'hombre-rojo', color: 'Rojo', hex: '#dc2626' }
+        ];
+
+        const allDamaColors = [
+            { key: 'dama-azul-marino', color: 'Azul Marino', hex: '#1e3a5f' },
+            { key: 'dama-beige', color: 'Beige', hex: '#d4a574' },
+            { key: 'dama-negro', color: 'Negro', hex: '#1a1a1a' },
+            { key: 'dama-plomo', color: 'Plomo', hex: '#6b7280' },
+            { key: 'dama-rojo', color: 'Rojo', hex: '#dc2626' }
+        ];
+
+        // Calculate promotional price for polos based on quantity
+        function getPoloPromoPrice(qty) {
+            let total = 0;
+            let remaining = qty;
+
+            // Apply bundles of 3 for best price
+            while (remaining >= 3) {
+                total += 99;
+                remaining -= 3;
+            }
+
+            if (remaining === 2) total += 89;
+            if (remaining === 1) total += 49;
+
+            return total;
+        }
+
+        // Update the live final price display
+        function updatePoloFinalPrice(qty) {
+            const priceEl = document.getElementById('poloFinalPrice');
+            if (priceEl) {
+                priceEl.textContent = 'S/' + getPoloPromoPrice(qty);
+            }
+        }
+
+
+        // ===== MAGNIFIER ZOOM =====
+        function initMagnifier(containerId, imgId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const img = document.getElementById(imgId);
+            if (!img) return;
+            if (container.querySelector('.zoom-lens')) return;
+
+            const lens = document.createElement('div');
+            lens.className = 'zoom-lens';
+            container.appendChild(lens);
+
+            const result = document.createElement('div');
+            result.className = 'zoom-result';
+            const resultImg = document.createElement('img');
+            result.appendChild(resultImg);
+            container.appendChild(result);
+
+            const ZOOM = 3;
+
+            function moveLens(e) {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const lensW = lens.offsetWidth;
+                const lensH = lens.offsetHeight;
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+                x = Math.max(lensW/2, Math.min(rect.width - lensW/2, x));
+                y = Math.max(lensH/2, Math.min(rect.height - lensH/2, y));
+                lens.style.left = x + 'px';
+                lens.style.top = y + 'px';
+                resultImg.src = img.src;
+                resultImg.style.width = (img.offsetWidth * ZOOM) + 'px';
+                resultImg.style.height = (img.offsetHeight * ZOOM) + 'px';
+                resultImg.style.left = '-' + ((x - lensW/2) * ZOOM) + 'px';
+                resultImg.style.top  = '-' + ((y - lensH/2) * ZOOM) + 'px';
+            }
+
+            container.addEventListener('mousemove', moveLens);
+            container.addEventListener('mouseleave', function() {
+                lens.style.display = 'none';
+                result.style.display = 'none';
+            });
+            container.addEventListener('mouseenter', function() {
+                lens.style.display = 'block';
+                result.style.display = 'block';
+                resultImg.src = img.src;
+            });
+        }
+
+        // Image Zoom Functionality - reinitialize on each modal open
+        let zoomInitialized = false;
+        let isZoomed = false;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX = 0, startY = 0;
+        const MAX_ZOOM = 2.2;
+        
+        function initZoomOnce() {
+            if (zoomInitialized) return;
+            zoomInitialized = true;
+            
+            const container = document.getElementById('productDetailMain');
+            const img = document.getElementById('detailMainImg');
+            
+            if (!container || !img) {
+                zoomInitialized = false;
+                return;
+            }
+            
+            // Prevent default drag
+            img.addEventListener('dragstart', function(e) { e.preventDefault(); });
+            
+            // Single click to zoom (only 2 states: normal <-> zoomed)
+            container.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                if (isZoomed) {
+                    // Reset to normal
+                    isZoomed = false;
+                    translateX = 0;
+                    translateY = 0;
+                    img.style.transform = 'translate(0px, 0px) scale(1)';
+                    img.classList.remove('is-zoomed');
+                } else {
+                    // Apply fixed max zoom
+                    isZoomed = true;
+                    img.style.transform = 'translate(0px, 0px) scale(' + MAX_ZOOM + ')';
+                    img.classList.add('is-zoomed');
+                }
+            });
+            
+            // Mouse drag to pan when zoomed
+            container.addEventListener('mousedown', function(e) {
+                if (!isZoomed) return;
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                container.style.cursor = 'grabbing';
+            });
+            
+            container.addEventListener('mousemove', function(e) {
+                if (!isDragging || !isZoomed) return;
+                
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                
+                // Clamp translation to stay within bounds
+                const maxTranslate = (MAX_ZOOM - 1) * container.offsetWidth / 2;
+                translateX = Math.max(-maxTranslate, Math.min(maxTranslate, translateX));
+                translateY = Math.max(-maxTranslate, Math.min(maxTranslate, translateY));
+                
+                img.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + MAX_ZOOM + ')';
+            });
+            
+            container.addEventListener('mouseup', function() {
+                isDragging = false;
+                container.style.cursor = 'zoom-in';
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                isDragging = false;
+                container.style.cursor = 'zoom-in';
+            });
+        }
+        
+        function resetZoom() {
+            isZoomed = false;
+            translateX = 0;
+            translateY = 0;
+            isDragging = false;
+            const img = document.getElementById('detailMainImg');
+            if (img) {
+                img.style.transform = 'translate(0px, 0px) scale(1)';
+                img.classList.remove('is-zoomed');
+            }
+        }
+
+        let currentProduct = null;
+        let currentSize = 'S';
+        let currentQty = 1;
+        let currentGender = 'varon';
+
+        // Gender Tab Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const genderTabs = document.querySelectorAll('.gender-tab');
+            const poloCards = document.querySelectorAll('.polo-card');
+
+            function initGenderFilter() {
+                genderTabs.forEach(tab => {
+                    if (tab.dataset.filter === 'varon') {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+
+                poloCards.forEach(card => {
+                    if (card.dataset.gender === 'varon') {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            }
+
+            initGenderFilter();
+
+            genderTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    currentGender = this.dataset.filter;
+                    genderTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    poloCards.forEach(card => {
+                        if (card.dataset.gender === currentGender) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Product Card Click - Open Detail
+            poloCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productId = this.dataset.product;
+                    if (products[productId]) {
+                        openProductDetail(productId);
+                    }
+                });
+            });
+
+            // Close Detail
+            document.getElementById('detailClose').addEventListener('click', closeProductDetail);
+            document.getElementById('productDetail').addEventListener('click', function(e) {
+                if (e.target === this) closeProductDetail();
+            });
+
+            // Size Selection
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentSize = this.dataset.size;
+                });
+            });
+
+            // Quantity
+            document.getElementById('qtyMinus').addEventListener('click', function() {
+                if (currentQty > 1) {
+                    currentQty--;
+                    document.getElementById('qtyValue').value = currentQty;
+                    updatePoloFinalPrice(currentQty);
+                }
+            });
+
+            document.getElementById('qtyPlus').addEventListener('click', function() {
+                currentQty++;
+                document.getElementById('qtyValue').value = currentQty;
+                updatePoloFinalPrice(currentQty);
+            });
+
+            // Add to Cart
+            document.getElementById('addToCart').addEventListener('click', function() {
+                // Validar que se haya seleccionado una talla
+                if (!currentSize) {
+                    if (typeof mostrarBanner === 'function') mostrarBanner('Por favor selecciona una talla.');
+                    else alert('Por favor selecciona una talla.');
+                    return;
+                }
+                // Add to cart using the cart system
+                if (typeof agregarAlCarritoPolos === 'function') {
+                    agregarAlCarritoPolos(currentProduct, currentSize, currentQty);
+                } else {
+                    // Fallback toast
+                    if (typeof showToast === 'function') showToast('Agregado al carrito', `${currentProduct.name} ${currentProduct.color} - Talla ${currentSize}`);
+                }
+                closeProductDetail();
+            });
+        });
+
+        function openProductDetail(productId) {
+            // Initialize zoom when modal opens
+            initZoomOnce();
+            setTimeout(function() { initMagnifier('productDetailMain', 'detailMainImg'); }, 80);
+            
+            currentProduct = products[productId];
+            const detail = document.getElementById('productDetail');
+            const thumbsContainer = document.getElementById('detailThumbs');
+            
+            // Reset quantity
+            currentQty = 1;
+            document.getElementById('qtyValue').value = currentQty;
+            
+            // Show promo block for polos
+            const promoBlock = document.getElementById('poloPromoBlock');
+            if (promoBlock) {
+                promoBlock.style.display = 'block';
+                updatePoloFinalPrice(currentQty);
+            }
+            
+            // Set product info
+            document.getElementById('detailTitle').textContent = currentProduct.name;
+            document.getElementById('detailColor').textContent = currentProduct.color;
+            document.getElementById('detailMainImg').src = currentProduct.images[0];
+
+            // Create thumbnails
+            thumbsContainer.innerHTML = '';
+            currentProduct.images.forEach((img, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'product-thumb' + (index === 0 ? ' active' : '');
+                thumb.innerHTML = `<img src="${img}" alt="Thumbnail ${index + 1}">`;
+                thumb.addEventListener('click', function() {
+                    const mainImg = document.getElementById('detailMainImg');
+                    mainImg.src = img;
+                    mainImg.onload = function() { initMagnifier('productDetailMain', 'detailMainImg'); };
+                    document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+                thumbsContainer.appendChild(thumb);
+            });
+
+            // Create color palette
+            const paletteContainer = document.getElementById('detailPalette');
+            paletteContainer.innerHTML = '';
+            const colorList = currentProduct.gender === 'varon' ? allHombreColors : allDamaColors;
+            colorList.forEach(c => {
+                const colorBtn = document.createElement('span');
+                colorBtn.className = 'palette-color' + (c.key === productId ? ' active' : '');
+                colorBtn.style.background = c.hex;
+                colorBtn.title = c.color;
+                colorBtn.addEventListener('click', function() {
+                    if (products[c.key]) {
+                        openProductDetail(c.key);
+                    }
+                });
+                paletteContainer.appendChild(colorBtn);
+            });
+
+            // Handle XL tooltip for men's products
+            const isMan = currentProduct.gender === 'varon';
+            const sizeButtons = document.querySelectorAll('.product-detail__sizes .size-btn');
+            sizeButtons.forEach(btn => {
+                // Remove any existing tooltip first
+                const existingTooltip = btn.querySelector('.size-tooltip');
+                if (existingTooltip) {
+                    existingTooltip.remove();
+                }
+                
+                // Add tooltip only for XL on men's products
+                if (btn.dataset.size === 'XL' && isMan) {
+                    const tooltip = document.createElement('span');
+                    tooltip.className = 'size-tooltip';
+                    tooltip.textContent = 'Tallas XL serían 5 soles más';
+                    btn.appendChild(tooltip);
+                }
+            });
+
+            // Populate Recomendados
+            populateRecomendados(productId);
+
+            detail.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function populateRecomendados(currentProductId) {
+            const container = document.getElementById('recomendadosGrid');
+            container.innerHTML = '';
+
+            const currentProduct = products[currentProductId];
+            const gender = currentProduct.gender;
+            
+            // Get products of the same gender, excluding current
+            const recommendedKeys = Object.keys(products).filter(key => {
+                return products[key].gender === gender && key !== currentProductId;
+            });
+
+            // Shuffle and take first 3
+            const shuffled = recommendedKeys.sort(() => Math.random() - 0.5).slice(0, 3);
+
+            shuffled.forEach(key => {
+                const product = products[key];
+                const card = document.createElement('div');
+                card.className = 'recomendado-card';
+                card.innerHTML = `
+                    <div class="recomendado-card__media">
+                        <img src="${product.images[0]}" alt="${product.color}">
+                    </div>
+                    <p class="recomendado-card__name">${product.name}</p>
+                    <p class="recomendado-card__color">${product.color}</p>
+                `;
+                card.addEventListener('click', function() {
+                    openProductDetail(key);
+                });
+                container.appendChild(card);
+            });
+        }
+
+        function closeProductDetail() {
+            document.getElementById('productDetail').classList.remove('active');
+            document.body.style.overflow = '';
+            currentProduct = null;
+            
+            // Reset zoom when closing modal
+            resetZoom();
+        }
+
+        // Add to Cart function for Polos - with promotional pricing
+
+        // ============================================================
+        // PROMO POLOS — recalcula precios de TODOS los polos en el carrito
+        // cuando se agrega uno nuevo, la promo aplica al total sin importar color ni talla
+        // ============================================================
+        function recalcularPreciosPolos(cart) {
+            const poloItems = cart.filter(function(item) { return item.isPolo; });
+            if (poloItems.length === 0) return cart;
+
+            // Total de unidades polo (todos colores/tallas)
+            const totalUnidades = poloItems.reduce(function(sum, item) {
+                return sum + (parseInt(item.qty) || 1);
+            }, 0);
+
+            // Precio base total según promo (sin contar XL extra)
+            var totalBase = 0, rem = totalUnidades;
+            while (rem >= 3) { totalBase += 99; rem -= 3; }
+            if (rem === 2) totalBase += 89;
+            if (rem === 1) totalBase += 49;
+
+            // Distribuir precio base proporcional a cada polo item
+            // El recargo XL (S/5 por unidad XL) se suma POR SEPARADO
+            // para que el total del carrito cuadre con el precio mostrado en pantalla
+            poloItems.forEach(function(item) {
+                var qty = parseInt(item.qty) || 1;
+                var precioBase = Math.round((totalBase / totalUnidades) * 100) / 100;
+                // price es el precio unitario (base + recargo XL si aplica)
+                item.price = precioBase + (item.size === 'XL' ? 5 : 0);
+            });
+
+            return cart;
+        }
+
+        function agregarAlCarritoPolos(producto, talla, cantidad) {
+            // Build new cart item (price will be recalculated)
+            var cartItem = {
+                id: 'polo-' + producto.colorKey + '-' + talla,
+                name: producto.name + ' ' + producto.color,
+                price: 0,
+                color: producto.color,
+                colorHex: producto.colorHex || '#888',
+                size: talla,
+                qty: cantidad,
+                image: producto.images ? producto.images[0] : '',
+                isPolo: true
+            };
+
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add or update item
+            var existingIndex = cart.findIndex(function(item) {
+                return item.id === cartItem.id;
+            });
+
+            if (existingIndex >= 0) {
+                cart[existingIndex].qty = Math.min(10, cart[existingIndex].qty + cantidad);
+            } else {
+                if (cart.length >= 20) {
+                    if (typeof showInfoModal === 'function') showInfoModal('Carrito lleno', 'Tu carrito ya tiene el máximo de 20 productos distintos.'); else alert('Tu carrito ya tiene el máximo de 20 productos distintos.');
+                    return;
+                }
+                cart.push(cartItem);
+            }
+
+            // Recalculate ALL polo prices based on total quantity
+            cart = recalcularPreciosPolos(cart);
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            actualizarContadorCarrito();
+            dispatchCartUpdate();
+
+            // Calculate total polos for toast
+            var totalPolos = cart.filter(function(i) { return i.isPolo; })
+                                  .reduce(function(s, i) { return s + i.qty; }, 0);
+            var precioTotal = 0, r = totalPolos;
+            while (r >= 3) { precioTotal += 99; r -= 3; }
+            if (r === 2) precioTotal += 89;
+            if (r === 1) precioTotal += 49;
+
+            showToast(
+                'Polo agregado — ' + totalPolos + ' polo' + (totalPolos > 1 ? 's' : '') + ' en total',
+                'Precio promo: S/' + precioTotal + (talla === 'XL' ? ' + S/5 por XL' : '')
+            );
+        }
+    </script>
+    <script>
+    // Categories Modal Functionality
+    // Modal handled by header.js
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Diseño y calidad en cada prenda que acompaña tu día</h2>
+                <div class="footer-social">
+                    <p>Síguenos</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="TikTok">TikTok</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                    </div>
+                </div>
+                <p class="footer-copy">© 2026 Rexofit. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>EXPLORAR</h4>
+                    <a href="index.html">Categorías</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-col">
+                    <h4>MI CUENTA</h4>
+                    <a href="carrito.html">Mis pedidos</a>
+                    <a href="#">Mis datos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contactanos</h4>
+                    <a href="#">Atención</a>
+                    <a href="#">Cambios y devoluciones</a>
+                    <a href="#">Términos</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a class="claims" href="#">Libro de Reclamaciones</a>
+            <div class="payments">
+                <span class="pay">VISA</span>
+                <span class="pay">PLIN</span>
+                <span class="pay">YAPE</span>
+                <span class="pay">BCP</span>
+                <span class="pay">Interbank</span>
+            </div>
+        </div>
+        <div class="footer-watermark" aria-hidden="true">REXOFIT</div>
+    </footer>
+
+    <!-- FLOATING SIDE DOTS NAVIGATION -->
+    <nav class="side-nav" aria-label="Categorías">
+        <a href="index.html" class="side-nav__dot" title="Inicio" data-label="Inicio">
+            <img src="/img/hero-section.webp" alt="Inicio">
+        </a>
+        <a href="polos.html" class="side-nav__dot  active" title="Polos" data-label="Polos">
+            <img src="/img/categorias/categoria-polos.webp" alt="Polos">
+        </a>
+        <a href="buzos.html" class="side-nav__dot" title="Buzos" data-label="Buzos">
+            <img src="/img/categorias/categoria-buzos.webp" alt="Buzos">
+        </a>
+        <a href="zapatos-mujer.html" class="side-nav__dot" title="Sandalias" data-label="Sandalias">
+            <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias">
+        </a>
+    </nav>
+
+    <script>
+    // ── Banners género polos ──────────────────────────────
+    (function() {
+        function actualizarBannersP(generoActivo) {
+            var bMujer = document.getElementById('bannerVerMujer');
+            var bVaron = document.getElementById('bannerVerVaronP');
+            if (!bMujer || !bVaron) return;
+            if (generoActivo === 'varon') {
+                bMujer.style.display = 'flex';
+                bVaron.style.display = 'none';
+            } else {
+                bMujer.style.display = 'none';
+                bVaron.style.display = 'flex';
+            }
+        }
+
+        document.querySelectorAll('.gender-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                setTimeout(function() { actualizarBannersP(tab.dataset.filter); }, 50);
+            });
+        });
+
+        var btnMujer = document.getElementById('btnVerMujer');
+        if (btnMujer) {
+            btnMujer.addEventListener('click', function() {
+                var mujerTab = document.querySelector('.gender-tab[data-filter="mujer"]') ||
+                               document.querySelector('.gender-tab[data-filter="dama"]');
+                if (mujerTab) { mujerTab.click(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+            });
+        }
+
+        var btnVaronP = document.getElementById('btnVerVaronP');
+        if (btnVaronP) {
+            btnVaronP.addEventListener('click', function() {
+                var varonTab = document.querySelector('.gender-tab[data-filter="varon"]');
+                if (varonTab) { varonTab.click(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+            });
+        }
+
+        var activeTab = document.querySelector('.gender-tab.active');
+        if (activeTab) actualizarBannersP(activeTab.dataset.filter);
+    })();
+    </script>
+
+
+    <!-- GUÍA DE TALLAS MODAL -->
+    <div class="size-guide-overlay" id="sizeGuideOverlay">
+        <div class="size-guide-modal">
+            <button class="size-guide-modal__close" onclick="document.getElementById('sizeGuideOverlay').classList.remove('active')">&times;</button>
+            <h3>📏 Guía de Tallas — Polos</h3>
+            <p>Medidas en centímetros. Mide sobre la prenda.</p>
+            <table class="size-guide-table">
+                <thead>
+                    <tr>
+                        <th>Talla</th>
+                        <th>Pecho (cm)</th>
+                        <th>Hombro (cm)</th>
+                        <th>Largo (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>S</strong></td><td>88–92</td><td>42</td><td>68</td></tr>
+                    <tr><td><strong>M</strong></td><td>94–98</td><td>44</td><td>70</td></tr>
+                    <tr><td><strong>L</strong></td><td>100–104</td><td>46</td><td>72</td></tr>
+                    <tr><td><strong>XL</strong></td><td>106–110</td><td>48</td><td>74</td></tr>
+                </tbody>
+            </table>
+            <p class="size-guide-note">💡 Polos de algodón Pima tienen mínima contracción al lavar. Si tienes dudas entre dos tallas, elige la mayor.</p>
+        </div>
+    </div>
+
+</body>
+</html>

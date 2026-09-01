@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T2JZ6T3T');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYEP8DF0RK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GYEP8DF0RK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Carrito - Rexofit</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrito-page.css">
+    <link rel="icon" type="image/png" href="/img/logo-negro.png">
+    <!-- SEO -->
+    <meta name="description" content="Completa tu pedido de ropa deportiva Rexofit por WhatsApp. Envío a todo el Perú.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rexofit.com/carrito">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carrito de compras | Rexofit">
+    <meta property="og:description" content="Completa tu pedido de ropa deportiva Rexofit por WhatsApp. Envío a todo el Perú.">
+    <meta property="og:url" content="https://rexofit.com/carrito">
+    <meta property="og:image" content="https://rexofit.com/img/logo-negro.png">
+    <meta property="og:site_name" content="Rexofit">
+</head>
+<body data-pagina="carrito">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2JZ6T3T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Header rendered by header.js -->
+    <header class="navbar-container"></header>
+
+    <!-- Categories Modal -->
+    <div class="categories-modal" id="categoriesModal" hidden>
+        <div class="categories-modal__backdrop" id="categoriesBackdrop"></div>
+        <div class="categories-modal__panel">
+            <button class="categories-modal__close" id="categoriesClose" aria-label="Cerrar">&times;</button>
+            <h3 class="categories-modal__title">Tienda</h3>
+            <div class="categories-modal__list">
+                <a href="polos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-polos.webp" alt="Polos" class="categories-modal__img">
+                    <span>POLOS</span>
+                </a>
+                <a href="buzos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" class="categories-modal__img">
+                    <span>BUZOS</span>
+                </a>
+                <a href="zapatos-mujer.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" class="categories-modal__img">
+                    <span>SANDALIAS</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header simplificado -->
+        <div class="checkout-header">
+            <h1>Completa tu pedido por WhatsApp</h1>
+            <p class="checkout-subtitle">Llena tus datos y envía tu pedido</p>
+        </div>
+
+        <!-- CONTENEDOR PRINCIPAL: DOS COLUMNAS -->
+        <div class="carrito-page-container">
+            <!-- COLUMNA IZQUIERDA: INFORMACIÓN DEL CLIENTE -->
+            <section class="checkout-form-section">
+                <h2>Información de entrega</h2>
+                <form id="pedidoForm" class="pedido-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="distrito">Distrito</label>
+                        <input type="text" id="distrito" name="distrito" placeholder="Ej: Lima">
+                    </div>
+
+                    <!-- Dirección y Referencia (ocultas si es pickup) -->
+                    <div id="direccionGroup">
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" placeholder="Ej: Av. Siempre Viva 123">
+                        </div>
+                        <div class="form-group" style="margin-top: 14px;">
+                            <label for="referencia">Referencia (opcional)</label>
+                            <input type="text" id="referencia" name="referencia" placeholder="Ej: Cerca al parque">
+                        </div>
+                    </div>
+
+                    <!-- Método de entrega -->
+                    <div class="form-group">
+                        <label>Método de entrega</label>
+                        <div class="delivery-toggle">
+                            <button type="button" class="delivery-btn active" data-value="shalom" id="btnShalom">
+                                📦 Envío por agencia
+                            </button>
+                            <button type="button" class="delivery-btn" data-value="contraentrega" id="btnContraentrega">
+                                🤝 Contra entrega
+                            </button>
+                        </div>
+                        <input type="hidden" id="metodoEntrega" name="metodoEntrega" value="shalom">
+                    </div>
+
+                    <!-- Selector de agencia (visible con Envío por agencia) -->
+                    <div id="agenciaGroup" class="form-group">
+                        <label for="agencia">¿A qué agencia deseas recibir tu pedido?</label>
+                        <select id="agencia" name="agencia">
+                            <option value="">Selecciona una agencia</option>
+                            <option value="Shalom">Shalom</option>
+                            <option value="Olva Courier">Olva Courier</option>
+                            <option value="Cruz del Sur">Cruz del Sur</option>
+                            <option value="otra">Otra agencia</option>
+                        </select>
+                        <div id="otraAgenciaGroup" style="display:none; margin-top:10px;">
+                            <input type="text" id="otraAgencia" name="otraAgencia" placeholder="Escribe el nombre de tu agencia">
+                        </div>
+                        <p class="agencia-envio-note">🎁 Envío gratis por agencia</p>
+                    </div>
+
+                    <!-- Nota contra entrega (solo Lima) -->
+                    <div id="contraentregaNote" style="display:none;" class="contraentrega-note">
+                        <span>🏙️ Contra entrega disponible <strong>solo en Lima</strong>. Envío gratis por promoción. Pagas cuando recibes tu pedido.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notas">Notas del pedido (opcional)</label>
+                        <textarea id="notas" name="notas" rows="3" placeholder="Ej: Entregar solo en la mañana"></textarea>
+                    </div>
+                </form>
+            </section>
+
+            <!-- COLUMNA DERECHA: RESUMEN DEL PEDIDO -->
+            <section class="checkout-summary-section">
+                <h2>Resumen del pedido</h2>
+                
+                <div id="carritoProductosLista" class="checkout-items-list">
+                    <!-- Productos se renderizan aquí -->
+                </div>
+
+                <!-- Resumen de compra -->
+                <div id="carritoResumen" class="checkout-resumen">
+                    <div class="resumen-item">
+                        <span>Subtotal</span>
+                        <span id="subtotal" class="valor">S/ 0.00</span>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Envío</span>
+                        <span id="envioValor" class="valor">Por confirmar</span>
+                    </div>
+                    <!-- Mensaje envío gratis -->
+                    <div id="msgEnvioGratis" class="envio-gratis-msg" style="display:none;">
+                        🎉 ¡Envío gratis aplicado a tu pedido!
+                    </div>
+                    <!-- Mensaje incentivo (exactamente 2 productos) -->
+                    <div id="msgLlevateMas" class="envio-incentivo-msg" style="display:none;">
+                        🎁 Tu envío ya es <strong>gratis</strong>
+                    </div>
+                    <div class="resumen-item total">
+                        <span>Total</span>
+                        <span id="total" class="valor">S/ 0.00</span>
+                    </div>
+                </div>
+
+                <!-- Garantías de confianza -->
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="trust-badge__icon">🤝</span>
+                        <div>
+                            <strong>Pago seguro</strong>
+                            <span>Yape · Plin · BCP · Interbank</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge__icon">📦</span>
+                        <div>
+                            <strong>Contra entrega disponible</strong>
+                            <span>Pagas cuando recibes tu pedido</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge__icon">💬</span>
+                        <div>
+                            <strong>Atención directa</strong>
+                            <span>Hablamos por WhatsApp contigo</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge__icon">✅</span>
+                        <div>
+                            <strong>Producto verificado</strong>
+                            <span>Revisamos calidad antes de enviar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón principal -->
+                <button type="button" id="btnEnviarWhatsApp" class="btn-whatsapp-order">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Pedir por WhatsApp
+                </button>
+
+                <!-- Info de pago -->
+                <div class="payment-info">
+                    <p class="payment-title">Pago</p>
+                    <p class="payment-text">El pago se coordinará por WhatsApp (BCP / Yape / Plin / Interbank)</p>
+                </div>
+
+                <!-- Botón vaciar -->
+                <button id="btnVaciarCarrito" class="btn-vaciar-carrito" style="display: none;">
+                    Vaciar carrito
+                </button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer minimal -->
+    <footer class="footer">
+        <p>&copy; 2026 Rexofit. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- MODAL ELIMINAR PRODUCTO -->
+    <div id="deleteModal" class="modal-del" hidden>
+        <div class="modal-del__backdrop"></div>
+        <div class="modal-del__panel" role="dialog" aria-modal="true">
+            <h3>¿Quieres borrar el producto?</h3>
+            <p>El producto se quitará de tu carrito.</p>
+            <div class="modal-del__actions">
+                <button id="btnCancelDel" type="button" class="btn-ghost">Cancelar</button>
+                <button id="btnOkDel" type="button" class="btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- SCRIPTS -->
+    <script src="js/carrito.js"></script>
+    <script src="js/header.js"></script>
+    <script>
+        // Modal handled by header.js
+
+        // Delivery method toggle
+        (function() {
+            var btnShalom = document.getElementById('btnShalom');
+            var btnContraentrega = document.getElementById('btnContraentrega');
+            var metodoInput = document.getElementById('metodoEntrega');
+            var direccionGroup = document.getElementById('direccionGroup');
+            var agenciaGroup = document.getElementById('agenciaGroup');
+            var contraNote = document.getElementById('contraentregaNote');
+
+            if (!btnShalom || !btnContraentrega) return;
+
+            // Mostrar/ocultar campo "otra agencia"
+            var selectAgencia = document.getElementById('agencia');
+            var otraAgenciaGroup = document.getElementById('otraAgenciaGroup');
+            if (selectAgencia) {
+                selectAgencia.addEventListener('change', function() {
+                    if (otraAgenciaGroup) {
+                        otraAgenciaGroup.style.display = this.value === 'otra' ? 'block' : 'none';
+                    }
+                });
+            }
+
+            btnShalom.addEventListener('click', function() {
+                btnShalom.classList.add('active');
+                btnContraentrega.classList.remove('active');
+                metodoInput.value = 'shalom';
+                direccionGroup.style.display = 'block';
+                agenciaGroup.style.display = 'flex';
+                if (contraNote) contraNote.style.display = 'none';
+                actualizarEnvio();
+            });
+
+            btnContraentrega.addEventListener('click', function() {
+                btnContraentrega.classList.add('active');
+                btnShalom.classList.remove('active');
+                metodoInput.value = 'contraentrega';
+                direccionGroup.style.display = 'block';
+                agenciaGroup.style.display = 'none';
+                if (contraNote) contraNote.style.display = 'flex';
+                actualizarEnvio();
+            });
+        })();
+    </script>
+</body>
+</html>

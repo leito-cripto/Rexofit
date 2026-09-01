@@ -1,0 +1,594 @@
+/* ========================================
+   ESTILOS PÁGINA DE CARRITO - DISEÑO MINIMAL
+   ======================================== */
+
+/* Header simplificado */
+.checkout-header {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+.checkout-header h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+}
+
+.checkout-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL (DOS COLUMNAS)
+   ======================================== */
+
+.carrito-page-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+/* ========================================
+   COLUMNA IZQUIERDA: FORMULARIO
+   ======================================== */
+
+.checkout-form-section {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+}
+
+.checkout-form-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111;
+    margin: 0 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Formulario */
+.pedido-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px; /* Mínimo 16px — evita zoom automático en iOS */
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+    background: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+/* Delivery toggle buttons */
+.delivery-toggle {
+    display: flex;
+    gap: 12px;
+}
+
+.delivery-btn {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delivery-btn:hover {
+    border-color: #999;
+    background: #f5f5f5;
+}
+
+.delivery-btn.active {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+}
+
+/* ========================================
+   COLUMNA DERECHA: RESUMEN
+   ======================================== */
+
+.checkout-summary-section {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    height: fit-content;
+    position: sticky;
+    top: 24px;
+}
+
+.checkout-summary-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111;
+    margin: 0 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Lista de productos */
+.checkout-items-list {
+    margin-bottom: 24px;
+}
+
+.checkout-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.checkout-item:last-child {
+    border-bottom: none;
+}
+
+.checkout-item-image {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f5f5f5;
+    flex-shrink: 0;
+}
+
+.checkout-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.checkout-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.checkout-item-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111;
+    margin: 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.checkout-item-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 8px;
+}
+
+.cart-color-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.18);
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.checkout-item-qty {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.checkout-item-price {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.checkout-item-subtotal {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111;
+}
+
+/* Carrito vacío */
+.carrito-vacio {
+    text-align: center;
+    color: #888;
+    padding: 40px 20px;
+    font-size: 0.95rem;
+}
+
+.carrito-vacio a {
+    color: #111;
+    text-decoration: underline;
+}
+
+/* Resumen */
+.checkout-resumen {
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    margin-top: 8px;
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.resumen-item span:first-child {
+    color: #666;
+}
+
+.resumen-item .valor {
+    color: #111;
+    font-weight: 500;
+}
+
+.resumen-item.total {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.resumen-item.total span:first-child {
+    color: #111;
+    font-weight: 600;
+}
+
+.resumen-item.total .valor {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp-order {
+    width: 100%;
+    padding: 16px 24px;
+    background: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 20px;
+}
+
+.btn-whatsapp-order:hover {
+    background: #1ebe5d;
+    transform: translateY(-1px);
+}
+
+.btn-whatsapp-order:active {
+    transform: translateY(0);
+}
+
+/* Info de pago */
+.payment-info {
+    margin-top: 24px;
+    padding: 16px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.payment-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #111;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.payment-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Botón vaciar */
+.btn-vaciar-carrito {
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+    background: transparent;
+    color: #ff0000;
+    border: 1px solid #f70000;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-vaciar-carrito:hover {
+    border-color: #e90000;
+    color: #ff0000;
+}
+
+/* ========================================
+   RESPONSIVIDAD
+   ======================================== */
+
+@media (max-width: 900px) {
+    .carrito-page-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .checkout-summary-section {
+        position: static;
+        order: -1;
+    }
+
+    .checkout-form-section,
+    .checkout-summary-section {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-header {
+        padding: 32px 16px 24px;
+    }
+
+    .carrito-page-container {
+        padding: 0 12px 40px;
+    }
+
+    .checkout-form-section,
+    .checkout-summary-section {
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+
+    .delivery-toggle {
+        flex-direction: column;
+    }
+
+    .checkout-item {
+        gap: 12px;
+    }
+
+    .checkout-item-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn-whatsapp-order {
+        padding: 14px 20px;
+    }
+}
+
+
+/* ========================================
+   CONTROLES DE CANTIDAD EN CARRITO
+   ======================================== */
+
+.checkout-item-qty-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.qty-ctrl-btn {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    background: #fafafa;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    line-height: 1;
+}
+
+.qty-ctrl-btn:hover {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+}
+
+.qty-ctrl-num {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111;
+    min-width: 20px;
+    text-align: center;
+}
+
+.qty-max-msg {
+    font-size: 0.75rem;
+    color: #e53935;
+    font-weight: 500;
+}
+
+/* ========================================
+   GARANTÍAS DE CONFIANZA
+   ======================================== */
+
+.trust-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #f8fffe;
+    border: 1px solid #d1fae5;
+    border-radius: 10px;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.trust-badge__icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.trust-badge div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.trust-badge strong {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #065f46;
+}
+
+.trust-badge span {
+    font-size: 0.78rem;
+    color: #6b7280;
+}
+
+/* Nota contra entrega */
+.contraentrega-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    color: #92400e;
+    font-weight: 500;
+    margin-top: -12px;
+}
+
+/* ========================================
+   SELECTOR DE AGENCIA
+   ======================================== */
+
+#agenciaGroup select {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    background: #fafafa;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+}
+
+#agenciaGroup select:focus {
+    outline: none;
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(17,17,17,0.08);
+    background-color: #fff;
+}
+
+/* ========================================
+   MENSAJES DE ENVÍO GRATIS
+   ======================================== */
+
+.envio-gratis-msg {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #065f46;
+    background: #d1fae5;
+    border: 1px solid #6ee7b7;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: -4px;
+    margin-bottom: 4px;
+    text-align: center;
+    animation: fadeInMsg 0.3s ease;
+}
+
+.envio-incentivo-msg {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #92400e;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: -4px;
+    margin-bottom: 4px;
+    text-align: center;
+    animation: fadeInMsg 0.3s ease;
+}
+
+@keyframes fadeInMsg {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Nota envío gratis bajo selector agencia */
+.agencia-envio-note {
+    font-size: 0.8rem;
+    color: #065f46;
+    background: #d1fae5;
+    border: 1px solid #6ee7b7;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 500;
+}

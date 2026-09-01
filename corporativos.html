@@ -1,0 +1,856 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T2JZ6T3T');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYEP8DF0RK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GYEP8DF0RK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Corporativos | Rexofit</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* =============================================
+           CORPORATE PAGE - Scoped Styles
+           ============================================= */
+        body[data-pagina="corporativos"] {
+            padding: 0;
+            background: #fff;
+        }
+
+        body[data-pagina="corporativos"] main {
+            display: block;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .corp-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .corp-hero__content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .corp-hero__title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #111;
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .corp-hero__text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .corp-hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            width: fit-content;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .corp-hero__cta:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .corp-hero__cta svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .corp-hero__image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border-radius: 16px;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .corp-hero__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .corp-hero__image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Section Title */
+        .corp-section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111;
+            text-align: center;
+            margin: 0 0 40px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Uses/Occasions Section */
+        .corp-uses {
+            padding: 60px 40px;
+            background: #fafafa;
+        }
+
+        .corp-uses__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .corp-uses-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+        }
+
+        .corp-use-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .corp-use-card__image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .corp-use-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .corp-use-card__image-placeholder {
+            color: #999;
+            font-size: 13px;
+        }
+
+        .corp-use-card__name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111;
+            margin: 0;
+        }
+
+        /* Clients Section - Empty */
+        .corp-clients {
+            padding: 60px 40px;
+            background: #fff;
+        }
+
+        .corp-clients__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .corp-clients__placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            border: 2px dashed #e0e0e0;
+            border-radius: 12px;
+            color: #999;
+            font-size: 14px;
+            background: #fafafa;
+        }
+
+        /* Benefits Section */
+        .corp-benefits {
+            padding: 60px 40px;
+            background: #fafafa;
+        }
+
+        .corp-benefits__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .corp-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .corp-benefit-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .corp-benefit-card__icon {
+            width: 48px;
+            height: 48px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .corp-benefit-card__icon svg {
+            width: 24px;
+            height: 24px;
+            color: #111;
+        }
+
+        .corp-benefit-card__title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+            margin: 0;
+        }
+
+        .corp-benefit-card__text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Catalogs Section */
+        .corp-catalogs {
+            padding: 60px 40px;
+            background: #fff;
+        }
+
+        .corp-catalogs__inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .corp-catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .corp-catalog-card {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .corp-catalog-card__title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+            margin: 0;
+        }
+
+        .corp-catalog-card__text {
+            font-size: 13px;
+            color: #777;
+            margin: 0;
+        }
+
+        .corp-catalog-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .corp-catalog-btn:hover {
+            background: #333;
+        }
+
+        .corp-catalog-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Contact Section */
+        .corp-contact {
+            padding: 60px 40px;
+            background: #111;
+            color: #fff;
+        }
+
+        .corp-contact__inner {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .corp-contact__title {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .corp-contact__text {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .corp-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .corp-whatsapp-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+        }
+
+        .corp-whatsapp-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .corp-hero {
+                gap: 40px;
+                padding: 60px 30px;
+            }
+
+            .corp-uses-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .corp-hero {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .corp-hero__content {
+                align-items: center;
+            }
+
+            .corp-hero__title {
+                font-size: 36px;
+            }
+
+            .corp-hero__image {
+                order: -1;
+                aspect-ratio: 16/9;
+            }
+
+            .corp-section-title {
+                font-size: 26px;
+            }
+
+            .corp-uses, .corp-benefits, .corp-catalogs, .corp-contact {
+                padding: 40px 20px;
+            }
+
+            .corp-uses-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .corp-benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .corp-catalog-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .corp-contact__title {
+                font-size: 26px;
+            }
+
+            .corp-contact__text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .corp-hero__title {
+                font-size: 28px;
+            }
+
+            .corp-uses-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .corp-use-card__name {
+                font-size: 12px;
+            }
+        }
+
+        /* FLOATING SIDE DOTS NAVIGATION */
+        .side-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 8000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .side-nav__dot {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            background: #fff;
+            display: block;
+            text-decoration: none;
+            position: relative;
+            overflow: visible;
+        }
+        .side-nav__dot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .side-nav__dot:hover,
+        .side-nav__dot.active {
+            border-color: #111;
+            transform: scale(1.15);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+        }
+        
+        /* Tooltip al pasar por los dots */
+        .side-nav__dot::after {
+            content: attr(data-label);
+            position: absolute;
+            right: calc(100% + 10px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: #111;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            padding: 5px 10px;
+            border-radius: 6px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            transform: translateY(-50%) translateX(4px);
+            letter-spacing: 0.3px;
+        }
+
+        .side-nav__dot:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+@media (max-width: 768px) { .side-nav { display: none; } }
+    </style>
+    <link rel="icon" type="image/png" href="/img/logo-negro.png">
+    <!-- SEO -->
+    <meta name="description" content="Pedidos corporativos de ropa deportiva para empresas, colegios, equipos y eventos en Perú. Cotiza por WhatsApp.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rexofit.com/corporativos">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pedidos Corporativos | Rexofit">
+    <meta property="og:description" content="Pedidos corporativos de ropa deportiva para empresas, colegios, equipos y eventos en Perú. Cotiza por WhatsApp.">
+    <meta property="og:url" content="https://rexofit.com/corporativos">
+    <meta property="og:image" content="https://rexofit.com/img/logo-negro.png">
+    <meta property="og:site_name" content="Rexofit">
+</head>
+<body data-pagina="corporativos">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2JZ6T3T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <img src="/img/logo-blanco.jpeg" class="brand-logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span style="display:none; font-size:22px; font-weight:700; color:#111;">Rexofit</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">INICIO</a>
+                <a href="#" class="nav-link" id="categoriasLink">TIENDA</a>
+                <a href="revendedores.html" class="nav-link">REVENDEDORES</a>
+                <a href="empresas.html" class="nav-link active">EMPRESAS</a>
+            </nav>
+            <a href="carrito.html" class="cart-link" aria-label="Carrito">
+                <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Categories Modal -->
+    <div class="categories-modal" id="categoriesModal" hidden>
+        <div class="categories-modal__backdrop" id="categoriesBackdrop"></div>
+        <div class="categories-modal__panel">
+            <button class="categories-modal__close" id="categoriesClose" aria-label="Cerrar">&times;</button>
+            <h3 class="categories-modal__title">Tienda</h3>
+            <div class="categories-modal__list">
+                <a href="polos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-polos.webp" alt="Polos" class="categories-modal__img">
+                    <span>POLOS</span>
+                </a>
+                <a href="buzos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" class="categories-modal__img">
+                    <span>BUZOS</span>
+                </a>
+                <a href="zapatos-mujer.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" class="categories-modal__img">
+                    <span>SANDALIAS</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="corp-hero">
+            <div class="corp-hero__content">
+                <h1 class="corp-hero__title">Pedidos corporativos Rexofit</h1>
+                <p class="corp-hero__text">Creamos buzos, polos y prendas personalizadas para colegios, empresas, promociones, eventos y equipos. Trabajamos pedidos al por mayor con enfoque en calidad, imagen de marca y atención directa por WhatsApp para todo el Perú.</p>
+                <a href="https://wa.me/51987753006?text=Hola,%20quiero%20una%20cotización%20para%20pedidos%20corporativos" class="corp-hero__cta" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.162-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Solicitar cotización por WhatsApp
+                </a>
+            </div>
+            <div class="corp-hero__image">
+                <img src="/img/corporativos/hero-corporativo.png" alt="Pedidos corporativos Rexofit">
+            </div>
+        </section>
+
+        <!-- Ideal para Section -->
+        <section class="corp-uses">
+            <div class="corp-uses__inner">
+                <h2 class="corp-section-title">Ideal para</h2>
+                <div class="corp-uses-grid">
+                    <div class="corp-use-card">
+                        <div class="corp-use-card__image">
+                            <img src="/img/corporativos/empresas.png" alt="Empresas">
+                        </div>
+                        <p class="corp-use-card__name">Empresas</p>
+                    </div>
+                    <div class="corp-use-card">
+                        <div class="corp-use-card__image">
+                            <img src="/img/corporativos/equipos-deportivos.jpg" alt="Equipos deportivos">
+                        </div>
+                        <p class="corp-use-card__name">Equipos deportivos</p>
+                    </div>
+                    <div class="corp-use-card">
+                        <div class="corp-use-card__image">
+                            <img src="/img/corporativos/escuela.png" alt="Colegios y escuelas">
+                        </div>
+                        <p class="corp-use-card__name">Colegios</p>
+                    </div>
+                    <div class="corp-use-card">
+                        <div class="corp-use-card__image">
+                            <img src="/img/corporativos/eventos.jpg" alt="Eventos">
+                        </div>
+                        <p class="corp-use-card__name">Eventos</p>
+                    </div>
+                    <div class="corp-use-card">
+                        <div class="corp-use-card__image">
+                            <img src="/img/corporativos/promociones.jpg" alt="Promociones">
+                        </div>
+                        <p class="corp-use-card__name">Promociones</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section - Empty -->
+        <section class="corp-clients">
+            <div class="corp-clients__inner">
+                <h2 class="corp-section-title">Algunos de nuestros clientes</h2>
+                <div class="corp-clients__placeholder">
+                    Próximamente
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="corp-benefits">
+            <div class="corp-benefits__inner">
+                <h2 class="corp-section-title">Por qué trabajar con Rexofit</h2>
+                <div class="corp-benefits-grid">
+                    <div class="corp-benefit-card">
+                        <div class="corp-benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="corp-benefit-card__title">Calidad y presentación</h3>
+                        <p class="corp-benefit-card__text">Prendas pensadas para proyectar una imagen profesional y duradera.</p>
+                    </div>
+                    <div class="corp-benefit-card">
+                        <div class="corp-benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3 class="corp-benefit-card__title">Personalización</h3>
+                        <p class="corp-benefit-card__text">Adaptamos colores, estampados y detalles según la necesidad del cliente.</p>
+                    </div>
+                    <div class="corp-benefit-card">
+                        <div class="corp-benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="corp-benefit-card__title">Atención directa</h3>
+                        <p class="corp-benefit-card__text">Cotización rápida y coordinación clara por WhatsApp para todo el Perú.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalogs Section -->
+        <section class="corp-catalogs">
+            <div class="corp-catalogs__inner">
+                <h2 class="corp-section-title">Catálogos corporativos</h2>
+                <div class="corp-catalog-grid">
+                    <div class="corp-catalog-card">
+                        <h3 class="corp-catalog-card__title">Catálogo de buzos corporativos</h3>
+                        <p class="corp-catalog-card__text">Descubre nuestras opciones de buzos personalizados para tu empresa</p>
+                        <a href="/pdf/catalogo-buzos-corporativos.pdf" target="_blank" rel="noopener noreferrer" class="corp-catalog-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Ver catálogo
+                        </a>
+                    </div>
+                    <div class="corp-catalog-card">
+                        <h3 class="corp-catalog-card__title">Catálogo de polos corporativos</h3>
+                        <p class="corp-catalog-card__text">Explora nuestras variedades de polos para pedidos al por mayor</p>
+                        <a href="/pdf/catalogo-polos-corporativos.pdf" target="_blank" rel="noopener noreferrer" class="corp-catalog-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Ver catálogo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="corp-contact">
+            <div class="corp-contact__inner">
+                <h2 class="corp-contact__title">Contáctanos</h2>
+                <p class="corp-contact__text">Si necesitas una cotización para tu colegio, empresa, equipo o evento, escríbenos directamente y te ayudaremos a definir la mejor opción para tu pedido.</p>
+                <a href="https://wa.me/51987753006?text=Hola,%20quiero%20una%20cotización%20para%20pedidos%20corporativos" class="corp-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.162-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Solicitar cotización por WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Diseño y calidad en cada prenda que acompaña tu día</h2>
+                <div class="footer-social">
+                    <p>Síguenos</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="TikTok">TikTok</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                    </div>
+                </div>
+                <p class="footer-copy">© 2026 Rexofit. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>EXPLORAR</h4>
+                    <a href="index.html">Categorías</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-col">
+                    <h4>MI CUENTA</h4>
+                    <a href="carrito.html">Mis pedidos</a>
+                    <a href="#">Mis datos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contactanos</h4>
+                    <a href="/contacto">Atención</a>
+                    <a href="#">Cambios y devoluciones</a>
+                    <a href="#">Términos</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a class="claims" href="#">Libro de Reclamaciones</a>
+            <div class="payments">
+                <span class="pay">VISA</span>
+                <span class="pay">PLIN</span>
+                <span class="pay">YAPE</span>
+                <span class="pay">BCP</span>
+                <span class="pay">Interbank</span>
+            </div>
+        </div>
+        <div class="footer-watermark" aria-hidden="true">REXOFIT</div>
+    </footer>
+
+   
+
+    <script src="js/header.js"></script>
+    <script>
+    // Categories Modal Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('categoriesModal');
+        var link = document.getElementById('categoriasLink');
+        var close = document.getElementById('categoriesClose');
+        var backdrop = document.getElementById('categoriesBackdrop');
+
+        if (link && modal) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.hidden = false;
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (close && modal) {
+            close.addEventListener('click', function() {
+                modal.hidden = true;
+                document.body.style.overflow = '';
+            });
+        }
+
+        if (backdrop && modal) {
+            backdrop.addEventListener('click', function() {
+                modal.hidden = true;
+                document.body.style.overflow = '';
+            });
+        }
+    });
+    </script>
+
+    <!-- FLOATING SIDE DOTS NAVIGATION -->
+    <nav class="side-nav" aria-label="Categorías">
+        <a href="index.html" class="side-nav__dot" title="Inicio" data-label="Inicio">
+            <img src="/img/hero-section.webp" alt="Inicio">
+        </a>
+        <a href="polos.html" class="side-nav__dot" title="Polos" data-label="Polos">
+            <img src="/img/categorias/categoria-polos.webp" alt="Polos">
+        </a>
+        <a href="buzos.html" class="side-nav__dot" title="Buzos" data-label="Buzos">
+            <img src="/img/categorias/categoria-buzos.webp" alt="Buzos">
+        </a>
+        <a href="zapatos-mujer.html" class="side-nav__dot" title="Sandalias" data-label="Sandalias">
+            <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias">
+        </a>
+    </nav>
+</body>
+</html>

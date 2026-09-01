@@ -1,0 +1,1181 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T2JZ6T3T');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYEP8DF0RK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GYEP8DF0RK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandalias | Rexofit</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos compartidos entre catálogos -->
+    <link rel="stylesheet" href="css/catalog-shared.css">
+    <style>
+        /* Sandalias Page — estilos exclusivos de esta página */
+        
+        /* Page Container */
+        .zapatos-main {
+            min-height: 100vh;
+            padding: 80px 40px 60px;
+        }
+
+        .zapatos-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .zapatos-header__title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .zapatos-header__subtitle {
+            font-size: 15px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Product Grid - 5 columns centered */
+
+        /* Product Card */
+        .zapato-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .zapato-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        /* Card Media */
+        .zapato-card__media {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .zapato-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Color Palette Dots */
+        .zapato-card__colors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px 0 2px;
+            background: #fff;
+        }
+
+        .zapato-color-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex: 0 0 14px;
+            border: 1px solid rgba(0,0,0,0.18);
+            box-sizing: border-box;
+        }
+
+        /* Card Info */
+        .zapato-card__info {
+            padding: 14px 12px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .zapato-card__name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111;
+            margin: 0 0 4px;
+        }
+
+        .zapato-card__type {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+
+        .zapato-card__price {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin: 4px 0 0;
+        }
+
+
+        /* ===== BADGE OFERTA ===== */
+        .card-badge-oferta {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e11d48;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            z-index: 3;
+            pointer-events: none;
+            /* === EDITAR AQUÍ: cambia el texto del badge desde el HTML === */
+        }
+
+        /* ===== ESTRELLAS ===== */
+        .card-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            margin: 4px 0 2px;
+        }
+        .card-stars__icons {
+            color: #f59e0b;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .card-stars__count {
+            font-size: 11px;
+            color: #888;
+            margin-left: 2px;
+        }
+        /* Precio tachado (oferta) */
+        .price-strike {
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+            display: block;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        .detail-price-strike {
+            font-size: 16px;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+
+        /* ===== CONTADOR DE STOCK ===== */
+        .stock-counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #b45309;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        .stock-counter__dot {
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: stockPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes stockPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ===== GUÍA DE TALLAS ===== */
+        .size-guide-link {
+            font-size: 12px;
+            color: #6b7280;
+            cursor: pointer;
+            background: none;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 4px 10px;
+            margin-left: auto;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .size-guide-link:hover {
+            border-color: #111;
+            color: #111;
+            background: #f9f9f9;
+        }
+        .detail-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .detail-stars {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #f59e0b;
+        }
+        .detail-stars__count {
+            font-size: 12px;
+            color: #888;
+        }
+        .detail-material {
+            margin-top: 0;
+            padding: 14px 16px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            border-left: 3px solid #e5e7eb;
+        }
+        .detail-material__title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .detail-material__text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .size-guide-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 20000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .size-guide-overlay.active { display: flex; }
+
+        .size-guide-modal {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .size-guide-modal__close {
+            position: absolute;
+            top: 14px; right: 14px;
+            width: 34px; height: 34px;
+            border: none; background: #f5f5f5;
+            border-radius: 50%; font-size: 20px;
+            cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .size-guide-modal h3 {
+            font-size: 20px; font-weight: 700;
+            color: #111; margin: 0 0 6px;
+        }
+        .size-guide-modal p {
+            font-size: 13px; color: #666; margin: 0 0 20px;
+        }
+        .size-guide-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .size-guide-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #111;
+            padding: 10px 12px;
+            text-align: center;
+            border: 1px solid #e8e8e8;
+        }
+        .size-guide-table td {
+            padding: 10px 12px;
+            text-align: center;
+            border: 1px solid #eee;
+            color: #444;
+        }
+        .size-guide-table tr:nth-child(even) td { background: #fafafa; }
+        .size-guide-note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="/img/logo-negro.png">
+    <!-- SEO -->
+    <meta name="description" content="Sandalias y zapatillas de mujer desde S/ 29.90. Modelos elegantes y cómodos. Envío a todo el Perú con Shalom y Olva Courier.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rexofit.com/zapatos-mujer">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sandalias de Mujer | Rexofit">
+    <meta property="og:description" content="Sandalias y zapatillas de mujer desde S/ 29.90. Modelos elegantes y cómodos. Envío a todo el Perú con Shalom y Olva Courier.">
+    <meta property="og:url" content="https://rexofit.com/zapatos-mujer">
+    <meta property="og:image" content="https://rexofit.com/img/logo-negro.png">
+    <meta property="og:site_name" content="Rexofit">
+</head>
+<body data-pagina="zapatos-mujer">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2JZ6T3T"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header container (rendered by JS) -->
+    <header class="navbar-container"></header>
+
+    <!-- Categories Modal (rendered by header.js) -->
+    <div class="categories-modal" id="categoriesModal" hidden>
+        <div class="categories-modal__backdrop" id="categoriesBackdrop"></div>
+        <div class="categories-modal__panel">
+            <button class="categories-modal__close" id="categoriesClose" aria-label="Cerrar">&times;</button>
+            <h3 class="categories-modal__title">Tienda</h3>
+            <div class="categories-modal__list">
+                <a href="polos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-polos.webp" alt="Polos" class="categories-modal__img">
+                    <span>POLOS</span>
+                </a>
+                <a href="buzos.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" class="categories-modal__img">
+                    <span>BUZOS</span>
+                </a>
+                <a href="zapatos-mujer.html" class="categories-modal__item">
+                    <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" class="categories-modal__img">
+                    <span>SANDALIAS</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="zapatos-main">
+        <!-- Product Grid -->
+        <div class="zapatos-grid" id="zapatosGrid">
+            <!-- Products will be rendered by JS -->
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Diseño y calidad en cada prenda que acompaña tu día</h2>
+                <div class="footer-social">
+                    <p>Síguenos</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="TikTok">TikTok</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                    </div>
+                </div>
+                <p class="footer-copy">© 2026 Rexofit. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>EXPLORAR</h4>
+                    <a href="index.html">Categorías</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-col">
+                    <h4>MI CUENTA</h4>
+                    <a href="carrito.html">Mis pedidos</a>
+                    <a href="#">Mis datos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contactanos</h4>
+                    <a href="https://wa.me/51929896007">Atención</a>
+                    <a href="#">Cambios y devoluciones</a>
+                    <a href="#">Términos</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a class="claims" href="#">Libro de Reclamaciones</a>
+            <div class="payments">
+                <span class="pay">VISA</span>
+                <span class="pay">PLIN</span>
+                <span class="pay">YAPE</span>
+                <span class="pay">BCP</span>
+                <span class="pay">Interbank</span>
+            </div>
+        </div>
+        <div class="footer-watermark" aria-hidden="true">REXOFIT</div>
+    </footer>
+
+    <!-- Product Detail Overlay -->
+    <div class="product-detail-overlay" id="productDetail">
+        <div class="product-detail">
+            <button class="product-detail__close" id="detailClose">&times;</button>
+            <div class="product-detail__content">
+                <!-- Main Image Area -->
+                <div class="product-detail__main-area">
+                    <!-- Main Image -->
+                    <div class="product-detail__main">
+                        <img id="detailMainImg" src="" alt="Product Image">
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="product-detail__thumbs" id="detailThumbs"></div>
+                </div>
+                <!-- Product Info -->
+                <div class="product-detail__info">
+
+                    <!-- 1. Título y tipo -->
+                    <h1 class="product-detail__title" id="detailTitle">Zapato</h1>
+                    <p class="product-detail__color" id="detailColor">Tipo</p>
+
+                    <!-- 2. Estrellas + Stock en una fila -->
+                    <div class="detail-meta-row">
+                        <div class="detail-stars">
+                            ★★★★★
+                            <span class="detail-stars__count">(183 reseñas)</span>
+                        </div>
+                        <!-- CONTADOR DE STOCK: edita el número aquí -->
+                        <div class="stock-counter" id="zapatoStockCounter">
+                            <span class="stock-counter__dot"></span>
+                            Solo quedan <strong><span id="zapatoStockNum">4</span></strong> pares
+                        </div>
+                    </div>
+
+                    <!-- 3. Precio -->
+                    <div style="display:flex;align-items:baseline;gap:10px;margin:4px 0;">
+                        <span class="detail-price-strike" id="detailPriceStrike">S/ 49.90</span>
+                        <p class="product-detail__price" id="detailPrice" style="font-size:26px;font-weight:700;color:#111;margin:0;">S/ 39.90</p>
+                    </div>
+
+                    <!-- 4. Paleta de colores -->
+                    <div class="product-detail__palette">
+                        <span class="product-detail__palette-label">Color:</span>
+                        <div id="detailPalette"></div>
+                    </div>
+
+                    <!-- 5. Tallas + Guía (renderizadas por JS) -->
+                    <div class="product-detail__sizes" id="sizesContainer">
+                        <span class="product-detail__sizes-label">Talla:</span>
+                        <!-- Sizes injected by JS -->
+                    </div>
+
+                    <!-- 6. Cantidad -->
+                    <div class="product-detail__quantity">
+                        <span class="product-detail__quantity-label">Cantidad:</span>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" id="qtyMinus">-</button>
+                            <input type="number" class="quantity-value" id="qtyValue" value="1" min="1">
+                            <button class="quantity-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 7. Botón agregar -->
+                    <button class="add-to-cart-btn" id="addToCart">Agregar al Carrito</button>
+
+                    <!-- 8. Descripción de material -->
+                    <div class="detail-material">
+                        <p class="detail-material__title">Material</p>
+                        <p class="detail-material__text" id="detailDescription">Elegante y cómodo calzado femenino diseñado para uso diario.</p>
+                    </div>
+
+                    <!-- Recomendados Section -->
+                    <div class="product-detail__recomendados">
+                        <h3 class="product-detail__recomendados-title">Recomendados</h3>
+                        <div class="product-detail__recomendados-grid" id="recomendadosGrid">
+                            <!-- Will be populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/header.js"></script>
+    <script src="js/carrito.js"></script>
+    <script>
+        // Product Data - Sandalias from sandalias folders
+        // Each folder = one product with multiple images
+        const productosZapatos = {
+            'doble-tira-confort': {
+                id: 'doble-tira-confort',
+                name: 'Sandalia Mujer Doble Tira Confort',
+                type: 'Sandalia',
+                price: 39.90,
+                oldPrice: 49.90,
+                description: 'Sandalia para mujer con diseño moderno de doble tira que brinda un ajuste cómodo y seguro al caminar. Su plataforma ligera aporta estabilidad y descanso durante el día, ideal para uso diario, paseos o salidas casuales. Perfecta para combinar estilo, comodidad y practicidad en cada paso. 👡✨',
+                colors: [
+                    { name: 'Rosa',     hex: '#d8a7b1', imageIndex: 0, sizes: { '35': true, '36': true, '37': true, '38': true, '39': false } },
+                    { name: 'Morado',   hex: '#8b7bb8', imageIndex: 1, sizes: { '35': true, '36': false, '37': false, '38': false, '39': true } },
+                    { name: 'Amarillo', hex: '#d9b44a', imageIndex: 2, sizes: { '35': false, '36': false, '37': false, '38': true, '39': true } },
+                    { name: 'Dorado',   hex: '#c9a227', imageIndex: 3, sizes: { '35': false, '36': false, '37': true, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Doble Tira Confort/sandalia-mujer-verano-15.jpeg',
+                    '/img/sandalias/Sandalia Mujer Doble Tira Confort/sandalia-mujer-verano-17.jpeg',
+                    '/img/sandalias/Sandalia Mujer Doble Tira Confort/sandalia-mujer-verano-19.jpeg',
+                    '/img/sandalias/Sandalia Mujer Doble Tira Confort/sandalia-mujer-verano-22.jpeg'
+                ]
+            },
+            'estilo-casual-elegance': {
+                id: 'estilo-casual-elegance',
+                name: 'Sandalia Mujer Estilo Casual Elegance',
+                type: 'Sandalia',
+                price: 29.90,
+                oldPrice: 39.90,
+                description: 'Sandalia para mujer con diseño moderno y cómodo, ideal para acompañar tus actividades del día a día. Cuenta con correa ajustable que brinda mayor seguridad al caminar y una suela ligera que aporta estabilidad y confort. Perfecta para uso diario, paseos o salidas casuales, combinando estilo y practicidad en cada paso. 👡✨',
+                colors: [
+                    { name: 'Rosa',          hex: '#FDA5D5', imageIndex: 0, sizes: { '35': false, '36': false, '37': true, '38': false, '39': false } },
+                    { name: 'Morado oscuro', hex: '#1E1A4D', imageIndex: 1, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Estilo Casual Elegance/sandalia-mujer-verano-13.jpeg',
+                    '/img/sandalias/Sandalia Mujer Estilo Casual Elegance/sandalia-mujer-verano-16.jpeg'
+                ]
+            },
+            'estilo-mk-urbano': {
+                id: 'estilo-mk-urbano',
+                name: 'Sandalia Mujer Estilo MK Urbano',
+                type: 'Sandalia',
+                price: 39.90,
+                oldPrice: 49.90,
+                description: 'Sandalia para mujer con diseño moderno estampado, ideal para quienes buscan comodidad y estilo en su día a día. Su suela ligera y resistente brinda estabilidad al caminar, perfecta para salidas casuales, paseos o uso diario, combinando moda y confort en cada paso. 👡✨',
+                colors: [
+                    { name: 'Negro',  hex: '#1a1a1a', imageIndex: 0, sizes: { '35': false, '36': true, '37': true, '38': false, '39': false } },
+                    { name: 'Blanco', hex: '#F3F4F6', imageIndex: 1, sizes: { '35': false, '36': true, '37': true, '38': false, '39': true } },
+                    { name: 'Marrón', hex: '#733E0A', imageIndex: 2, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Estilo MK Urbano/sandalia-mujer-verano-02.jpeg',
+                    '/img/sandalias/Sandalia Mujer Estilo MK Urbano/sandalia-mujer-verano-08.jpeg',
+                    '/img/sandalias/Sandalia Mujer Estilo MK Urbano/sandalia-mujer-verano-54.jpeg'
+                ]
+            },
+            'floral-elegance': {
+                id: 'floral-elegance',
+                name: 'Sandalia Mujer Floral Elegance',
+                type: 'Sandalia',
+                price: 29.90,
+                oldPrice: 39.90,
+                description: 'Sandalia para mujer con diseño moderno y delicado, pensada para brindar comodidad y estilo en cada paso. Ideal para salidas, reuniones o uso diario, ofreciendo un ajuste cómodo y un look femenino que realza cualquier outfit. 👡✨',
+                colors: [
+                    { name: 'Rosa',   hex: '#FC9C9C', imageIndex: 0, sizes: { '35': true, '36': true, '37': false, '38': false, '39': false } },
+                    { name: 'Blanco', hex: '#F1F5F9', imageIndex: 1, sizes: { '35': true, '36': true, '37': true, '38': true, '39': true } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Floral Elegance/sandalia-mujer-verano-03.jpeg',
+                    '/img/sandalias/Sandalia Mujer Floral Elegance/sandalia-mujer-verano-04.jpeg'
+                ]
+            },
+            'glam': {
+                id: 'glam',
+                name: 'Sandalia Mujer Glam',
+                type: 'Sandalia',
+                price: 29.90,
+                oldPrice: 39.90,
+                description: 'Sandalia para mujer con diseño elegante y detalle decorativo que aporta un estilo femenino y moderno. Ideal para uso diario, salidas o reuniones casuales, ofreciendo comodidad y ligereza al caminar. Perfecta para complementar diferentes outfits con un toque de estilo y delicadeza. 👡✨',
+                colors: [
+                    { name: 'Negro',       hex: '#0A0A0A', imageIndex: 0, sizes: { '35': true, '36': true, '37': true, '38': false, '39': true } },
+                    { name: 'Blanco',      hex: '#F5F5F5', imageIndex: 1, sizes: { '35': true, '36': false, '37': true, '38': false, '39': false } },
+                    { name: 'blanquinegro',hex: '#CAD5E2', imageIndex: 2, sizes: { '35': false, '36': true, '37': true, '38': false, '39': true } },
+                    { name: 'arcoiris',    hex: '#FF6467', imageIndex: 3, sizes: { '35': false, '36': false, '37': true, '38': true, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Glam/sandalia-mujer-verano-09.jpeg',
+                    '/img/sandalias/Sandalia Mujer Glam/sandalia-mujer-verano-10.jpeg',
+                    '/img/sandalias/Sandalia Mujer Glam/sandalia-mujer-verano-33.jpeg',
+                    '/img/sandalias/Sandalia Mujer Glam/sandalia-mujer-verano-40.jpeg'
+                ]
+            },
+            'lazo-floral': {
+                id: 'lazo-floral',
+                name: 'Sandalia Mujer Lazo Floral',
+                type: 'Sandalia',
+                price: 29.90,
+                oldPrice: 39.90,
+                description: 'Sandalia para mujer con diseño delicado y detalle de lazo decorativo que aporta un estilo femenino y moderno. Su suela cómoda brinda estabilidad al caminar, ideal para uso diario, paseos o salidas casuales. Perfecta para complementar diferentes outfits con comodidad, estilo y un toque elegante. 👡🌸✨',
+                colors: [
+                    { name: 'Blanco', hex: '#E5E7EB', imageIndex: 0, sizes: { '35': false, '36': false, '37': false, '38': false, '39': true } },
+                    { name: 'Piel',   hex: '#FFCCD3', imageIndex: 1, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } },
+                    { name: 'negro',  hex: '#09090B', imageIndex: 2, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Lazo Floral/sandalia-mujer-verano-05.jpeg',
+                    '/img/sandalias/Sandalia Mujer Lazo Floral/sandalia-mujer-verano-06.jpeg',
+                    '/img/sandalias/Sandalia Mujer Lazo Floral/sandalia-mujer-verano-07.jpeg'
+                ]
+            },
+            'perla-chic': {
+                id: 'perla-chic',
+                name: 'Sandalia Mujer Perla Chic',
+                type: 'Sandalia',
+                price: 39.90,
+                oldPrice: 49.90,
+                description: 'Sandalia para mujer con diseño moderno y detalle decorativo de perlas que aporta un estilo elegante y sofisticado. Su suela cómoda permite caminar con mayor estabilidad, ideal para uso diario, salidas o reuniones casuales, combinando confort, estilo y practicidad en cada paso. 👡✨',
+                colors: [
+                    { name: 'Dorado',     hex: '#c0a080', imageIndex: 0, sizes: { '35': true, '36': true, '37': false, '38': true, '39': true } },
+                    { name: 'Negro',      hex: '#1a1a1a', imageIndex: 1, sizes: { '35': false, '36': false, '37': true, '38': true, '39': false } },
+                    { name: 'Beige',      hex: '#d4a574', imageIndex: 2, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } },
+                    { name: 'Crema',      hex: '#e8d5b7', imageIndex: 3, sizes: { '35': true, '36': true, '37': false, '38': false, '39': false } },
+                    { name: 'Blanco',     hex: '#f5f5f5', imageIndex: 4, sizes: { '35': true, '36': false, '37': true, '38': false, '39': false } },
+                    { name: 'Blanco',     hex: '#F5F5F4', imageIndex: 5, sizes: { '35': true, '36': true, '37': false, '38': true, '39': false } },
+                    { name: 'negro claro',hex: '#262626', imageIndex: 6, sizes: { '35': false, '36': true, '37': true, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-24.jpeg',
+                    '/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-25.jpeg',
+                    '/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-29.jpeg',
+                    '/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-30.jpeg',
+                    '/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-35.jpeg',
+                    '/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-36.jpeg',
+                    '/img/sandalias/Sandalia Mujer Perla Chic/sandalia-mujer-verano-37.jpeg'
+                ]
+            },
+            'plataforma-activa': {
+                id: 'plataforma-activa',
+                name: 'Sandalia Mujer Plataforma Activa',
+                type: 'Plataforma',
+                price: 39.90,
+                oldPrice: 49.90,
+                description: 'Sandalia para mujer diseñada para brindar comodidad y soporte durante el día. Su plataforma ligera ayuda a caminar con mayor estabilidad, ideal para actividades diarias, paseos o salidas casuales, ofreciendo confort y practicidad en cada paso. 👡✨',
+                colors: [
+                    { name: 'Negro',      hex: '#1a1a1a', imageIndex: 0, sizes: { '35': true, '36': false, '37': true, '38': false, '39': false } },
+                    { name: 'negroblanco',hex: '#44403B', imageIndex: 1, sizes:{ '35': true, '36': false, '37': true, '38': false, '39': false } },
+                    { name: 'azulmarino', hex: '#0C183C', imageIndex: 2, sizes: { '35': true, '36': false, '37': true, '38': false, '39': true } },
+                    { name: 'Blanco',     hex: '#F5F5F5', imageIndex: 3, sizes: { '35': true, '36': true, '37': true, '38': true, '39': true } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Plataforma Activa/sandalia-mujer-verano-18.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Activa/sandalia-mujer-verano-26.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Activa/sandalia-mujer-verano-51.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Activa/sandalia-mujer-verano-52.jpeg'
+                ]
+            },
+            'plataforma-comfort': {
+                id: 'plataforma-comfort',
+                name: 'Sandalia Mujer Plataforma Comfort',
+                type: 'Plataforma',
+                price: 29.90,
+                oldPrice: 39.90,
+                description: 'Sandalia para mujer con plataforma cómoda, diseñada para caminar con mayor estabilidad y descanso durante el día. Ideal para uso diario, paseos o salidas casuales. Combina comodidad, altura y estilo en un calzado práctico pensado para el bienestar de tus pies. 👡✨',
+                colors: [
+                    { name: 'negro', hex: '#1a1a1a', imageIndex: 0, sizes: { '35': false, '36': false, '37': false, '38': true, '39': false } },
+                    { name: 'Rojo',  hex: '#FB2C36', imageIndex: 1, sizes: { '35': true, '36': false, '37': false, '38': true, '39': true } },
+                    { name: 'azul',  hex: '#193CB8', imageIndex: 2, sizes: { '35': false, '36': false, '37': false, '38': true, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Plataforma Comfort/sandalia-mujer-verano-45.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Comfort/sandalia-mujer-verano-55.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Comfort/sandalia-mujer-verano-56.jpeg'
+                ]
+            },
+            'plataforma-cruzada': {
+                id: 'plataforma-cruzada',
+                name: 'Sandalia Mujer Plataforma Cruzada',
+                type: 'Plataforma',
+                price: 39.90,
+                oldPrice: 49.90,
+                description: 'Sandalia para mujer con diseño de tiras cruzadas que ofrece un estilo moderno y cómodo para el día a día. Su plataforma ligera brinda estabilidad y descanso al caminar, mientras que su ajuste con correa proporciona mayor seguridad. Ideal para uso diario, paseos o salidas casuales, combinando estilo, comodidad y practicidad. 👡✨',
+                colors: [
+                    { name: 'Blanco', hex: '#F5F5F5', imageIndex: 0, sizes: { '35': true, '36': true, '37': false, '38': false, '39': false } },
+                    { name: 'Rojo',   hex: '#FB2C36', imageIndex: 1, sizes: { '35': true, '36': true, '37': true, '38': false, '39': true } },
+                    { name: 'Azul',   hex: '#8b7355', imageIndex: 2, sizes: { '35': false, '36': true, '37': true, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Plataforma Cruzada/sandalia-mujer-verano-46.jpg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Cruzada/sandalia-mujer-verano-47.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Cruzada/sandalia-mujer-verano-48.jpeg'
+                ]
+            },
+            'plataforma-perla': {
+                id: 'plataforma-perla',
+                name: 'Sandalia Mujer Plataforma Perla',
+                type: 'Plataforma',
+                price: 39.90,
+                oldPrice: 49.90,
+                description: 'Sandalia para mujer con plataforma cómoda y diseño elegante, ideal para caminar con mayor estabilidad y confort durante el día. Perfecta para salidas, paseos o eventos casuales, combinando estilo femenino con comodidad en cada paso. 👡✨',
+                colors: [
+                    { name: 'Negro', hex: '#09090B', imageIndex: 0, sizes: { '35': true, '36': true, '37': true, '38': false, '39': true } },
+                    { name: 'Piel',  hex: '#FFE2E2', imageIndex: 1, sizes: { '35': true, '36': true, '37': true, '38': true, '39': true } },
+                    { name: 'Blanco',hex: '#F5F5F4', imageIndex: 2, sizes: { '35': true, '36': false, '37': true, '38': true, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Plataforma Perla/sandalia-mujer-verano-01.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Perla/sandalia-mujer-verano-12.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Perla/sandalia-mujer-verano-23.jpeg'
+                ]
+            },
+            'plataforma-urbana': {
+                id: 'plataforma-urbana',
+                name: 'Sandalia Mujer Plataforma Urbana',
+                type: 'Plataforma',
+                price: 39.90,
+                oldPrice: 41.90,
+                description: 'Sandalia para mujer diseñada para brindar comodidad y estabilidad al caminar. Su plataforma ligera permite mayor descanso durante el día, ideal para uso diario, paseos o salidas casuales, combinando practicidad, estilo y confort. 👡✨',
+                colors: [
+                    { name: 'Morado', hex: '#1C0840', imageIndex: 0, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } },
+                    { name: 'Azul',   hex: '#162456', imageIndex: 1, sizes: { '35': false, '36': false, '37': true, '38': false, '39': false } },
+                    { name: 'Rosa',   hex: '#FFC9C9', imageIndex: 2, sizes: { '35': true, '36': false, '37': true, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Plataforma Urbana/sandalia-mujer-verano-20.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Urbana/sandalia-mujer-verano-21.jpeg',
+                    '/img/sandalias/Sandalia Mujer Plataforma Urbana/sandalia-mujer-verano-28.jpeg'
+                ]
+            },
+            'sport-comfort': {
+                id: 'sport-comfort',
+                name: 'Sandalia Mujer Sport Comfort',
+                type: 'Zapatilla',
+                price: 29.90,
+                oldPrice: 39.90,
+                description: 'Sandalia deportiva para mujer con diseño moderno y correas ajustables que brinda mayor comodidad y seguridad al caminar. Su suela ligera ofrece estabilidad y confort, ideal para uso diario, paseos o actividades casuales, combinando estilo deportivo y practicidad en cada paso. 👡✨',
+                colors: [
+                    { name: 'Rojo',   hex: '#FF0000', imageIndex: 0, sizes: { '35': false, '36': false, '37': true, '38': true, '39': false } },
+                    { name: 'Blanco', hex: '#F4F4F5', imageIndex: 1, sizes: { '35': false, '36': false, '37': true, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Sport Comfort/sandalia-mujer-verano-34.jpeg',
+                    '/img/sandalias/Sandalia Mujer Sport Comfort/sandalia-mujer-verano-53.jpeg'
+                ]
+            },
+            'trenza': {
+                id: 'trenza',
+                name: 'Sandalia Mujer Trenza',
+                type: 'Sandalia',
+                price: 29.90,
+                oldPrice: 39.90,
+                description: 'Sandalia para mujer con diseño moderno de tiras trenzadas y detalles que aportan un toque elegante y femenino. Ideal para uso diario, paseos o salidas casuales, ofreciendo comodidad, estilo y un ajuste ligero para acompañarte durante todo el día. 👡✨',
+                colors: [
+                    { name: 'Piel',       hex: '#FFA38A', imageIndex: 0, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } },
+                    { name: 'Plata',      hex: '#D6D3D1', imageIndex: 1, sizes: { '35': true, '36': false, '37': false, '38': true, '39': false } },
+                    { name: 'Dorado',     hex: '#c0a080', imageIndex: 2, sizes: { '35': true, '36': false, '37': true, '38': true, '39': false } },
+                    { name: 'Rosa',       hex: '#FFC9C9', imageIndex: 3, sizes: { '35': true, '36': true, '37': true, '38': true, '39': false } },
+                    { name: 'Azulmarino', hex: '#132762', imageIndex: 4, sizes: { '35': true, '36': true, '37': true, '38': true, '39': true } },
+                    { name: 'Negro',      hex: '#0A0A0A', imageIndex: 5, sizes: { '35': false, '36': true, '37': true, '38': true, '39': true } },
+                    { name: 'Blanco',     hex: '#F5F5F5', imageIndex: 6, sizes: { '35': false, '36': true, '37': true, '38': false, '39': true } }
+                ],
+                images: [
+                    '/img/sandalias/Sandalia Mujer Trenza/sandalia-mujer-verano-11.jpeg',
+                    '/img/sandalias/Sandalia Mujer Trenza/sandalia-mujer-verano-14.jpeg',
+                    '/img/sandalias/Sandalia Mujer Trenza/sandalia-mujer-verano-27.jpeg',
+                    '/img/sandalias/Sandalia Mujer Trenza/sandalia-mujer-verano-31.jpeg',
+                    '/img/sandalias/Sandalia Mujer Trenza/sandalia-mujer-verano-32.jpeg',
+                    '/img/sandalias/Sandalia Mujer Trenza/sandalia-mujer-verano-39.jpeg',
+                    '/img/sandalias/Sandalia Mujer Trenza/sandalia-mujer-verano-50.jpeg'
+                ]
+            },
+            'zapatilla-comfort-urbano': {
+                id: 'zapatilla-comfort-urbano',
+                name: 'Zapatilla Mujer Comfort Urbano',
+                type: 'Zapatilla',
+                price: 39.90,
+                oldPrice: 49.90,
+                description: 'Zapatilla para mujer con diseño moderno y ajuste práctico que brinda mayor comodidad al caminar. Su suela ligera ofrece estabilidad y confort durante el día, ideal para uso diario, trabajo o salidas casuales, combinando estilo, practicidad y bienestar en cada paso. 👟✨',
+                colors: [
+                    { name: 'Negro', hex: '#1a1a1a', imageIndex: 0, sizes: { '35': true, '36': true, '37': false, '38': true, '39': false } },
+                    { name: 'Piel',  hex: '#FFC9C9', imageIndex: 1, sizes: { '35': true, '36': false, '37': false, '38': true, '39': false } },
+                    { name: 'Rojo',  hex: '#E7180B', imageIndex: 2, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } },
+                    { name: 'Blanco',hex: '#F4F4F5', imageIndex: 3, sizes: { '35': true, '36': false, '37': false, '38': false, '39': true } },
+                    { name: 'Azul',  hex: '#162456', imageIndex: 4, sizes: { '35': true, '36': false, '37': false, '38': false, '39': false } }
+                ],
+                images: [
+                    '/img/sandalias/Zapatilla Mujer Comfort Urbano/sandalia-mujer-verano-41.jpeg',
+                    '/img/sandalias/Zapatilla Mujer Comfort Urbano/sandalia-mujer-verano-42.jpeg',
+                    '/img/sandalias/Zapatilla Mujer Comfort Urbano/sandalia-mujer-verano-43.jpeg',
+                    '/img/sandalias/Zapatilla Mujer Comfort Urbano/sandalia-mujer-verano-44.jpeg',
+                    '/img/sandalias/Zapatilla Mujer Comfort Urbano/sandalia-mujer-verano-49.jpeg'
+                ]
+            }
+        };
+
+        let currentZapato = null;
+        let currentQty = 1;
+        let currentSelectedSize = '';
+        let currentSelectedColor = null;
+        let currentSelectedColorHex = null;
+        let currentSelectedImage = null;
+
+        // Render Product Grid
+        function renderZapatosGrid() {
+            const grid = document.getElementById('zapatosGrid');
+            grid.innerHTML = '';
+
+            Object.keys(productosZapatos).forEach(key => {
+                const producto = productosZapatos[key];
+                const card = document.createElement('div');
+                card.className = 'zapato-card';
+                card.dataset.product = key;
+
+                // Get first 4 colors for preview
+                const previewColors = producto.colors.slice(0, 4);
+                
+                card.innerHTML = `
+                    <div class="zapato-card__media">
+                        <!-- BADGE OFERTA: edita el texto aquí -->
+                        <span class="card-badge-oferta">30% OFF</span>
+                        <img src="${producto.images[0]}" alt="${producto.name}">
+                    </div>
+                    <div class="zapato-card__colors">
+                        ${previewColors.map(color => `
+                            <span 
+                                class="zapato-color-dot" 
+                                style="background: ${color.hex};"
+                                title="${color.name}">
+                            </span>
+                        `).join('')}
+                    </div>
+                    <div class="zapato-card__info">
+                        <h3 class="zapato-card__name">${producto.name}</h3>
+                        <p class="zapato-card__type">${producto.type}</p>
+                        <div class="card-stars"><span class="card-stars__icons">★★★★★</span><span class="card-stars__count">(183)</span></div>
+                        <span class="price-strike">S/ ${producto.oldPrice ? producto.oldPrice.toFixed(2) : '49.90'}</span>
+                        <p class="zapato-card__price">S/ ${producto.price ? producto.price.toFixed(2) : '39.90'}</p>
+                    </div>
+                `;
+
+                card.addEventListener('click', function() {
+                    openZapatoDetail(key);
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        // Open Product Detail Modal
+        function openZapatoDetail(productId) {
+            currentZapato = productosZapatos[productId];
+            const detail = document.getElementById('productDetail');
+            const thumbsContainer = document.getElementById('detailThumbs');
+            
+            // Reset quantity
+            currentQty = 1;
+            document.getElementById('qtyValue').value = currentQty;
+            
+            // Set product info
+            document.getElementById('detailTitle').textContent = currentZapato.name;
+            const priceEl = document.getElementById('detailPrice');
+            const strikeEl = document.getElementById('detailPriceStrike');
+            if (strikeEl) strikeEl.textContent = 'S/ ' + (currentZapato.oldPrice ? currentZapato.oldPrice.toFixed(2) : '49.90');
+            if (priceEl) priceEl.textContent = 'S/ ' + (currentZapato.price ? currentZapato.price.toFixed(2) : '39.90');
+            document.getElementById('detailColor').textContent = currentZapato.type;
+            document.getElementById('detailDescription').textContent = currentZapato.description;
+            document.getElementById('detailMainImg').src = currentZapato.images[0];
+
+            // Set default selected color
+            currentSelectedColor = currentZapato.colors[0]?.name || '';
+            currentSelectedColorHex = currentZapato.colors[0]?.hex || '';
+
+            // Create thumbnails — conectados a color y tallas
+            thumbsContainer.innerHTML = '';
+            currentZapato.images.forEach((img, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'product-thumb' + (index === 0 ? ' active' : '');
+                thumb.innerHTML = `<img src="${img}" alt="Thumbnail ${index + 1}">`;
+                thumb.addEventListener('click', function() {
+                    // Cambiar imagen principal
+                    document.getElementById('detailMainImg').src = img;
+                    document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Buscar el color que corresponde a este thumbnail (por imageIndex)
+                    const matchedColor = currentZapato.colors.find(c => c.imageIndex === index);
+                    if (matchedColor) {
+                        // Actualizar color activo en la paleta
+                        currentSelectedColor = matchedColor.name;
+                        currentSelectedColorHex = matchedColor.hex;
+                        document.querySelectorAll('#detailPalette .palette-color').forEach((btn, i) => {
+                            btn.classList.toggle('active', currentZapato.colors[i] === matchedColor);
+                        });
+                        // Actualizar tallas según el color del thumbnail
+                        renderSizesForColor(matchedColor);
+                    }
+                });
+                thumbsContainer.appendChild(thumb);
+            });
+
+            // Create color palette
+            const paletteContainer = document.getElementById('detailPalette');
+            paletteContainer.innerHTML = '';
+            currentZapato.colors.forEach((color, index) => {
+                const colorBtn = document.createElement('span');
+                colorBtn.className = 'palette-color' + (index === 0 ? ' active' : '');
+                colorBtn.style.background = color.hex;
+                colorBtn.title = color.name;
+
+                colorBtn.addEventListener('click', function () {
+                    document.querySelectorAll('#detailPalette .palette-color').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    this.classList.add('active');
+                    currentSelectedColor = color.name;
+                    currentSelectedColorHex = color.hex;
+
+                    const targetImage = currentZapato.images[color.imageIndex];
+                    if (targetImage) {
+                        document.getElementById('detailMainImg').src = targetImage;
+                        currentSelectedImage = targetImage;
+
+                        const thumbs = document.querySelectorAll('.product-thumb');
+                        thumbs.forEach((thumb, thumbIndex) => {
+                            thumb.classList.toggle('active', thumbIndex === color.imageIndex);
+                        });
+                    }
+
+                    // Actualizar tallas según el color seleccionado
+                    renderSizesForColor(color);
+                });
+
+                paletteContainer.appendChild(colorBtn);
+            });
+
+            // Render sizes dynamically — usa las tallas del color activo
+            function renderSizesForColor(color) {
+                const sizesContainer = document.getElementById('sizesContainer');
+                sizesContainer.innerHTML = '<span class="product-detail__sizes-label">Talla:</span>';
+                sizesContainer.insertAdjacentHTML('beforeend', '<button class="size-guide-link" onclick="document.getElementById(\"sizeGuideOverlay\").classList.add(\"active\")" >Guía de tallas</button>');
+                currentSelectedSize = '';
+                const allSizes = ['35', '36', '37', '38', '39'];
+                const colorSizes = (color && color.sizes) ? color.sizes : { '35': true, '36': true, '37': true, '38': true, '39': true };
+                allSizes.forEach(function(size) {
+                    const available = colorSizes[size] !== false;
+                    const btn = document.createElement('button');
+                    btn.className = 'size-btn' + (available ? '' : ' size-btn--agotado');
+                    btn.dataset.size = size;
+                    btn.textContent = size;
+                    btn.title = available ? '' : 'Agotado';
+                    if (!available) {
+                        btn.disabled = true;
+                    } else {
+                        btn.addEventListener('click', function() {
+                            sizesContainer.querySelectorAll('.size-btn:not(.size-btn--agotado)').forEach(function(b) {
+                                b.classList.remove('active');
+                            });
+                            btn.classList.add('active');
+                            currentSelectedSize = size;
+                        });
+                    }
+                    sizesContainer.appendChild(btn);
+                });
+            }
+
+            // Render tallas del primer color al abrir el detalle
+            renderSizesForColor(currentZapato.colors[0]);
+
+            // Populate Recomendados
+            populateZapatoRecomendados(productId);
+
+            detail.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function populateZapatoRecomendados(currentProductId) {
+            const container = document.getElementById('recomendadosGrid');
+            container.innerHTML = '';
+
+            const allKeys = Object.keys(productosZapatos).filter(key => key !== currentProductId);
+            const shuffled = allKeys.sort(() => Math.random() - 0.5).slice(0, 3);
+
+            shuffled.forEach(key => {
+                const producto = productosZapatos[key];
+                const card = document.createElement('div');
+                card.className = 'recomendado-card';
+                card.innerHTML = `
+                    <div class="recomendado-card__media">
+                        <img src="${producto.images[0]}" alt="${producto.name}">
+                    </div>
+                    <p class="recomendado-card__name">${producto.name}</p>
+                    <p class="recomendado-card__type">${producto.type}</p>
+                `;
+                card.addEventListener('click', function() {
+                    openZapatoDetail(key);
+                });
+                container.appendChild(card);
+            });
+        }
+
+        function closeZapatoDetail() {
+            document.getElementById('productDetail').classList.remove('active');
+            document.body.style.overflow = '';
+            currentZapato = null;
+            currentSelectedSize = '';
+            document.querySelectorAll('.size-btn').forEach(function(b) { b.classList.remove('active'); });
+        }
+
+        // Add to Cart function for Zapatos
+        function agregarAlCarritoZapatos(producto, cantidad) {
+            const cartItem = {
+                id: 'zapato-' + producto.id + '-' + (currentSelectedColor || 'default') + '-' + (currentSelectedSize || 'nosize'),
+                name: producto.name,
+                price: producto.price,
+                size: currentSelectedSize || '',
+                color: currentSelectedColor || '',
+                colorHex: currentSelectedColorHex || '',
+                qty: cantidad,
+                image: currentSelectedImage || producto.images[0]
+            };
+
+            // Get existing cart
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if product exists (no duplicates, sum qty)
+            const existingIndex = cart.findIndex(item => item.id === cartItem.id);
+
+            if (existingIndex >= 0) {
+                // Max 10 per product
+                cart[existingIndex].qty = Math.min(10, cart[existingIndex].qty + cantidad);
+            } else {
+                // Max 20 distinct products
+                if (cart.length >= 20) {
+                    if (typeof showToast === 'function') showToast('Carrito lleno', 'Máximo 20 productos distintos.');
+                    else alert('Tu carrito ya tiene el máximo de 20 productos distintos.');
+                    return;
+                }
+                cart.push(cartItem);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update counter and dispatch event
+            if (typeof actualizarContadorCarrito === 'function') actualizarContadorCarrito();
+            if (typeof dispatchCartUpdate === 'function') dispatchCartUpdate();
+
+            // Show toast using header.js system
+            if (typeof showToast === 'function') {
+                showToast('Producto agregado al carrito', `${currentSelectedColor || ''} - Talla ${currentSelectedSize || ''}`);
+            } else {
+                showCartToast(`${producto.name} agregado al carrito`);
+            }
+        }
+
+        function showCartToast(message) {
+            const toast = document.getElementById('toastCart');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2200);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderZapatosGrid();
+
+            // Deep link: si la URL tiene #producto-id, abrirlo automáticamente
+            const hash = window.location.hash.replace('#', '');
+            if (hash && productosZapatos[hash]) {
+                setTimeout(function() { openZapatoDetail(hash); }, 120);
+            }
+
+            // Size buttons handled dynamically per product in openZapatoDetail
+
+            // Close Detail
+            document.getElementById('detailClose').addEventListener('click', closeZapatoDetail);
+            document.getElementById('productDetail').addEventListener('click', function(e) {
+                if (e.target === this) closeZapatoDetail();
+            });
+
+            // Quantity
+            document.getElementById('qtyMinus').addEventListener('click', function() {
+                if (currentQty > 1) {
+                    currentQty--;
+                    document.getElementById('qtyValue').value = currentQty;
+                }
+            });
+
+            document.getElementById('qtyPlus').addEventListener('click', function() {
+                currentQty++;
+                document.getElementById('qtyValue').value = currentQty;
+            });
+
+            // Add to Cart
+            document.getElementById('addToCart').addEventListener('click', function() {
+                if (currentZapato) {
+                    if (!currentSelectedSize) {
+                        if (typeof showInfoModal === 'function') {
+                            showInfoModal('Selecciona una talla', 'Por favor elige tu talla antes de agregar al carrito.');
+                        } else {
+                            alert('Por favor selecciona una talla.');
+                        }
+                        return;
+                    }
+                    agregarAlCarritoZapatos(currentZapato, currentQty);
+                    closeZapatoDetail();
+                }
+            });
+        });
+    </script>
+
+    <!-- FLOATING SIDE DOTS NAVIGATION -->
+    <nav class="side-nav" aria-label="Categorías">
+        <a href="index.html" class="side-nav__dot" title="Inicio" data-label="Inicio">
+            <img src="/img/hero-section.webp" alt="Inicio">
+        </a>
+        <a href="polos.html" class="side-nav__dot" title="Polos" data-label="Polos">
+            <img src="/img/categorias/categoria-polos.webp" alt="Polos">
+        </a>
+        <a href="buzos.html" class="side-nav__dot" title="Buzos" data-label="Buzos">
+            <img src="/img/categorias/categoria-buzos.webp" alt="Buzos">
+        </a>
+        <a href="zapatos-mujer.html" class="side-nav__dot  active" title="Zapatos para Mujer" data-label="Sandalias">
+            <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Zapatos para Mujer">
+        </a>
+    </nav>
+
+    <!-- GUÍA DE TALLAS MODAL -->
+    <div class="size-guide-overlay" id="sizeGuideOverlay">
+        <div class="size-guide-modal">
+            <button class="size-guide-modal__close" onclick="document.getElementById('sizeGuideOverlay').classList.remove('active')">&times;</button>
+            <h3>📏 Guía de Tallas — Sandalias</h3>
+            <p>Tallas en numeración peruana / latinoamericana.</p>
+            <table class="size-guide-table">
+                <thead>
+                    <tr>
+                        <th>Talla PE</th>
+                        <th>Talla EU</th>
+                        <th>Largo pie (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>35</strong></td><td>35</td><td>22.0–22.5</td></tr>
+                    <tr><td><strong>36</strong></td><td>36</td><td>22.5–23.0</td></tr>
+                    <tr><td><strong>37</strong></td><td>37</td><td>23.5–24.0</td></tr>
+                    <tr><td><strong>38</strong></td><td>38</td><td>24.0–24.5</td></tr>
+                    <tr><td><strong>39</strong></td><td>39</td><td>24.5–25.0</td></tr>
+                    <tr><td><strong>40</strong></td><td>40</td><td>25.5–26.0</td></tr>
+                </tbody>
+            </table>
+            <p class="size-guide-note">💡 Mide tu pie en cm desde el talón hasta el dedo más largo. Si estás entre dos tallas, elige la mayor para mayor comodidad.</p>
+        </div>
+    </div>
+
+</body>
+</html>
