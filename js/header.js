@@ -10,7 +10,7 @@ class Header {
 
     /**
      * Renderizar el header en la página
-     * @param {String} paginaActiva - Nombre de la página actual ('home', 'buzos', 'polos', 'revendedores', 'empresas')
+     * @param {String} paginaActiva - Nombre de la página actual ('home', 'buzos', 'polos', 'revendedores', 'empresas', 'momentos')
      */
     render(paginaActiva = 'home') {
         const headerElement = document.querySelector(this.containerSelector);
@@ -25,18 +25,19 @@ class Header {
         headerElement.innerHTML = `
             <div class="site-header">
                 <div class="header-inner">
-                    <a href="index.html" class="brand">
+                    <a href="/" class="brand">
                         <img src="/img/logo-blanco.jpeg" class="brand-logo"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
                         <span style="display:none; font-size:22px; font-weight:700; color:#111;">Rexofit</span>
                     </a>
                     <nav class="nav-links">
-                        <a href="index.html" class="nav-link${isActive('home')}">INICIO</a>
+                        <a href="/" class="nav-link${isActive('home')}">INICIO</a>
                         <a href="#" class="nav-link${(paginaActiva === 'buzos' || paginaActiva === 'polos' || paginaActiva === 'zapatos-mujer') ? ' active' : ''}" id="btnTienda">TIENDA</a>
-                        <a href="revendedores.html" class="nav-link${isActive('revendedores')}">REVENDEDORES</a>
-                        <a href="empresas.html" class="nav-link${isActive('empresas')}">EMPRESAS</a>
+                        <a href="/revendedores" class="nav-link${isActive('revendedores')}">REVENDEDORES</a>
+                        <a href="/empresas" class="nav-link${isActive('empresas')}">EMPRESAS</a>
+                        <a href="/momentos/" class="nav-link nav-link--momentos${isActive('momentos')}">MOMENTOS</a>
                     </nav>
-                    <a href="carrito.html" class="cart-link" aria-label="Carrito">
+                    <a href="/carrito" class="cart-link" aria-label="Carrito">
                         <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="9" cy="21" r="1"></circle>
                             <circle cx="20" cy="21" r="1"></circle>
@@ -345,7 +346,7 @@ function injectMiniCartDrawer() {
         <span>Total</span>
         <strong id="miniCartTotal">S/ 0.00</strong>
       </div>
-      <a href="carrito.html" class="mini-cart-checkout">
+      <a href="/carrito" class="mini-cart-checkout">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
           <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.029 18.88a7.83 7.83 0 01-3.992-1.093l-.287-.17-2.975.78.793-2.9-.187-.298A7.863 7.863 0 014.2 11.93c0-4.328 3.52-7.848 7.849-7.848a7.794 7.794 0 015.548 2.299 7.794 7.794 0 012.3 5.55c-.002 4.327-3.522 7.848-7.868 7.948z"/>
@@ -366,7 +367,7 @@ function injectMiniCartDrawer() {
   document.addEventListener('click', function(e) {
     const cartLink = e.target.closest('.cart-link');
     if (!cartLink) return;
-    // On carrito.html, navigate normally
+    // On carrito, navigate normally
     const path = window.location.pathname;
     const isCarritoPage = path.includes('carrito') || document.body.dataset.pagina === 'carrito';
     if (isCarritoPage) return;
@@ -449,14 +450,14 @@ document.addEventListener('DOMContentLoaded', () => {
   injectMiniCartDrawer();
 
   // ── POPUP MES MORADO ──────────────────────────────
-  setTimeout(function() { injectSemanaSantaPopup(); }, 800);
+  setTimeout(function() { injectMesMoradoPopup(); }, 800);
 });
 
-function injectSemanaSantaPopup() {
+function injectMesMoradoPopup() {
   if (document.getElementById('_ssPopup')) return;
 
   // Mostrar 1 vez por sesión, luego esperar 1 hora antes de volver a aparecer
-  var POPUP_KEY = 'rexofit_mes_morado_shown';
+  var POPUP_KEY = 'rexofit_mes_morado_2026_shown';
   var UNA_HORA  = 5 * 60 * 1000;
   var lastShown = parseInt(localStorage.getItem(POPUP_KEY) || '0', 10);
   if (Date.now() - lastShown < UNA_HORA) return;
@@ -573,6 +574,6 @@ function injectSemanaSantaPopup() {
   document.getElementById('_ssShopBtn').onclick = function() {
     cerrar();
     var btnTienda = document.getElementById('btnTienda') || document.getElementById('categoriasLink');
-    if (btnTienda) { btnTienda.click(); } else { window.location.href = 'polos.html'; }
+    if (btnTienda) { btnTienda.click(); } else { window.location.href = '/polos'; }
   };
 }

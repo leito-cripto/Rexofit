@@ -130,7 +130,7 @@ function render() {
     if (!wrap) return;
 
     if (cart.length === 0) {
-        wrap.innerHTML = '<p class="carrito-vacio">Tu carrito esta vacio. <a href="index.html">Ver catalogo</a></p>';
+        wrap.innerHTML = '<p class="carrito-vacio">Tu carrito esta vacio. <a href="/">Ver catalogo</a></p>';
         var btn = document.getElementById('btnVaciarCarrito');
         if (btn) btn.style.display = 'none';
     } else {

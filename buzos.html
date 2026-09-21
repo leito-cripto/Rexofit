@@ -21,9 +21,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buzos | Rexofit</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <!-- Estilos compartidos entre catálogos -->
-    <link rel="stylesheet" href="css/catalog-shared.css">
+    <link rel="stylesheet" href="/css/catalog-shared.css">
     <style>
         /* Buzos Page — estilos exclusivos de esta página */
 
@@ -516,15 +516,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="categories-modal__close" id="categoriesClose" aria-label="Cerrar">&times;</button>
             <h3 class="categories-modal__title">Tienda</h3>
             <div class="categories-modal__list">
-                <a href="polos.html" class="categories-modal__item">
+                <a href="/polos" class="categories-modal__item">
                     <img src="/img/categorias/categoria-polos.webp" alt="Polos" class="categories-modal__img">
                     <span>POLOS</span>
                 </a>
-                <a href="buzos.html" class="categories-modal__item">
+                <a href="/buzos" class="categories-modal__item">
                     <img src="/img/categorias/categoria-buzos.webp" alt="Buzos" class="categories-modal__img">
                     <span>BUZOS</span>
                 </a>
-                <a href="zapatos-mujer.html" class="categories-modal__item">
+                <a href="/zapatos-mujer" class="categories-modal__item">
                     <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias" class="categories-modal__img">
                     <span>SANDALIAS</span>
                 </a>
@@ -934,8 +934,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Scripts -->
-    <script src="js/header.js"></script>
-    <script src="js/carrito.js"></script>
+    <script src="/js/header.js?v=20260916-morado"></script>
+    <script src="/js/carrito.js"></script>
     <script>
         // Product Data - All products (Varón + Dama)
         const products = {
@@ -1310,7 +1310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             initGenderFilter();
 
             // Deep link: si la URL tiene #producto-id, abrirlo automáticamente
-            // Ej: buzos.html#varon-azul-marino
+            // Ej: buzos#varon-azul-marino
             const hash = window.location.hash.replace('#', '');
             if (hash && products[hash]) {
                 // Si es dama, cambiar el tab primero
@@ -1607,12 +1607,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="footer-cols">
                 <div class="footer-col">
                     <h4>EXPLORAR</h4>
-                    <a href="index.html">Categorías</a>
-                    <a href="carrito.html">Carrito</a>
+                    <a href="/">Categorías</a>
+                    <a href="/carrito">Carrito</a>
                 </div>
                 <div class="footer-col">
                     <h4>MI CUENTA</h4>
-                    <a href="carrito.html">Mis pedidos</a>
+                    <a href="/carrito">Mis pedidos</a>
                     <a href="#">Mis datos</a>
                 </div>
                 <div class="footer-col">
@@ -1638,16 +1638,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- FLOATING SIDE DOTS NAVIGATION -->
     <nav class="side-nav" aria-label="Categorías">
-        <a href="index.html" class="side-nav__dot" title="Inicio" data-label="Inicio">
+        <a href="/" class="side-nav__dot" title="Inicio" data-label="Inicio">
             <img src="/img/hero-section.webp" alt="Inicio">
         </a>
-        <a href="polos.html" class="side-nav__dot" title="Polos" data-label="Polos">
+        <a href="/polos" class="side-nav__dot" title="Polos" data-label="Polos">
             <img src="/img/categorias/categoria-polos.webp" alt="Polos">
         </a>
-        <a href="buzos.html" class="side-nav__dot  active" title="Buzos" data-label="Buzos">
+        <a href="/buzos" class="side-nav__dot  active" title="Buzos" data-label="Buzos">
             <img src="/img/categorias/categoria-buzos.webp" alt="Buzos">
         </a>
-        <a href="zapatos-mujer.html" class="side-nav__dot" title="Sandalias" data-label="Sandalias">
+        <a href="/zapatos-mujer" class="side-nav__dot" title="Sandalias" data-label="Sandalias">
             <img src="/img/categorias/categoria-zapato-mujer.webp" alt="Sandalias">
         </a>
     </nav>
